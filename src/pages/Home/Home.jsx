@@ -5,7 +5,7 @@ import { ChangeView } from '../../common/ChangeView/ChangeView';
  
 export const Home = () => {
      return (
-         <div className='homeDesign'> Bienvenido a nuestra Clínica Dental
+         <div className='homeDesign'> Bienvenidos a nuestra Clínica Dental
             {/* <ChangeView 
                 path={"/login"}
                 name={"Login"}
