@@ -7,6 +7,10 @@ export const Header = () => {
     return (
         <div className="headerDesign">
             <ChangeView 
+                path={"/"}
+                name={"Home"}
+            />
+            <ChangeView 
                 path={"/login"}
                 name={"Login"}
             />
@@ -14,6 +18,7 @@ export const Header = () => {
                 path={"/register"}
                 name={"Register"}
             />
+            
         </div>
     )
 }
