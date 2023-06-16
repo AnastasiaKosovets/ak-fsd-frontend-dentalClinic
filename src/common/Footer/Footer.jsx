@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.css';
-import { ChangeView } from '../../common/ChangeView/ChangeView';
+// import { ChangeView } from '../../common/ChangeView/ChangeView';
 export const Footer = () => {
 
 

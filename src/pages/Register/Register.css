@@ -1,9 +1,15 @@
+.mainRegister {
+    display: flex;
+    justify-content: center;
+    row-gap: 5em;
+}
+
 .registerDesign {
     height: 100vh;
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
-    /* flex: content; */
+    padding-top: 2em;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
@@ -17,4 +23,5 @@
 display: flex;
 flex-direction: column;
 margin: 0;
+padding-top: 1em;
 }
