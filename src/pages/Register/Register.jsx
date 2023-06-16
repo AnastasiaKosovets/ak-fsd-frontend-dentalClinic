@@ -23,6 +23,7 @@ export const Register = () => {
 
   const InputHandler = (e) => {
 
+
     setCredentials((prevState) => ({
         ...prevState,
         //En este punto es donde el handler 
@@ -34,7 +35,9 @@ export const Register = () => {
 
   }
      return (
+         
          <div className='registerDesign'>Regístrate y pide tú cita On-line
+           {/* {<pre>{JSON.stringify(credentials, null,2)}</pre>} */}
             {/* <ChangeView 
                 path={"/"}
                 name={"Home"}
