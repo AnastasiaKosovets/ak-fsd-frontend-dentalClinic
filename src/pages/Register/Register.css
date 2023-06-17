@@ -6,11 +6,11 @@
 }
 
 .registerDesign {
-    height: 75vh;
+    height: 79.4vh;
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
-    padding-top: 2em;
+    padding-top: 1em;
     flex-direction: column;
     /* flex-wrap: wrap; */
     /* justify-content: center; */

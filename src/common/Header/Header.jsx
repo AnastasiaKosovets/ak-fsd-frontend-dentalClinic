@@ -2,8 +2,9 @@ import React from "react";
 import './Header.css';
 import { ChangeView } from '../../common/ChangeView/ChangeView';
 
-export const Header = () => {
 
+
+export const Header = () => {
     return (
         <div className="headerDesign">
             <ChangeView 
@@ -25,4 +26,5 @@ export const Header = () => {
             
         </div>
     )
-}
+      }
+ 

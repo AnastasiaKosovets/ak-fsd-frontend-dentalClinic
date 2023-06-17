@@ -38,6 +38,7 @@ export const Register = () => {
                 path={"/login"}
                 name={"Login"}
             /> */}
+            
         <div className="registerForm">
           <div className="formTxt">
             {" "}
