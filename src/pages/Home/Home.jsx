@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Home.css';
 import { ChangeView } from '../../common/ChangeView/ChangeView';

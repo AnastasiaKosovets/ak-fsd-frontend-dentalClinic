@@ -1,14 +1,9 @@
-.loginForm {
-    padding-top: 1em;
-}
-
-.loginDesign {
-    height: 75vh;
+.treatmentDesign {
+    /* height: 82vh; */
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
-    padding-top: 2em;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* justify-content: center; */
     align-items: center;
     /* font-family:'Courier New', Courier, monospace; */
@@ -17,9 +12,16 @@
     font-size: x-large;
 }
 
-.navLogin {
+.thisCard {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    
 }
+
+/* .mainCardBlock {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 1em;
+} */

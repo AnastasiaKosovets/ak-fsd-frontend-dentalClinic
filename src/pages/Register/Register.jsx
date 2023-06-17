@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Register.css";
-import { ChangeView } from "../../common/ChangeView/ChangeView";
+// import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
 
 export const Register = () => {
@@ -133,7 +133,10 @@ export const Register = () => {
             />
           </div>
         </div>
+        
       </div>
+      
+      
     </div>
   );
 };

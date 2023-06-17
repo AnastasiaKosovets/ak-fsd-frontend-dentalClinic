@@ -1,13 +1,13 @@
 .homeDesign {
 
-    height: 100vh;
+    height: 82vh;
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family:'Courier New', Courier, monospace;
+    /* font-family:'Courier New', Courier, monospace; */
     color: rgb(66, 103, 123);
     font-weight: bolder;
     font-size: x-large;

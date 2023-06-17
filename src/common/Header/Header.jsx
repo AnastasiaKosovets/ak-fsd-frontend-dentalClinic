@@ -1,8 +1,8 @@
 import React from "react";
 import './Header.css';
 import { ChangeView } from '../../common/ChangeView/ChangeView';
-export const Header = () => {
 
+export const Header = () => {
 
     return (
         <div className="headerDesign">
@@ -17,6 +17,10 @@ export const Header = () => {
             <ChangeView 
                 path={"/register"}
                 name={"Register"}
+            />
+            <ChangeView 
+                path={"/treatment"}
+                name={"Treatment"}
             />
             
         </div>

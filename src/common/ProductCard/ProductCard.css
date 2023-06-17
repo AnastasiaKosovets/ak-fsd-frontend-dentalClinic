@@ -1,0 +1,23 @@
+.productCardDesign {
+    height: 12em;
+    width: 15em;
+    background-color: #55ad03;
+    border-radius: 1em;
+    margin: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productCardDesign:hover {
+    background-color: #E1ECC8;
+    transition: 0.3s;
+}
+
+.pictureDesign {
+    height: 6em;
+    width: 5em;
+}
