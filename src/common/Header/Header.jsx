@@ -7,7 +7,7 @@ import { ChangeView } from '../../common/ChangeView/ChangeView';
 export const Header = () => {
     return (
         <div className="headerDesign">
-            {/* <ChangeView 
+            <ChangeView 
                 path={"/"}
                 name={"Home"}
             />
@@ -22,7 +22,7 @@ export const Header = () => {
             <ChangeView 
                 path={"/treatment"}
                 name={"Treatment"}
-            /> */}
+            />
             <nav class="navbar navbar-expand-lg bg-transparent">
   <div class="container-fluid">
     <a class="navbar-brand  text-light fw-semibold" href="/">Clinica Dental</a>
