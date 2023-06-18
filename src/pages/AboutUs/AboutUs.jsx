@@ -73,10 +73,9 @@ export const AboutUs = () => {
           <Card style={{ width: "20rem" }}>
             <Card.Img variant="top" src={doctor3} />
             <Card.Body>
-              <Card.Text>Card Title</Card.Text>
+              <Card.Text>Svetlana Razhevska</Card.Text>
               <Card.Title>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Especialista en Ortodoncia, trabaja con varios métodos como Invisalign
               </Card.Title>
             </Card.Body>
           </Card>
