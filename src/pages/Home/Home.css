@@ -10,3 +10,8 @@
     font-weight: bolder;
     font-size: x-large;
 }
+
+.carouselImg {
+    height: 22em;
+    width: 35em;
+}
