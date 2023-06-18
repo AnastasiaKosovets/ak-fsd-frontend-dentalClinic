@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { ChangeView } from '../../common/ChangeView/ChangeView';
+// import { ChangeView } from '../../common/ChangeView/ChangeView';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
  
