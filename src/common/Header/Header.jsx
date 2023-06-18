@@ -1,13 +1,19 @@
 import React from "react";
 import './Header.css';
-import { ChangeView } from '../../common/ChangeView/ChangeView';
-
+// import { ChangeView } from '../../common/ChangeView/ChangeView';
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 export const Header = () => {
+
     return (
         <div className="headerDesign">
-            <ChangeView 
+           
+            {/* <ChangeView 
                 path={"/"}
                 name={"Home"}
             />
@@ -22,43 +28,33 @@ export const Header = () => {
             <ChangeView 
                 path={"/treatment"}
                 name={"Treatment"}
-            />
-            <nav class="navbar navbar-expand-lg bg-transparent">
-  <div class="container-fluid">
-    <a class="navbar-brand  text-light fw-semibold" href="/">Clinica Dental</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active text-light fw-semibold" aria-current="page" href="#">Sobre Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fw-semibold" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fw-semibold" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fw-semibold" href="/register">Registro</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Tratamientos
-          </a>
+            /> */}
+            
+            <Navbar collapseOnSelect expand="lg" className="bg-transparent">
+      <Container>
+      <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental</Nav.Link>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="" className="fw-semibold">Sobre Nosotros</Nav.Link>
+            <Nav.Link as={Link} to="/treatment" className="fw-semibold">Tratamientos</Nav.Link>
+            {/* <Nav.Link as={Link} to="/login" className="text-light fw-semibold">Login</Nav.Link> */}
+            {/* <NavDropdown title="Tratamientos" className="fw-semibold" id="collasible-nav-dropdown">
+              <Nav.Link as={Link} to="" className="treatmentHover">Prevención Bucal</Nav.Link>
+              <Nav.Link as={Link} to="" className="treatmentHover">Ortodoncia</Nav.Link>
+              <Nav.Link as={Link} to="" className="treatmentHover">Endodoncia</Nav.Link>
+              <NavDropdown.Divider />
+              <Nav.Link as={Link} to="/treatment" className="treatmentHover">Todos Tratamientos</Nav.Link>
+            </NavDropdown> */}
+          </Nav>
+          <Nav>
+          <Nav.Link as={Link} to="/login" className="fw-semibold">Login</Nav.Link>
+          <Nav.Link as={Link} to="/register" className="fw-semibold">Registro</Nav.Link>
           
-          <ul class="dropdown-menu text-light">
-            <li><a class="dropdown-item fw-semibold" href="#">Prevención Bucal</a></li>
-            <li><a class="dropdown-item fw-semibold" href="#">Ortodoncia</a></li>
-            <li><a class="dropdown-item fw-semibold" href="#">Endodoncia</a></li>
-            <li><a class="dropdown-item fw-semibold" href="/treatment">Ver todos</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
         </div>
     )
       }
