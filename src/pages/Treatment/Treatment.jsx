@@ -24,7 +24,7 @@ export const Treatment = () => {
                     ? (
                         <div className="thisCard">
                             {
-                                products.slice(0,8).map(
+                                products.slice(0,4).map(
                                     product => {
                                         return (
                                             <div key={product.id}>

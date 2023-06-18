@@ -1,6 +1,6 @@
 .productCardDesign {
-    height: 12em;
-    width: 15em;
+    /* height: 14em;
+    width: 14em; */
     background-color: rgba(169, 220, 240, 0.447);
     box-shadow: .0rem .0.5rem .1rem  rgb(46, 87, 109);
     border-radius: 1em;
@@ -8,8 +8,8 @@
     cursor: pointer;
     transition: 0.3s;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -19,6 +19,5 @@
 }
 
 .pictureDesign {
-    height: 6em;
-    width: 5em;
+    margin-top: 1em;
 }
