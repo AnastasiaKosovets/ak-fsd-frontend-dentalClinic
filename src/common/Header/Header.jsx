@@ -50,7 +50,6 @@ export const Header = () => {
           <Nav>
           <Nav.Link as={Link} to="/login" className="fw-semibold">Login</Nav.Link>
           <Nav.Link as={Link} to="/register" className="fw-semibold">Registro</Nav.Link>
-          
           </Nav>
         </Navbar.Collapse>
       </Container>
