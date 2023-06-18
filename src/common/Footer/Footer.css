@@ -6,7 +6,7 @@
     background-color: rgb(147, 191, 207);
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* .socialMedia, .contacts {

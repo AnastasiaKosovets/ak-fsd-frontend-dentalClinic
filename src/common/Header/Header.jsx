@@ -36,8 +36,9 @@ export const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="" className="fw-semibold">Sobre Nosotros</Nav.Link>
+            
             <Nav.Link as={Link} to="/treatment" className="fw-semibold">Tratamientos</Nav.Link>
+            <Nav.Link as={Link} to="" className="fw-semibold">Sobre Nosotros</Nav.Link>
             {/* <Nav.Link as={Link} to="/login" className="text-light fw-semibold">Login</Nav.Link> */}
             {/* <NavDropdown title="Tratamientos" className="fw-semibold" id="collasible-nav-dropdown">
               <Nav.Link as={Link} to="" className="treatmentHover">Prevención Bucal</Nav.Link>

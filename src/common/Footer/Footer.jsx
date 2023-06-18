@@ -19,7 +19,6 @@ export const Footer = () => {
           </Nav>
         </Container>
       </Navbar>
-      <br />
             
         </div>
     )
