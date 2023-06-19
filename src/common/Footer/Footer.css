@@ -9,7 +9,12 @@
     /* align-items: center; */
 }
 
-/* .socialMedia, .contacts {
+.navBarStyle {
     display: flex;
-    font-weight: bolder ;
-} */
+    justify-content: space-evenly;
+    font-size: larger;
+}
+
+.footerText:hover {
+    color: rgb(128, 162, 248);
+}

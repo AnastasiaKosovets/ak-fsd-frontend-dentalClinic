@@ -4,9 +4,11 @@
     padding: 0;
     background-color: rgba(133, 220, 249, 0.653);
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     /* align-items: center; */
 }
+
+
 
 .navBarStyle {
     display: flex;
