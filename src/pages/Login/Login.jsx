@@ -65,13 +65,13 @@ export const Login = () => {
 
   return (
     <div className="mainLogin">
-      <div className="loginDesign">
+      <div className="loginDesign">Pide tu cita on-line
       {welcome !== "" ? (
         <div>{welcome}</div>
       ) : (
-        <div>
+        <div className="mainLogInDesign">
           {/* La utilidad de la siguiente linea es renderizar un hook at tiempo real en el DOM */}
-          {<pre>{JSON.stringify(credentials, null, 2)}</pre>}
+          {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
 
           <InputText
             // type, design, placeholder, name, functionHandler, onBlurFunction
@@ -95,7 +95,7 @@ export const Login = () => {
                 ? "normalInput"
                 : "normalInput errorInput"
             }
-            placeholder={"Password...."}
+            placeholder={"Introduce tu contraseña"}
             name={"password"}
             functionHandler={InputHandler}
             onBlurFunction={inputCheck}

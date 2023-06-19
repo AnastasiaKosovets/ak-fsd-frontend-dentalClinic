@@ -1,5 +1,13 @@
-.loginForm {
+/* .loginForm {
     padding-top: 1em;
+} */
+
+.mainLogInDesign {
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .loginDesign {
@@ -15,14 +23,22 @@
     font-size: x-large;
 }
 
+.normalInput {
+    width: 15em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
+    background-color: rgb(227, 234, 236);
+}
+
 .errorText {
     color: red;
 }
 
 .logInButton {
     height: 3em;
-    width: 7em;
-    background-color: rgba(74, 157, 198, 0.76);
+    width: 12em;
+    background-color: rgba(102, 186, 228, 0.76);
     color: white;
     cursor: pointer;
     transition: 0.4s;
@@ -30,7 +46,7 @@
     margin-top: 1em;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .logInButton:hover {
