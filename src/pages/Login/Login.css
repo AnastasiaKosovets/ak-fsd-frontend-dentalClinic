@@ -15,6 +15,28 @@
     font-size: x-large;
 }
 
+.errorText {
+    color: red;
+}
+
+.logInButton {
+    height: 3em;
+    width: 7em;
+    background-color: rgba(74, 157, 198, 0.76);
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 1em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.logInButton:hover {
+    transition: 0.4s;
+    background-color: rgba(60, 101, 122, 0.76);
+}
 /* .navLogin {
     display: flex;
     flex-direction: column;

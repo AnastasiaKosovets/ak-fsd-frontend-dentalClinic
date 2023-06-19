@@ -4,68 +4,109 @@ import "./Login.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
-import { logIn } from "../" 
+import { logIn } from "../../services/apiCalls";
+import { useNavigate } from "react-router-dom"; 
 
 export const Login = () => {
+// Instanciamos el useNavigate dentro de la constante
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     email: "",
     password: ""
   });
 
+  const [credentialsError, setCredentialsError] = useState({
+    emailError: "",
+    passwordError: ""
+  }) 
+
+  const [welcome, setWelcome] = useState("");
 
   const InputHandler = (e) => {
+    // Ahora procedemos a bindear(atar) los inputs mediante la presente
+    // función handler a sus correspondientes estados del Hook, que se llama credentials
 
     setCredentials((prevState) => ({
         ...prevState,
         //En este punto es donde el handler 
         //asigna el valor a la propiedad adecuada....
         [e.target.name]: e.target.value,
-        
       }));
-
   }
 
   const inputCheck = (e) => {
 
-    checkError(e.target.name, e.target.value);
+    let errorMessage = checkError(e.target.name, e.target.value);
 
-    console.log(e.target.value, "soy el check....");
-    console.log(e.target.name, "soy el check.....");
-    
-
+    setCredentialsError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: errorMessage,
+    }));
+    // checkError(e.target.name, e.target.value);
+    // console.log(e.target.value, "soy el check....");
+    // console.log(e.target.name, "soy el check.....");
   }
+
+  const logInMe = () => {
+    logIn(credentials)
+    .then((results) => {
+      let decodificated = jwt_decode(results.data.token);
+
+      setTimeout(() => {
+        navigate("/");
+      }, 3500);
+
+      setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
+    })
+    .catch((error) => console.log(error));
+  };
 
 
   return (
     <div className="mainLogin">
-      <div className="loginDesign"> Accede a tu perfil
-    {/* {<pre>{JSON.stringify(credentials, null,2)}</pre>} */}
+      <div className="loginDesign">
+      {welcome !== "" ? (
+        <div>{welcome}</div>
+      ) : (
+        <div>
+          {/* La utilidad de la siguiente linea es renderizar un hook at tiempo real en el DOM */}
+          {<pre>{JSON.stringify(credentials, null, 2)}</pre>}
 
-      {/* <div className="navLogin">
-        <ChangeView path={"/"} name={"Home"} />
-        <ChangeView path={"/register"} name={"Register"} />
-      </div> */}
-
-      <div className="loginForm">
-        <InputText 
+          <InputText
+            // type, design, placeholder, name, functionHandler, onBlurFunction
             type={"email"}
-            placeholder={"Introduce el email"}
+            design={
+              credentialsError.emailError === ""
+                ? "normalInput"
+                : "normalInput errorInput"
+            }
+            placeholder={"Introduce tu e-mail"}
             name={"email"}
-            classDesign={"InputText"}
             functionHandler={InputHandler}
             onBlurFunction={inputCheck}
-        />
-        {/* <InputText 
+          />
+          <div className="errorText">{credentialsError.emailError}</div>
+          <InputText
+            // type, design, placeholder, name, functionHandler, onBlurFunction
             type={"password"}
-            placeholder={"Introduce la contraseña"}
+            design={
+              credentialsError.passwordError === ""
+                ? "normalInput"
+                : "normalInput errorInput"
+            }
+            placeholder={"Password...."}
             name={"password"}
-            classDesign={"InputText"}
             functionHandler={InputHandler}
             onBlurFunction={inputCheck}
+          />
+          <div className="errorText">{credentialsError.passwordError}</div>
 
-        /> */}
-      </div>
+          <div onClick={() => logInMe()} className="logInButton">
+            Iniciar sesión
+          </div>
+        </div>
+      )}
     </div>
     </div>
     
