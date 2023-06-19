@@ -12,10 +12,15 @@
 
 .navBarStyle {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     font-size: larger;
+    /* text-decoration: none; */
+    transition: 0.6s;
+
 }
 
 .headerText:hover {
     color: rgb(128, 162, 248);
+    text-decoration: underline;
+    transition: 0.4s;
 }

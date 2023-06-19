@@ -67,19 +67,20 @@ export const Header = () => {
                 to="/login"
                 className="fw-semibold headerText"
               >
-                Login
+                Iniciar sesión
               </Nav.Link>
-              <Nav.Link
+              {/* <Nav.Link
                 as={Link}
                 to="/register"
                 className="fw-semibold headerText"
               >
-                Registro
-              </Nav.Link>
+                Registrarse
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      
     </div>
   );
 };
