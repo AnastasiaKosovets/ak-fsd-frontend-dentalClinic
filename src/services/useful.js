@@ -1,21 +1,36 @@
-// export const checkError = {name, value} => {
-//     switch(name){
+export const checkError = (name, value) => {
 
-//         case "email":
-//         case "e-email":
-//         case "correo":
-//             console.log("intento de leer el email");
-//         break;
 
-//         case "password":
-//         case "contraseña":
-//             console.log("intento de leer el password")
-//         break;
+    switch(name){
 
-//         case "name":
-//         break;
+        case "email":
+        case "e-mail":
+        case "correo":
 
-//         default:
-//             console.log("intento de leer el .....")
-//     }
-// }
+            if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)){
+                return "Introduce un e-mail válido";
+            }
+
+                return "";
+
+        case "password":
+        case "contraseña":
+
+            if(value.length < 8){
+                return "El password debe de tener 8 caracteres minimo";
+
+            }
+                return "";
+
+
+        case "name":
+        
+
+        break;
+
+        default:
+            console.log("Formato desconocido");
+    }
+
+
+}

@@ -3,7 +3,8 @@ import jwt_decode from "jwt-decode";
 import "./Login.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
-// import { checkError } from "../../services/useful";
+import { checkError } from "../../services/useful";
+import { logIn } from "../" 
 
 export const Login = () => {
 
