@@ -49,9 +49,9 @@ export const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link as={Link} to="/treatment" className="fw-semibold">Tratamientos</Nav.Link>
-            <Nav.Link as={Link} to="/about" className="fw-semibold">Sobre Nosotros</Nav.Link>
-            <Nav.Link as={Link} to="/" className="fw-semibold">Citas</Nav.Link>
+            <Nav.Link as={Link} to="/treatment" className="fw-semibold headerText">Tratamientos</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="fw-semibold headerText">Sobre Nosotros</Nav.Link>
+            <Nav.Link as={Link} to="/" className="fw-semibold headerText">Citas</Nav.Link>
             {/* <Nav.Link as={Link} to="/login" className="text-light fw-semibold">Login</Nav.Link> */}
             {/* <NavDropdown title="Tratamientos" className="fw-semibold" id="collasible-nav-dropdown">
               <Nav.Link as={Link} to="" className="treatmentHover">Prevención Bucal</Nav.Link>
@@ -62,8 +62,8 @@ export const Header = () => {
             </NavDropdown> */}
           </Nav>
           <Nav>
-          <Nav.Link as={Link} to="/login" className="fw-semibold">Login</Nav.Link>
-          <Nav.Link as={Link} to="/register" className="fw-semibold">Registro</Nav.Link>
+          <Nav.Link as={Link} to="/login" className="fw-semibold headerText">Login</Nav.Link>
+          <Nav.Link as={Link} to="/register" className="fw-semibold headerText">Registro</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
