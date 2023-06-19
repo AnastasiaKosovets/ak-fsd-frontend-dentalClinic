@@ -9,3 +9,7 @@ export const bringProducts = async () => {
 export const logIn = async (credentials) => {
     return await axios.post(`http://localhost:9000/auth/login`, credentials);
 }
+
+export const myRegister = async (credentials) => {
+    return await axios.post(`http://localhost:9000/auth/register`, credentials)
+}

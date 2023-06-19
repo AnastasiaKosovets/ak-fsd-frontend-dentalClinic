@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import jwt_decode from "jwt-decode";
 import "./Register.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
+import { checkError } from "../../services/useful";
+import { myRegister } from "../../services/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+  const navigate = useState();
+
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -16,6 +22,20 @@ export const Register = () => {
     collegialNumber: "",
   });
 
+  const [credentialsError, setCredentialsError] = useState({
+    emailError: "",
+    passwordError: "",
+    firstNameError: "",
+    lastNameError: "",
+    documentError: "",
+    dateOfBirthError: "",
+    addressError: "",
+    telefonNumberError: "",
+    collegialNumberError: "",
+  });
+
+  const [welcome, setWelcome] = useState("");
+
   const InputHandler = (e) => {
     setCredentials((prevState) => ({
       ...prevState,
@@ -24,6 +44,32 @@ export const Register = () => {
 
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const inputCheck = (e) => {
+    let errorMessage = checkError(e.target.name, e.target.value);
+
+    setCredentialsError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: errorMessage,
+    }));
+    // checkError(e.target.name, e.target.value);
+    // console.log(e.target.value, "soy el check....");
+
+    const registerMeOn = () => {
+      myRegister(credentials)
+        .then((results) => {
+          let decodificated = jwt_decode(results.data.token);
+
+          setTimeout(() => {
+            navigate("/");
+          }, 3500);
+
+          // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
+          setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
+        })
+        .catch((error) => console.log(error));
+    };
   };
   return (
     <div className="mainRegister">
@@ -38,8 +84,7 @@ export const Register = () => {
                 path={"/login"}
                 name={"Login"}
             /> */}
-            
-        <div className="registerForm">
+        {/* <div className="registerForm">
           <div className="formTxt">
             {" "}
             Email:
@@ -133,11 +178,49 @@ export const Register = () => {
               functionHandler={InputHandler}
             />
           </div>
+        </div> */}
+        {welcome !== "" ? (
+        <div>{welcome}</div>
+      ) : (
+        <div className="mainLogInDesign">
+          {/* La utilidad de la siguiente linea es renderizar un hook at tiempo real en el DOM */}
+          {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
+
+          <InputText
+            // type, design, placeholder, name, functionHandler, onBlurFunction
+            type={"email"}
+            design={
+              credentialsError.emailError === ""
+                ? "normalInput"
+                : "normalInput errorInput"
+            }
+            placeholder={"Introduce tu e-mail"}
+            name={"email"}
+            functionHandler={InputHandler}
+            onBlurFunction={inputCheck}
+          />
+          <div className="errorText">{credentialsError.emailError}</div>
+          <InputText
+            // type, design, placeholder, name, functionHandler, onBlurFunction
+            type={"password"}
+            design={
+              credentialsError.passwordError === ""
+                ? "normalInput"
+                : "normalInput errorInput"
+            }
+            placeholder={"Introduce tu contraseña"}
+            name={"password"}
+            functionHandler={InputHandler}
+            onBlurFunction={inputCheck}
+          />
+          <div className="errorText">{credentialsError.passwordError}</div>
+
+          <div onClick={() => logInMe()} className="logInButton">
+            Iniciar sesión
+          </div>
         </div>
-        
+      )}
       </div>
-      
-      
     </div>
   );
 };
