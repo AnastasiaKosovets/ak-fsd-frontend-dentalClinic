@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
 import doctor1 from "../../img/doctor1.jpg";
-import doctor2 from "../../img/doctor2.jpg";
+import doctor2mod from "../../img/doctor2mod.jpg";
 import doctor3 from "../../img/doctor3.webp";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -59,11 +59,11 @@ export const AboutUs = () => {
         </Col>
         <Col xs={10} sm={6} md={4} lg={4}>
           <Card className="m-4" style={{ width: "20rem" }}>
-            <Card.Img className="d-inline-block" variant="top" src={doctor2} />
+            <Card.Img className="d-inline-block" variant="top" src={doctor2mod} />
             <Card.Body>
               <Card.Text>Lucia de Castro</Card.Text>
               <Card.Title>
-                Especialista en Odontopediatría, graduada de la Facultad de
+                Especialista en Odontopediatría de la Facultad de
                 Medicina y Odontología de Universitat de València
               </Card.Title>
             </Card.Body>
