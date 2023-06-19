@@ -1,6 +1,4 @@
 .productCardDesign {
-    /* height: 14em;
-    width: 14em; */
     background-color: rgba(169, 220, 240, 0.447);
     box-shadow: .0rem .0.5rem .1rem  rgb(46, 87, 109);
     border-radius: 1em;
@@ -8,8 +6,6 @@
     cursor: pointer;
     transition: 0.3s;
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -21,3 +17,16 @@
 .pictureDesign {
     margin-top: 1em;
 }
+
+/* @media (max-width: 768px) {
+    .productCardDesign {
+      flex-direction: column;
+      align-items: center;
+      margin: 0.5em;
+    }
+  
+    .pictureDesign {
+      margin-top: 0.5em;
+    }
+  } */
+  

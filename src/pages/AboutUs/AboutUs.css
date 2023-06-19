@@ -1,5 +1,5 @@
 .aboutDesign {
-    height: 82vh;
+    height: 75vh;
     width: 100vw;
     background-color: rgb(247, 243, 231);
     display: flex;
@@ -11,11 +11,12 @@
     font-size: x-large;
 }
 
-@media (max-width: 600px) {
-    .aboutDesign {
-      height: auto;
-      flex-direction: column;
-      justify-content: center;
-      font-size: large;
-    }
+@media (max-width: 500px) {
+  .aboutDesign {
+    flex-direction: column;
+    height: auto;
+    padding: 2em;
+  /* padding: 0; */
+  margin: o;
   }
+}
