@@ -1,5 +1,5 @@
 .aboutDesign {
-    /* height: 82vh; */
+    height: 82vh;
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
@@ -10,3 +10,12 @@
     font-weight: bolder;
     font-size: x-large;
 }
+
+@media (max-width: 600px) {
+    .aboutDesign {
+      height: auto;
+      flex-direction: column;
+      justify-content: center;
+      font-size: large;
+    }
+  }
