@@ -45,9 +45,9 @@ export const AboutUs = () => {
 
     <div className="aboutDesign">
       <Row>
-        <Col xs={12} sm={6} md={4} lg={4}>
-          <Card style={{ width: "20rem" }}>
-            <Card.Img variant="top" src={doctor1} />
+        <Col xs={10} sm={6} md={4} lg={4}>
+          <Card className="m-4" style={{ width: "20rem" }}>
+            <Card.Img className="d-inline-block" variant="top" src={doctor1} />
             <Card.Body>
               <Card.Text>Dr. Juan Zubichi</Card.Text>
               <Card.Title>
@@ -57,9 +57,9 @@ export const AboutUs = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={12} sm={6} md={4} lg={4}>
-          <Card style={{ width: "20rem" }}>
-            <Card.Img variant="top" src={doctor2} />
+        <Col xs={10} sm={6} md={4} lg={4}>
+          <Card className="m-4" style={{ width: "20rem" }}>
+            <Card.Img className="d-inline-block" variant="top" src={doctor2} />
             <Card.Body>
               <Card.Text>Lucia de Castro</Card.Text>
               <Card.Title>
@@ -70,7 +70,7 @@ export const AboutUs = () => {
           </Card>
         </Col>
         <Col xs={12} sm={6} md={4} lg={4}>
-          <Card style={{ width: "20rem" }}>
+          <Card className="m-4" style={{ width: "20rem" }}>
             <Card.Img variant="top" src={doctor3} />
             <Card.Body>
               <Card.Text>Svetlana Razhevska</Card.Text>

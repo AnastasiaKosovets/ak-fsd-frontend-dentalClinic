@@ -32,17 +32,27 @@ export const Header = () => {
             /> */}
             
             <Navbar collapseOnSelect expand="lg" className="bg-transparent">
-      <Container>
-        
-      <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental
-        
-      </Nav.Link>
+      <Container className="navBarStyle">
+      {/* <Container>
+          
+        </Container> */}
+        <Navbar.Brand href="#home">
+            <img
+              src={logo2}
+              width="70"
+              height="50"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+      {/* <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental</Nav.Link> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             
             <Nav.Link as={Link} to="/treatment" className="fw-semibold">Tratamientos</Nav.Link>
             <Nav.Link as={Link} to="/about" className="fw-semibold">Sobre Nosotros</Nav.Link>
+            <Nav.Link as={Link} to="/" className="fw-semibold">Citas</Nav.Link>
             {/* <Nav.Link as={Link} to="/login" className="text-light fw-semibold">Login</Nav.Link> */}
             {/* <NavDropdown title="Tratamientos" className="fw-semibold" id="collasible-nav-dropdown">
               <Nav.Link as={Link} to="" className="treatmentHover">Prevención Bucal</Nav.Link>
