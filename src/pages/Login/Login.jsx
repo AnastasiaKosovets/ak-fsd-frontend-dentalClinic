@@ -57,6 +57,7 @@ export const Login = () => {
         navigate("/");
       }, 3500);
 
+      // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
       setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
     })
     .catch((error) => console.log(error));
