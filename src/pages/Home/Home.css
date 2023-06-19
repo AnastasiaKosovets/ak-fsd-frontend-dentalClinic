@@ -1,7 +1,7 @@
 .homeDesign {
     height: 82vh;
     width: 100vw;
-    background-color: rgb(238, 233, 218);
+    background-color: rgb(218, 220, 238);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -23,6 +23,12 @@
     padding: 0;
 }
 
+.carouselText{
+    color: rgb(250, 250, 250);
+    background-color: rgba(91, 127, 188, 0.567);
+    border-radius: 1em;
+}
+
 @media (max-width: 500px) {
     /* Estilos para dispositivos móviles con un ancho máximo de 600px */
     .homeDesign {
@@ -35,5 +41,10 @@
       /* Modifica los estilos para adaptarlos a dispositivos móviles */
       height: 10em;
       width: 18em;
+    }
+
+    .carouselText {
+        font-size: x-small;
+        /* background-color: rgba(128, 128, 128, 0.604); */
     }
   }

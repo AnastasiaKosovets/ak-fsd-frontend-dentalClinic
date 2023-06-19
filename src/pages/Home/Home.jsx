@@ -24,7 +24,7 @@ export const Home = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className="fw-semibold">Tú sonrisa es nuestra prioridad</h3>
+          <h3 className="fw-semibold carouselText">Tú sonrisa es nuestra prioridad</h3>
           {/* <p>Tú sonrisa es nuestra prioridad </p> */}
         </Carousel.Caption>
       </Carousel.Item>
@@ -36,7 +36,7 @@ export const Home = () => {
         />
 
         <Carousel.Caption>
-          <h3 className="fw-semibold">Contamos con el mejor equípo y últimas tecnologías</h3>
+          <h3 className="fw-semibold carouselText">Contamos con el mejor equípo y últimas tecnologías</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -47,7 +47,7 @@ export const Home = () => {
         />
 
         <Carousel.Caption>
-          <h3 className="fw-semibold">Trato especial para los mas peques</h3>
+          <h3 className="fw-semibold carouselText">Trato especial para los mas peques</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
