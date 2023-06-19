@@ -17,11 +17,18 @@ export const Login = () => {
         ...prevState,
         //En este punto es donde el handler 
         //asigna el valor a la propiedad adecuada....
-
         [e.target.name]: e.target.value,
         
       }));
 
+  }
+
+  const inputCheck = (e) => {
+
+    console.log(e.target.value, "soy el check....");
+    console.log(e.target.name, "soy el check.....");
+    
+    
   }
 
 
@@ -42,6 +49,7 @@ export const Login = () => {
             name={"email"}
             classDesign={"InputText"}
             functionHandler={InputHandler}
+            onBlurFunction={inputCheck}
         />
         <InputText 
             type={"password"}

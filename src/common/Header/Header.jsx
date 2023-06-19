@@ -45,7 +45,6 @@ export const Header = () => {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
-      {/* <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental</Nav.Link> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

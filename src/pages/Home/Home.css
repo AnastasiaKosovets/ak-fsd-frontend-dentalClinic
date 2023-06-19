@@ -15,3 +15,18 @@
     height: 22em;
     width: 35em;
 }
+
+@media (max-width: 600px) {
+    /* Estilos para dispositivos móviles con un ancho máximo de 600px */
+    .homeDesign {
+      /* Modifica los estilos para adaptarlos a dispositivos móviles */
+      flex-direction: column;
+      font-size: large;
+    }
+  
+    .carouselImg {
+      /* Modifica los estilos para adaptarlos a dispositivos móviles */
+      height: 10em;
+      width: 20em;
+    }
+  }
