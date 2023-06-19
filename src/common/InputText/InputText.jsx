@@ -1,4 +1,3 @@
-
 import React from 'react';
 import "./InputText.css";
  
@@ -14,5 +13,6 @@ export const InputText = ({type, placeholder, name, design, functionHandler, onB
                 onBlur={(e)=>onBlurFunction(e)}
             />
          </>
+      
      )
 }

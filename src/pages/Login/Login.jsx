@@ -54,13 +54,15 @@ export const Login = () => {
             functionHandler={InputHandler}
             onBlurFunction={inputCheck}
         />
-        <InputText 
+        {/* <InputText 
             type={"password"}
             placeholder={"Introduce la contraseña"}
             name={"password"}
             classDesign={"InputText"}
             functionHandler={InputHandler}
-        />
+            onBlurFunction={inputCheck}
+
+        /> */}
       </div>
     </div>
     </div>

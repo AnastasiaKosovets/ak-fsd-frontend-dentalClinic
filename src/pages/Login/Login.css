@@ -3,23 +3,30 @@
 }
 
 .loginDesign {
-    /* height: 76.8vh; */
-    width: 80vw;
+    height: 82vh;
+    width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
     padding-top: 2em;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    /* font-family:'Courier New', Courier, monospace; */
     color: rgb(66, 103, 123);
     font-weight: bolder;
     font-size: x-large;
 }
 
-.navLogin {
+/* .navLogin {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
+
+/* @media (max-width: 600px) {
+    .loginDesign {
+      height: 82vh;
+      flex-direction: column;
+      justify-content: center;
+      font-size: large;
+    }
+  } */
