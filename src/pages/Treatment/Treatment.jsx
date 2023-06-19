@@ -29,7 +29,8 @@ export const Treatment = () => {
                                     product => {
                                         return (
                                             <div key={product.id}>
-                                                {product.email}
+                                                {product.firstName}
+                                                {product.lastName}
                                             </div>
                                         )
                                     }

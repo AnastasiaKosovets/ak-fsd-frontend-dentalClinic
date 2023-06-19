@@ -24,6 +24,7 @@ export const checkError = (name, value) => {
 
 
         case "name":
+            // console.log(name);
         
 
         break;
