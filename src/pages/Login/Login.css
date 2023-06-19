@@ -3,8 +3,8 @@
 }
 
 .loginDesign {
-    height: 76.8vh;
-    width: 100vw;
+    /* height: 76.8vh; */
+    width: 80vw;
     background-color: rgb(238, 233, 218);
     display: flex;
     padding-top: 2em;
@@ -19,7 +19,7 @@
 
 .navLogin {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

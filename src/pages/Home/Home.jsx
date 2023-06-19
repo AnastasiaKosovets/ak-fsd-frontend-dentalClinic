@@ -16,7 +16,7 @@ export const Home = () => {
 
      return (
          <div className='homeDesign'> 
-          <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel className="mainCarousel" activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
           className="d-block carouselImg"

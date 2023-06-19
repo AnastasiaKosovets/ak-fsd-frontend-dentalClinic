@@ -1,5 +1,4 @@
 .headerDesign {
-    height: 9vh;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -11,5 +10,5 @@
 
 .navBarStyle {
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
 }

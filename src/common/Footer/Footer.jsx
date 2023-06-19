@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className="footerDesign">
         <Navbar bg="transparent">
         <Container>
-        <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental</Nav.Link>
+        {/* <Nav.Link as={Link} to="/" className="fw-semibold">Clinica Dental</Nav.Link> */}
           <Nav className="me-auto">
           <Nav.Link as={Link} to="/" className="fw-semibold">Redes Sociales</Nav.Link>
           <Nav.Link as={Link} to="/" className="fw-semibold">Contacto</Nav.Link>

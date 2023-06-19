@@ -14,9 +14,16 @@
 .carouselImg {
     height: 22em;
     width: 35em;
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 600px) {
+.mainCarousel{
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 500px) {
     /* Estilos para dispositivos móviles con un ancho máximo de 600px */
     .homeDesign {
       /* Modifica los estilos para adaptarlos a dispositivos móviles */
@@ -27,6 +34,6 @@
     .carouselImg {
       /* Modifica los estilos para adaptarlos a dispositivos móviles */
       height: 10em;
-      width: 20em;
+      width: 18em;
     }
   }

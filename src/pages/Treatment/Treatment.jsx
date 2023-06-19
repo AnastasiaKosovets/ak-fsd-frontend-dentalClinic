@@ -12,7 +12,8 @@ export const Treatment = () => {
             bringProducts()
             .then(
                 resultados => {
-                    setProducts(resultados.data.results)
+                    setProducts(resultados.data.data)
+                    // console.log(resultados.data.data)
                 }
             ) .catch (error => console.log(error));
         }
@@ -24,17 +25,11 @@ export const Treatment = () => {
                     ? (
                         <div className="thisCard">
                             {
-                                products.slice(0,4).map(
+                                products.map(
                                     product => {
                                         return (
                                             <div key={product.id}>
-                                                <ProductCard
-                                                    id={product.id}
-                                                    name={product.name}
-                                                    image={product.image}
-                                                    brand={product.species}
-                                                />
-
+                                                {product.email}
                                             </div>
                                         )
                                     }

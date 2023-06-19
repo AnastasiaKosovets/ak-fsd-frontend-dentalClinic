@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./Login.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
+// import { checkError } from "../../services/useful";
 
 export const Login = () => {
 
@@ -25,10 +26,12 @@ export const Login = () => {
 
   const inputCheck = (e) => {
 
+    checkError(e.target.name, e.target.value);
+
     console.log(e.target.value, "soy el check....");
     console.log(e.target.name, "soy el check.....");
     
-    
+
   }
 
 
