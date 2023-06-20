@@ -55,6 +55,17 @@ border: solid red;
     transition: 0.4s;
     background-color: rgba(60, 101, 122, 0.76);
 }
+
+.registerLink, .registerLinkText {
+  margin-top: 1em;
+  color: rgba(60, 101, 122, 0.76);
+  font-size: medium;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  color: rgba(89, 150, 181, 0.76);
+}
 /* media-query for mobile version */
 
 @media (max-width: 600px) {

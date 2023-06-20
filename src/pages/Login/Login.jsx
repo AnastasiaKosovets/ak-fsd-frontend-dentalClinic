@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import jwt_decode from "jwt-decode";
 import "./Login.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
+import { Link } from "react-router-dom";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
 import { logIn } from "../../services/apiCalls";
@@ -108,6 +109,13 @@ export const Login = () => {
           <div onClick={() => logInMe()} className="logInButton">
             Iniciar sesión
           </div>
+          <div className="registerLinkText">¿No tienes una cuenta?
+          <Link to="/register" className="registerLink">
+           ¡Regístrate aquí!
+          </Link>
+          </div>
+          
+          
         </div>
       )}
     </div>
