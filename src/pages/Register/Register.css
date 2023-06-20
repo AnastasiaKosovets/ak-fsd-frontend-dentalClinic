@@ -1,15 +1,5 @@
-.mainLogInDesign {
-    padding-top: 2em;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: .0rem .0.5rem .1rem  rgb(102, 188, 234);
-    border-radius: 1em;
-}
-
-.registerDesign {
-    /* height: 75.5vh; */
+.mainRegister {
+    height: 75.5vh;
     width: 100vw;
     padding-top: 2em;
     background-color: rgb(238, 233, 218);
@@ -22,21 +12,29 @@
     font-size: x-large; 
 }
 
+.mainLogDesign {
+    /* padding-top: 2em; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: .0rem .0.5rem .1rem  rgb(102, 188, 234);
+    border-radius: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
 .containerRegister {
     display: flex;
 }
-/* .registerForm {
-display: flex;
-flex-direction: column;
-margin: 0;
-padding-top: 1em;
-} */
 
 .normalInput {
+    height: 1.3em;
     width: 15em;
     margin: 1em;
     border-radius: 1em;
     color: rgb(66, 103, 123);
+    font-size: large;
     box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
     background-color: rgb(227, 234, 236);
 }
@@ -66,11 +64,30 @@ border: solid red;
     align-items: center
 }
 
-/* .logInButton:hover {
-    transition: 0.4s;
-    background-color: rgba(60, 101, 122, 0.76);
-} */
-
-
+@media (max-width: 768px) {
+    .mainRegister {
+      padding-top: 1em;
+      font-size: medium;
+    }
+  
+    .mainLogDesign {
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+    }
+  
+    .normalInput {
+      width: 80%;
+      font-size: medium;
+    }
+  
+    .logInButton {
+      width: 8em;
+      height: 2.5em;
+      font-size: medium;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+    }
+  }
+  
 
 

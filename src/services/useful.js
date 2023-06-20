@@ -3,13 +3,26 @@ export const checkError = (name, value) => {
 
     switch(name){
 
+        case "firstName":
+
+        if(value.length < 2){
+            return "El nombre debe de tener mínimo 2 carácteres"
+        }
+        return "";
+
+        case "lastName":
+
+        if(value.length < 2){
+            return "El apellido debe de tener mínimo 2 carácteres"
+        }
+        return "";
+
         case "email":
 
             if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)){
                 return "E-mail no válido";
             }
-
-                return "";
+            return "";
 
         case "password":
 
