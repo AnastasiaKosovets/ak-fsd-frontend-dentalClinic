@@ -3,15 +3,19 @@
     margin: 0;
     padding: 0;
     background-color: rgba(133, 220, 249, 0.653);
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     /* align-items: center; */
 }
+.mainPart{
+    display: flex;
 
+}
 .navBarStyle {
+    height: 4em;
     display: flex;
     /* justify-content: space-evenly; */
-    font-size: larger;
+    font-size: large;
     /* text-decoration: none; */
     transition: 0.6s;
 }

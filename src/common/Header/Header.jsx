@@ -27,7 +27,7 @@ export const Header = () => {
                 name={"Treatment"}
             /> */}
 
-      <Navbar collapseOnSelect expand="lg" className="bg-transparent">
+      <Navbar collapseOnSelect expand="lg" className="bg-transparent mainPart">
         <Container className="navBarStyle">
           <Navbar className="logoDesign m-1">
             <Nav.Link href="/">
@@ -42,7 +42,7 @@ export const Header = () => {
           </Navbar>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto firstPart">
               <Nav.Link
                 as={Link}
                 to="/treatment"
@@ -61,7 +61,7 @@ export const Header = () => {
                 Citas
               </Nav.Link>
             </Nav>
-            <Nav>
+            <Nav className="secondPart">
               <Nav.Link
                 as={Link}
                 to="/login"
