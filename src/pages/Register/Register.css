@@ -1,37 +1,42 @@
-.mainRegister {
+.mainLogInDesign {
+    padding-top: 2em;
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    /* row-gap: 5em; */
+    flex-direction: column;
+    align-items: center;
+    box-shadow: .0rem .0.5rem .1rem  rgb(102, 188, 234);
+    border-radius: 1em;
 }
 
 .registerDesign {
-    height: 79.4vh;
+    /* height: 75.5vh; */
     width: 100vw;
+    padding-top: 2em;
     background-color: rgb(238, 233, 218);
     display: flex;
-    padding-top: 1em;
     flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    align-items: center;
-    /* font-family:'Courier New', Courier, monospace; */
+    align-items: center; 
+    font-family:'Courier New', Courier, monospace; 
     color: rgb(66, 103, 123);
     font-weight: bolder;
-    font-size: x-large;
+    font-size: x-large; 
 }
 
-.registerForm {
+.containerRegister {
+    display: flex;
+}
+/* .registerForm {
 display: flex;
 flex-direction: column;
 margin: 0;
 padding-top: 1em;
-}
+} */
 
 .normalInput {
     width: 15em;
     margin: 1em;
     border-radius: 1em;
+    color: rgb(66, 103, 123);
     box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
     background-color: rgb(227, 234, 236);
 }
@@ -47,19 +52,25 @@ border: solid red;
 
 .logInButton {
     height: 3em;
-    width: 12em;
+    width: 10em;
     background-color: rgba(102, 186, 228, 0.76);
     color: white;
+    font-size: large;
     cursor: pointer;
     transition: 0.4s;
     border-radius: 1em;
     margin-top: 1em;
+    margin-bottom: 2em;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
-.logInButton:hover {
+/* .logInButton:hover {
     transition: 0.4s;
     background-color: rgba(60, 101, 122, 0.76);
-}
+} */
+
+
+
+

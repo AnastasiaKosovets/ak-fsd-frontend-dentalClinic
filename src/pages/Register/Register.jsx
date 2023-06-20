@@ -214,7 +214,35 @@ export const Register = () => {
             onBlurFunction={inputCheck}
           />
           <div className="errorText">{credentialsError.passwordError}</div>
-
+          <InputText
+              type={"text"}
+              design={"normalInput"}
+              placeholder={"Introduce tú nombre"}
+              name={"firstName"}
+              classDesign={"InputText"}
+              functionHandler={InputHandler}
+            />
+            <InputText
+              type={"text"}
+              design={"normalInput"}
+              placeholder={"Introduce tú apellido"}
+              name={"lastName"}
+              classDesign={"InputText"}
+              functionHandler={InputHandler}
+            />
+            <InputText
+            type={"text"}
+            design={
+              credentialsError.documentError === ""
+                ? "normalInput"
+                : "normalInput errorInput"
+            }
+            placeholder={"Introduce NIE/DNI"}
+            name={"document"}
+            functionHandler={InputHandler}
+            onBlurFunction={inputCheck}
+          />
+          <div className="errorText">{credentialsError.documentError}</div>
           <div onClick={() => logInMe()} className="logInButton">
             Iniciar sesión
           </div>
