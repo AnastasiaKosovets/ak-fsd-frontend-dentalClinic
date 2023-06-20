@@ -12,7 +12,7 @@
 
 }
 .navBarStyle {
-    height: 4em;
+    /* height: 4em; */
     display: flex;
     /* justify-content: space-evenly; */
     font-size: large;

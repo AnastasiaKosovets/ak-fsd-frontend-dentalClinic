@@ -17,8 +17,8 @@ export const Footer = () => {
             <Nav.Link href="/">
               <img
                 src={logo2}
-                width="70"
-                height="60"
+                width="60"
+                height="50"
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
               />
