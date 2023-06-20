@@ -18,7 +18,7 @@ export const Footer = () => {
               <img
                 src={logo2}
                 width="70"
-                height="50"
+                height="60"
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
               />
