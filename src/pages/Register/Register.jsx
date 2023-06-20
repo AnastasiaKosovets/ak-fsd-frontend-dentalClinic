@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import jwt_decode from "jwt-decode";
 import "./Register.css";
+import { Link } from "react-router-dom";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
@@ -51,14 +52,15 @@ export const Register = () => {
   const registerOn = () => {
     myRegister(credentials)
       .then((results) => {
-        let decodificated = jwt_decode(results.data.token);
+        // let decodificated = jwt_decode(results.data.token);
 
         setTimeout(() => {
           navigate("/");
-        }, 3500);
+        }, 2500);
 
         // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
-        setWelcome(`Gracias por registrarte ${decodificated.name}`);
+        setWelcome('Gracias por registrarte');
+        console.log(results);
       })
       .catch((error) => console.log(error));
   };
@@ -155,8 +157,13 @@ export const Register = () => {
           />
           <div className="errorText">{credentialsError.documentError}</div> */}
             <div onClick={() => registerOn()} className="logInButton">
-              Iniciar sesión
+              Regístrate
             </div>
+            <div className="registerLinkText">¿Ya tienes una cuenta?
+          <Link to="/login" className="registerLink">
+           ¡Inicia tu sesión!
+          </Link>
+          </div>
           </div>
         )}
       </div>
