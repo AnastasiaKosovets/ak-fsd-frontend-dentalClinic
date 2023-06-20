@@ -23,6 +23,7 @@
     width: 15em;
     margin: 1em;
     border-radius: 1em;
+    color: rgb(66, 103, 123);
     box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
     background-color: rgb(227, 234, 236);
 }
@@ -38,7 +39,7 @@ border: solid red;
 
 .logInButton {
     height: 3em;
-    width: 12em;
+    width: 10em;
     background-color: rgba(102, 186, 228, 0.76);
     color: white;
     cursor: pointer;
