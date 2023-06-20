@@ -69,11 +69,11 @@ export const Login = () => {
 
   return (
     <div className="mainLogin">
-      <div className="loginDesign">Pide tu cita on-line
+      <div className="loginDesign">
       {welcome !== "" ? (
         <div>{welcome}</div>
       ) : (
-        <div className="mainLogInDesign">
+        <div className="mainLogInDesign">Pide tu cita on-line
           {/* La utilidad de la siguiente linea es renderizar un hook at tiempo real en el DOM */}
           {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
 
@@ -106,7 +106,7 @@ export const Login = () => {
           />
           <div className="errorText">{credentialsError.passwordError}</div>
 
-          <div onClick={() => logInMe()} className="logInButton">
+          <div onClick={() => logInMe()} className="logButton">
             Iniciar sesión
           </div>
           <div className="registerLinkText">¿No tienes una cuenta?

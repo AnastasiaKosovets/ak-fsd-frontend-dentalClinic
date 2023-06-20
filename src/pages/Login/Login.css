@@ -4,10 +4,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    box-shadow: .0rem .0.5rem .1rem  rgb(102, 188, 234);
+    border-radius: 1em;
 }
 
 .loginDesign {
-    height: 82vh;
+    height: 75.5vh;
     width: 100vw;
     background-color: rgb(238, 233, 218);
     display: flex;
@@ -37,11 +39,12 @@ border: solid red;
     font-size:large;
 }
 
-.logInButton {
+.logButton {
     height: 3em;
     width: 10em;
     background-color: rgba(102, 186, 228, 0.76);
     color: white;
+    font-size: large;
     cursor: pointer;
     transition: 0.4s;
     border-radius: 1em;
@@ -57,7 +60,7 @@ border: solid red;
 }
 
 .registerLink, .registerLinkText {
-  margin-top: 1em;
+  margin: 1em;
   color: rgba(60, 101, 122, 0.76);
   font-size: medium;
   text-decoration: none;
@@ -68,7 +71,7 @@ border: solid red;
 }
 /* media-query for mobile version */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .mainLogInDesign {
       padding-top: 1em;
     }
@@ -79,17 +82,17 @@ border: solid red;
     }
   
     .normalInput {
-      width: 100%;
+      width: 80%;
     }
   
     .logInButton {
       width: 80%;
     }
   }
-  
+   */
 /* media query for tablets version */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+/* @media (min-width: 768px) and (max-width: 1023px) {
     .mainLogInDesign {
       padding-top: 1em;
     }
@@ -107,4 +110,4 @@ border: solid red;
       width: 80%;
     }
   }
-  
+   */
