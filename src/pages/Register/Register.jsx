@@ -33,7 +33,6 @@ export const Register = () => {
       ...prevState,
       //En este punto es donde el handler
       //asigna el valor a la propiedad adecuada....
-
       [e.target.name]: e.target.value,
     }));
   };
@@ -53,11 +52,11 @@ export const Register = () => {
     myRegister(credentials)
       .then((results) => {
         // let decodificated = jwt_decode(results.data.token);
-
+        // const {data} = results
+        // console.log(data)
         setTimeout(() => {
           navigate("/");
         }, 2500);
-
         // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
         setWelcome('Gracias por registrarte');
         console.log(results);

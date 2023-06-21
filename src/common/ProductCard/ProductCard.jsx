@@ -1,32 +1,37 @@
-import React, {useEffect} from 'react';
-import './ProductCard.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import React, { useEffect } from "react";
+import "./ProductCard.css";
+import Card from "react-bootstrap/Card";
+import ortodonciaImg from "../../img/ortodonciaImg.jpg";
 
-export const ProductCard = ({image, name, species, id}) => {
+export const ProductCard = ({ firstName, lastName, treatmentName, id }) => {
+  useEffect(() => {
+    console.log();
+  }, []);
 
-    useEffect(()=>{
-        console.log(image)
-    },[]);
-
-    const notFound = `https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png`;
-     return (
-         <div className="" >
-            <Card className='productCardDesign' style={{  width: '18rem' }}>
-                 <Card.Img variant="top" className='pictureDesign' style={{  width: '12rem' }} src={image !== "" ? image : notFound} alt={id} />
-                 <Card.Body>
-          <Card.Title className="cardText">{name}</Card.Title>
+  const notFound = `https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png`;
+  return (
+    <div className="">
+      <Card className="productCardDesign" style={{ width: "18rem" }}>
+        <Card.Body>
           <Card.Text className="cardText">
-          Some text
-          </Card.Text>
+          
+        {firstName}</Card.Text>
+          <Card.Text className="cardText">{lastName}</Card.Text>
+          <Card.Text className="cardText">
+          <Card.Img
+          variant="top"
+          className="pictureDesign"
+          style={{ width: "12rem" }}
+          src={ortodonciaImg}
+          alt={id}
+        />{treatmentName}</Card.Text>
         </Card.Body>
       </Card>
-            {/* <div className="imageDesign">
+      {/* <div className="imageDesign">
                 <img className="pictureDesign" src={image !== "" ? image : notFound} alt={id} />
             </div>
             <div className="cardText">{name}</div>
             <div className="cardText">{species}</div> */}
-         </div>
-        
-     )
-}
+    </div>
+  );
+};

@@ -29,8 +29,15 @@ export const Treatment = () => {
                                     product => {
                                         return (
                                             <div key={product.id}>
-                                                {product.firstName}
-                                                {product.lastName}
+                                                <ProductCard
+                                                treatmentName={product.treatmentName}
+                                                description={product.description}
+                                                />
+                                                
+                                                {/* {product.firstName}
+                                                {product.lastName} */}
+                                                
+                                                
                                             </div>
                                         )
                                     }

@@ -70,8 +70,8 @@ border: solid red;
     text-decoration: none;
   }
   
-  .registerLink:hover {
-    color: rgba(89, 150, 181, 0.76);
+  .registerLink {
+    color: rgb(120, 196, 234);
   }
 
 @media (max-width: 768px) {

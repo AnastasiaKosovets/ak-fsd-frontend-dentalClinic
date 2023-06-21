@@ -55,6 +55,4 @@ export const checkError = (name, value) => {
         default:
             console.log("Formato desconocido");
     }
-
-
 }
