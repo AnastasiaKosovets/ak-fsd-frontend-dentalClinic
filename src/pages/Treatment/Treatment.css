@@ -19,15 +19,3 @@
 .backgrCard {
     background: rgba(248, 249, 249, 0.662);
 }
-/* .thisCard {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} */
-
-/* .mainCardBlock {
-    display: flex;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    gap: 1em;
-} */

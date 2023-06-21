@@ -1,6 +1,9 @@
 import React from 'react';
 import './Treatment.css';
 import ortodonciaImg from "../../img/ortodonciaImg.jpg";
+import treatm5 from "../../img/treatm5.jpg";
+import treatm3a from "../../img/treatm3a.jpg";
+import treatm2 from "../../img/treatm2.jpg";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import { Container } from "react-bootstrap";
@@ -23,8 +26,8 @@ export const Treatment = () => {
           </Card>
         </Col>
         <Col xs={10} sm={6} md={4} lg={4}>
-          <Card className="m-2 mt-2" style={{ width: "20rem" }}>
-            {/* <Card.Img className="d-inline-block" variant="top" src={ortodonciaImg} /> */}
+          <Card className="m-2 mt-2" style={{ width: "25rem" }}>
+            <Card.Img className="d-inline-block" variant="top" src={treatm3a} />
             <Card.Body>
               <Card.Text>Lucia de Castro</Card.Text>
               <Card.Title>
