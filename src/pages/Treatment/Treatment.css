@@ -1,21 +1,43 @@
 .treatmentDesign {
-    /* height: 82vh; */
     width: 100vw;
     background-color: rgb(238, 233, 218);
-    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     /* flex-direction: column; */
-    /* justify-content: center; */
-    align-items: center;
-    /* font-family:'Courier New', Courier, monospace; */
     color: rgb(66, 103, 123);
-    /* font-weight: bolder; */
-    /* font-size: x-large; */
+}
+
+.treatmCard {
+    display: flex;
+    flex-direction: column;
+    height: 25em;
+    width: 25em;
+    border-radius: 1em;
+    box-shadow: .0rem .0.5rem .1rem  rgb(172, 181, 185);
+    background-color: rgb(249, 250, 250);
+}
+
+.imgStyleTrtm {
+    border-radius: 1em;
+    box-shadow: .0rem .0.5rem .1rem  rgb(172, 181, 185);
 }
 
 .treatmentStyleName {
     font-weight: bolder;
+    font-size: larger;
 }
 
-.backgrCard {
-    background: rgba(248, 249, 249, 0.662);
+.treatmentStyleText {
+    font-size: medium;
+}
+
+.firstRow {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* display: grid;
+  
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px; */
 }
