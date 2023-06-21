@@ -53,6 +53,8 @@ export const Login = () => {
     logIn(credentials)
     .then((results) => {
       let decodificated = jwt_decode(results.data.token);
+      console.log(decodificated)
+      localStorage.setItem("token", results.data.token);
 
       setTimeout(() => {
         navigate("/");
