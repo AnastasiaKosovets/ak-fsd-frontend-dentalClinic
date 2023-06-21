@@ -5,6 +5,7 @@ import doctor2mod from "../../img/doctor2mod.jpg";
 import doctor3 from "../../img/doctor3.webp";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
+import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 
@@ -44,9 +45,10 @@ export const AboutUs = () => {
     // </div>
 
     <div className="aboutDesign">
+      <Container>
       <Row>
         <Col xs={10} sm={6} md={4} lg={4}>
-          <Card className="m-4" style={{ width: "20rem" }}>
+          <Card className="m-2 mt-2" style={{ width: "20rem" }}>
             <Card.Img className="d-inline-block" variant="top" src={doctor1} />
             <Card.Body>
               <Card.Text>Dr. Juan Zubichi</Card.Text>
@@ -58,7 +60,7 @@ export const AboutUs = () => {
           </Card>
         </Col>
         <Col xs={10} sm={6} md={4} lg={4}>
-          <Card className="m-4" style={{ width: "20rem" }}>
+          <Card className="m-2 mt-2" style={{ width: "20rem" }}>
             <Card.Img className="d-inline-block" variant="top" src={doctor2mod} />
             <Card.Body>
               <Card.Text>Lucia de Castro</Card.Text>
@@ -70,7 +72,7 @@ export const AboutUs = () => {
           </Card>
         </Col>
         <Col xs={12} sm={6} md={4} lg={4}>
-          <Card className="m-4" style={{ width: "20rem" }}>
+          <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
             <Card.Img variant="top" src={doctor3} />
             <Card.Body>
               <Card.Text>Svetlana Razhevska</Card.Text>
@@ -81,6 +83,8 @@ export const AboutUs = () => {
           </Card>
         </Col>
       </Row>
+      </Container>
+      
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 import "./Register.css";
 import { Link } from "react-router-dom";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
 
-  const navigate = useState();
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     firstName: "",
