@@ -17,7 +17,7 @@ export const Treatment = () => {
       <Container>
         <Row className="firstRow">
           <Col xs={10} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
               <Card.Img
                 className="d-inline-block"
                 variant="top"
@@ -36,7 +36,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={10} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
               <Card.Img
                 className="d-inline-block"
                 variant="top"
@@ -55,7 +55,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm9} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -70,7 +70,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm11} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -86,7 +86,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm7} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -102,7 +102,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "25rem" }}>
+            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm8} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">Empastes</Card.Title>
