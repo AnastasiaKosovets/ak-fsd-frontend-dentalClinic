@@ -12,11 +12,18 @@
     /* font-size: x-large; */
 }
 
-.thisCard {
+.treatmentStyleName {
+    font-weight: bolder;
+}
+
+.backgrCard {
+    background: rgba(248, 249, 249, 0.662);
+}
+/* .thisCard {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
+} */
 
 /* .mainCardBlock {
     display: flex;

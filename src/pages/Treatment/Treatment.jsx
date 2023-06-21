@@ -1,57 +1,54 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './Treatment.css';
-import { bringProducts } from '../../services/apiCalls';
-import { ProductCard } from '../../common/ProductCard/ProductCard';
+import ortodonciaImg from "../../img/ortodonciaImg.jpg";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import { Container } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
 
 export const Treatment = () => {
-
-    const [products, setProducts] = useState([]);
-    
-    useEffect(() => {
-        if(products.length === 0){
-            bringProducts()
-            .then(
-                resultados => {
-                    setProducts(resultados.data.data)
-                    // console.log(resultados.data.data)
-                }
-            ) .catch (error => console.log(error));
-        }
-    }, [products]);
-    return(
-        <div className='homeDesign'>
-            {
-                products.length > 0 
-                    ? (
-                        <div className="thisCard">
-                            {
-                                products.map(
-                                    product => {
-                                        return (
-                                            <div key={product.id}>
-                                                <ProductCard
-                                                treatmentName={product.treatmentName}
-                                                description={product.description}
-                                                />
-                                                
-                                                {/* {product.firstName}
-                                                {product.lastName} */}
-                                                
-                                                
-                                            </div>
-                                        )
-                                    }
-                                )
-                            }
-                        </div>
-                    )
-
-                    : (
-                        <div>CARGANDO...</div>
-                    )
-            }
-
-         </div>
+    return (
+        <div className="treatmentDesign">
+      <Container>
+      <Row>
+        <Col xs={10} sm={6} md={4} lg={4}>
+          <Card className="m-2 mt-2" style={{ width: "25rem" }}>
+            <Card.Img className="d-inline-block" variant="top" src={ortodonciaImg} />
+            <Card.Body>
+              <Card.Title className='treatmentStyleName'>Ortodoncia</Card.Title>
+              <Card.Title>
+              Cualquier persona puede solucionar problemas de maloclusión, malposición o apiñamientos dentales. Por consiguiente disponemos de una solución para cada persona y para cada edad.
+              </Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={10} sm={6} md={4} lg={4}>
+          <Card className="m-2 mt-2" style={{ width: "20rem" }}>
+            {/* <Card.Img className="d-inline-block" variant="top" src={ortodonciaImg} /> */}
+            <Card.Body>
+              <Card.Text>Lucia de Castro</Card.Text>
+              <Card.Title>
+                Especialista en Odontopediatría de la Facultad de
+                Medicina y Odontología de Universitat de València
+              </Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} sm={6} md={4} lg={4}>
+          <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
+            {/* <Card.Img variant="top" src={doctor3} /> */}
+            <Card.Body>
+              <Card.Text>Svetlana Razhevska</Card.Text>
+              <Card.Title>
+                Especialista en Ortodoncia, trabaja con varios métodos como Invisalign
+              </Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      </Container>
+      
+    </div>
     )
      
 }
