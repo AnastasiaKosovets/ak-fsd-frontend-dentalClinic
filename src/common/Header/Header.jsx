@@ -57,8 +57,8 @@ export const Header = () => {
               >
                 Sobre Nosotros
               </Nav.Link>
-              <Nav.Link as={Link} to="/" className="fw-semibold headerText">
-                Citas
+              <Nav.Link as={Link} to="/users" className="fw-semibold headerText">
+                Usuarios
               </Nav.Link>
             </Nav>
             <Nav className="secondPart">

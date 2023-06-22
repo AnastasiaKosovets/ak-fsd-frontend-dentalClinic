@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import './Treatment.css';
+import './Users.css';
 import { bringProducts } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
 
-export const Treatment = () => {
+export const Users = () => {
 
     const [products, setProducts] = useState([]);
     
@@ -19,7 +19,7 @@ export const Treatment = () => {
         }
     }, [products]);
     return(
-        <div className='homeDesign'>
+        <div className='userDesign'>
             {
                 products.length > 0 
                     ? (
@@ -30,14 +30,18 @@ export const Treatment = () => {
                                         return (
                                             <div key={product.id}>
                                                 <ProductCard
-                                                treatmentName={product.treatmentName}
-                                                description={product.description}
+                                                id={product.id}
+                                                email={product.email}
+                                                password={product.password}
+                                                firstName={product.firstName}
+                                                lastName={product.lastName}
+                                                document={product.document}
+                                                dateOfBirth={product.dateOfBirth}
+                                                address={product.address}
+                                                telefonNumber={product.telefonNumber}
+                                                collegialNumber={product.collegialNumber}
+                                                role_id={product.role_id}
                                                 />
-                                                
-                                                {/* {product.firstName}
-                                                {product.lastName} */}
-                                                
-                                                
                                             </div>
                                         )
                                     }

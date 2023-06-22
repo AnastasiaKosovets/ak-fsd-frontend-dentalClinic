@@ -1,9 +1,22 @@
 import React, { useEffect } from "react";
 import "./ProductCard.css";
 import Card from "react-bootstrap/Card";
-import ortodonciaImg from "../../img/ortodonciaImg.jpg";
+// import ortodonciaImg from "../../img/ortodonciaImg.jpg";
 
-export const ProductCard = ({ firstName, lastName, treatmentName, id }) => {
+export const ProductCard = ({
+  firstName,
+  lastName,
+  email,
+  password,
+  treatmentName,
+  document,
+  dateOfBirth,
+  address,
+  telefonNumber,
+  collegialNumber,
+  role_id,
+  id,
+}) => {
   useEffect(() => {
     console.log();
   }, []);
@@ -13,18 +26,25 @@ export const ProductCard = ({ firstName, lastName, treatmentName, id }) => {
     <div className="">
       <Card className="productCardDesign" style={{ width: "18rem" }}>
         <Card.Body>
-          <Card.Text className="cardText">
-          
-        {firstName}</Card.Text>
+          <Card.Text className="cardText">{id}</Card.Text>
+          <Card.Text className="cardText">{email}</Card.Text>
+          <Card.Text className="cardText">{password}</Card.Text>
+          <Card.Text className="cardText">{firstName}</Card.Text>
           <Card.Text className="cardText">{lastName}</Card.Text>
-          <Card.Text className="cardText">
-          <Card.Img
+          <Card.Text className="cardText">{document}</Card.Text>
+          <Card.Text className="cardText">{dateOfBirth}</Card.Text>
+          <Card.Text className="cardText">{address}</Card.Text>
+          <Card.Text className="cardText">{telefonNumber}</Card.Text>
+          <Card.Text className="cardText">{collegialNumber}</Card.Text>
+          <Card.Text className="cardText">{role_id}</Card.Text>
+          {/* <Card.Text className="cardText"> */}
+          {/* <Card.Img
           variant="top"
           className="pictureDesign"
           style={{ width: "12rem" }}
           src={ortodonciaImg}
           alt={id}
-        />{treatmentName}</Card.Text>
+        />{treatmentName}</Card.Text> */}
         </Card.Body>
       </Card>
       {/* <div className="imageDesign">
