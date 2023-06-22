@@ -60,6 +60,13 @@ export const Header = () => {
               <Nav.Link as={Link} to="/users" className="fw-semibold headerText">
                 Usuarios
               </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/appointments"
+                className="fw-semibold headerText"
+              >
+                Citas
+              </Nav.Link>
             </Nav>
             <Nav className="secondPart">
               <Nav.Link

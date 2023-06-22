@@ -14,10 +14,10 @@ import Col from "react-bootstrap/Col";
 export const Treatment = () => {
   return (
     <div className="treatmentDesign">
-      <Container>
+      <Container className="">
         <Row className="firstRow">
           <Col xs={10} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img
                 className="d-inline-block"
                 variant="top"
@@ -36,7 +36,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={10} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img
                 className="d-inline-block"
                 variant="top"
@@ -55,7 +55,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm9} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -64,13 +64,13 @@ export const Treatment = () => {
                 <Card.Title>
                   Nuestro equipo de protésicos dentales en Valencia te
                   recomendará la que mejor se adapte a tus necesidades para que
-                  vuelvas a tener la sonrisa perfecta
+                  vuelvas a tener la sonrisa perfecta y cero dificultades
                 </Card.Title>
               </Card.Body>
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm11} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -86,7 +86,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm7} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
@@ -102,7 +102,7 @@ export const Treatment = () => {
             </Card>
           </Col>
           <Col xs={12} sm={6} md={4} lg={4}>
-            <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
+            <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
               <Card.Img variant="top" src={treatm8} />
               <Card.Body>
                 <Card.Title className="treatmentStyleName">Empastes</Card.Title>
@@ -110,7 +110,7 @@ export const Treatment = () => {
                   Los empastes dentales son un procedimiento odontológico para
                   la eliminación de una caries devolviendo al diente su forma y
                   color natural. Es muy importante comprobar salud de tus
-                  dientes
+                  dientes periodicamente
                 </Card.Title>
               </Card.Body>
             </Card>

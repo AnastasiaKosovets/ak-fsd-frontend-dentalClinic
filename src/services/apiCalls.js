@@ -15,3 +15,7 @@ export const myRegister = async (credentials) => {
     // console.log(credentials, "hola David");
     return await axios.post(`http://localhost:9000/auth/register`, credentials);
 }
+
+export const getAppointmentsByDoctor = async (credentials) => {
+    return await axios.get(`http://localhost:9000/appointments`, credentials)
+}
