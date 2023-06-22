@@ -8,7 +8,6 @@ export const ProductCard = ({
   lastName,
   email,
   password,
-  treatmentName,
   document,
   dateOfBirth,
   address,
@@ -16,6 +15,11 @@ export const ProductCard = ({
   collegialNumber,
   role_id,
   id,
+  doctor_id,
+  patient_id,
+  treatment_id,
+  price,
+  date
 }) => {
   useEffect(() => {
     console.log();
@@ -37,6 +41,11 @@ export const ProductCard = ({
           <Card.Text className="cardText">{telefonNumber}</Card.Text>
           <Card.Text className="cardText">{collegialNumber}</Card.Text>
           <Card.Text className="cardText">{role_id}</Card.Text>
+          <Card.Text className="cardText">{doctor_id}</Card.Text>
+          <Card.Text className="cardText">{patient_id}</Card.Text>
+          <Card.Text className="cardText">{treatment_id}</Card.Text>
+          <Card.Text className="cardText">{price}</Card.Text>
+          <Card.Text className="cardText">{date}</Card.Text>
           {/* <Card.Text className="cardText"> */}
           {/* <Card.Img
           variant="top"

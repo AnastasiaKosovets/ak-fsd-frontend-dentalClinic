@@ -1,0 +1,20 @@
+.appointmentsDesign {
+    width: auto;
+    background-color: rgb(247, 243, 231);
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    text-align: left;
+    color: rgb(66, 103, 123);
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.thisCard {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: small;
+}
