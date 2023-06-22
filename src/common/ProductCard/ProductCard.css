@@ -1,6 +1,6 @@
 .productCardDesign {
-    background-color: rgba(169, 220, 240, 0.447);
-    box-shadow: .0rem .0.5rem .1rem  rgb(46, 87, 109);
+    background-color: rgb(255, 255, 255);
+    box-shadow: .0rem .0.5rem .1rem  rgb(186, 186, 186);
     border-radius: 1em;
     margin: 1em;
     cursor: pointer;
@@ -10,7 +10,7 @@
 }
 
 .productCardDesign:hover {
-    background-color: #f0f7f5;
+    background-color: #eaebecd2;
     transition: 0.3s;
 }
 
