@@ -29,18 +29,18 @@ export const Users = () => {
                                     product => {
                                         return (
                                             <div key={product.id}>
-                                                <ProductCard
-                                                id={product.id}
-                                                email={product.email}
-                                                password={product.password}
-                                                firstName={product.firstName}
-                                                lastName={product.lastName}
-                                                document={product.document}
-                                                dateOfBirth={product.dateOfBirth}
-                                                address={product.address}
-                                                telefonNumber={product.telefonNumber}
-                                                collegialNumber={product.collegialNumber}
-                                                role_id={product.role_id}
+                                                <ProductCard className="usersCardDesign"
+                                                id={` Id: ${product.id}`}
+                                                email={`Email: ${product.email}`}
+                                                password={`Contraseña: ${product.password}`}
+                                                firstName={`Nombre: ${product.firstName}`}
+                                                lastName={`Apellido: ${product.lastName}`}
+                                                document={`NIE/DNI: ${product.document}`}
+                                                dateOfBirth={`Fecha de nacimiento: ${product.dateOfBirth}`}
+                                                address={`Dirección: ${product.address}`}
+                                                telefonNumber={`Número de teléfono: ${product.telefonNumber}`}
+                                                collegialNumber={`Número de colegiado: ${product.collegialNumber}`}
+                                                role_id={`Role_Id: ${product.role_id}`}
                                                 />
                                             </div>
                                         )
