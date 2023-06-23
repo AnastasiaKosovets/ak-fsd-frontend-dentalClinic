@@ -5,7 +5,13 @@
     margin: 1em;
     cursor: pointer;
     transition: 0.3s;
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
+    
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: small; */
+ 
     /* align-items: center; */
 }
 
