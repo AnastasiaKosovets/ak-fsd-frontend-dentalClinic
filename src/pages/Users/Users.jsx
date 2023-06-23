@@ -32,7 +32,7 @@ export const Users = () => {
                                                 <ProductCard className="usersCardDesign"
                                                 id={` Id: ${product.id}`}
                                                 email={`Email: ${product.email}`}
-                                                password={`Contraseña: ${product.password}`}
+                                                // password={`Contraseña: ${product.password}`}
                                                 firstName={`Nombre: ${product.firstName}`}
                                                 lastName={`Apellido: ${product.lastName}`}
                                                 document={`NIE/DNI: ${product.document}`}

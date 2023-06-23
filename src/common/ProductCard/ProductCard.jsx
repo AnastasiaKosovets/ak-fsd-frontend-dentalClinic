@@ -22,7 +22,7 @@ export const ProductCard = ({
   date
 }) => {
   useEffect(() => {
-    console.log();
+    console.log(doctor_id);
   }, []);
 
   const notFound = `https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png`;
@@ -32,7 +32,7 @@ export const ProductCard = ({
         <Card.Body>
           <Card.Text className="cardText">{id}</Card.Text>
           <Card.Text className="cardText">{email}</Card.Text>
-          <Card.Text className="cardText">{password}</Card.Text>
+          {/* <Card.Text className="cardText">{password}</Card.Text> */}
           <Card.Text className="cardText">{firstName}</Card.Text>
           <Card.Text className="cardText">{lastName}</Card.Text>
           <Card.Text className="cardText">{document}</Card.Text>

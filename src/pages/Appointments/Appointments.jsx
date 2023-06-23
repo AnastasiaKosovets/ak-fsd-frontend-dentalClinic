@@ -3,6 +3,7 @@ import './Appointments.css';
 import { getAppointmentsByDoctor } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
 
+
 export const Appointments = () => {
 
     const [products, setProducts] = useState([]);
