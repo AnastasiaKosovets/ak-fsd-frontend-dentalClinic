@@ -21,6 +21,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   //Instancio navigate para poder moverme entre la SPA
   const navigate = useNavigate();
+
   useEffect(()=>{
 
     if(!datosCredencialesRedux.credentials?.token){
@@ -33,17 +34,137 @@ export const Header = () => {
             {datosCredencialesRedux.credentials?.token 
 
                 ? (
-                    <div className="linksDesign">
-                        <div className="headerLink" >{datosCredencialesRedux?.credentials?.user?.name}</div>
-                        <div className="headerLink" onClick={()=>dispatch(userout({ credentials: ""}))}>logout</div>
-                    </div>
+                  <Navbar collapseOnSelect expand="lg" className="bg-transparent mainPart">
+        <Container className="navBarStyle">
+          <Navbar className="logoDesign m-1">
+            <Nav.Link href="/">
+              <img
+                src={logo2}
+                width="60"
+                height="50"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo"
+              />
+            </Nav.Link>
+          </Navbar>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto firstPart">
+              <Nav.Link
+                as={Link}
+                to="/treatment"
+                className="fw-semibold headerText"
+              >
+                Tratamientos
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/about"
+                className="fw-semibold headerText"
+              >
+                Sobre Nosotros
+              </Nav.Link>
+              <Nav.Link as={Link} to="/users" className="fw-semibold headerText">
+                Usuarios
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/appointments"
+                className="fw-semibold headerText"
+              >
+                Citas
+              </Nav.Link>
+            </Nav>
+            <Nav className="secondPart">
+              <Nav.Link
+                as={Link}
+                to="/login"
+                className="fw-semibold headerText"
+                onClick={() => dispatch(userout({credentials: ""}))}
+              >
+                Cerrar sesión
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/account"
+                className="fw-semibold headerText"
+              >
+                Mi Perfil
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+                    // <div className="linksDesign">
+                    //     {/* <div className="headerLink" >{datosCredencialesRedux?.credentials?.user?.name}</div> */}
+                        
+                    //     <div className="headerLink" onClick={()=>dispatch(userout({ credentials: ""}))}>logout</div>
+                    // </div>
                 )
 
                 : (
-                    <div className="linksDesign">
-                        <div className="headerLink" onClick={()=>navigate("/login")}>Login</div>
-                        <div className="headerLink" onClick={()=>navigate("/register")}>Register</div>
-                    </div>
+                  <Navbar collapseOnSelect expand="lg" className="bg-transparent mainPart">
+                  <Container className="navBarStyle">
+                    <Navbar className="logoDesign m-1">
+                      <Nav.Link href="/">
+                        <img
+                          src={logo2}
+                          width="60"
+                          height="50"
+                          className="d-inline-block align-top"
+                          alt="React Bootstrap logo"
+                        />
+                      </Nav.Link>
+                    </Navbar>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                      <Nav className="me-auto firstPart">
+                        <Nav.Link
+                          as={Link}
+                          to="/treatment"
+                          className="fw-semibold headerText"
+                        >
+                          Tratamientos
+                        </Nav.Link>
+                        <Nav.Link
+                          as={Link}
+                          to="/about"
+                          className="fw-semibold headerText"
+                        >
+                          Sobre Nosotros
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/users" className="fw-semibold headerText">
+                          Usuarios
+                        </Nav.Link>
+                        <Nav.Link
+                          as={Link}
+                          to="/appointments"
+                          className="fw-semibold headerText"
+                        >
+                          Citas
+                        </Nav.Link>
+                      </Nav>
+                      <Nav className="secondPart">
+                        <Nav.Link
+                          as={Link}
+                          to="/login"
+                          className="fw-semibold headerText"
+                        >
+                          Iniciar sesión
+                        </Nav.Link>
+                        <Nav.Link
+                          as={Link}
+                          to="/account"
+                          className="fw-semibold headerText"
+                        >
+                          Mi Perfil
+                        </Nav.Link>
+                      </Nav>
+                    </Navbar.Collapse>
+                  </Container>
+                </Navbar>
+          
                 )
                        
             }
