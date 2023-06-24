@@ -7,8 +7,19 @@ import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
 import { logIn } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom"; 
+//RDX
+//Importo métodos de Redux
+import { useDispatch, useSelector } from "react-redux";
+import { login, userData } from "../userSlice";
 
 export const Login = () => {
+  
+  //Dispatch escritura
+  const dispatch = useDispatch();
+
+  //useSelector es para el modo de lectura
+  const credentialsRdx = useSelector(userData);
+
 // Instanciamos el useNavigate dentro de la constante
   const navigate = useNavigate();
 
@@ -55,6 +66,14 @@ export const Login = () => {
       let decodificated = jwt_decode(results.data.token);
       console.log(decodificated)
       localStorage.setItem("token", results.data.token);
+
+      let datosBackend = {
+        token : resultado.data.token,
+        user: decodificado
+      }
+
+      //Guardo en redux.....
+      dispatch(login({ credentials: datosBackend}))
 
       setTimeout(() => {
         navigate("/");

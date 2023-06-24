@@ -11,3 +11,11 @@
     font-weight: bolder;
     font-size: x-large;
 }
+
+.thisCard {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: small;
+}
