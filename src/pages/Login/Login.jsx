@@ -68,8 +68,8 @@ export const Login = () => {
       localStorage.setItem("token", results.data.token);
 
       let datosBackend = {
-        token : resultado.data.token,
-        user: decodificado
+        token : results.data.token,
+        user: decodificated
       }
 
       //Guardo en redux.....
