@@ -76,13 +76,13 @@ export const Header = () => {
               >
                 Iniciar sesión
               </Nav.Link>
-              {/* <Nav.Link
+              <Nav.Link
                 as={Link}
-                to="/register"
+                to="/account"
                 className="fw-semibold headerText"
               >
-                Registrarse
-              </Nav.Link> */}
+                Mi Perfil
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
