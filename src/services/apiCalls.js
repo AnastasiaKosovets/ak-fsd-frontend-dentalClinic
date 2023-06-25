@@ -8,8 +8,13 @@ export const myRegister = async (credentials) => {
     return await axios.post(`http://localhost:9000/auth/register`, credentials);
 }
 
-export const myProfile = async (credentials) => {
-    return await axios.get(`http://localhost:9000/users/profile`, credentials);
+export const myProfile = async (token) => {
+    let access = {
+        headers: {
+            Autorization: "Bearer" + token,
+        }
+    }
+    return await axios.get(`http://localhost:9000/users/profile`, access);
 }
 
 export const bringProducts = async (credentials) => {
@@ -18,6 +23,6 @@ export const bringProducts = async (credentials) => {
     // return await axios.get(`http://localhost:9000/treatments`);
 }
 
-export const getAppointmentsByDoctor = async (credentials) => {
-    return await axios.get(`http://localhost:9000/appointments`, credentials)
+export const getAppointmentsByDoctor = async (token) => {
+    return await axios.get(`http://localhost:9000/appointments`);
 }

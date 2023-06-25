@@ -6,38 +6,53 @@ import { ProductCard } from "../../common/ProductCard/ProductCard";
 import Card from "react-bootstrap/Card";
 import userIcon from "../../img/userIcon.png";
 import treatm6 from "../../img/treatm6.jpg"
-import { myProfileInfo, userData } from "../userSlice";
+import { userData } from "../userSlice";
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 
 export const MyAccount = () => {
 
-    const token = localStorage.getItem("token");
-    console.log(token);
-    const [profile, setProfile] = useState([]);
-    const dispatch = useDispatch();
+    // const token = localStorage.getItem("token");
+    // console.log(token);
+    const credRdx = useSelector(userData);
+    const [user, setUser] = useState({
+        email: "",
+        firstName: "",
+        lastName: "",
+        document: "",
+        dateOfBirth: "",
+        address: "",
+        telefonNumber: ""
+    });
+    console.log(credRdx);
+    // const dispatch = useDispatch();
     
-    
-
     useEffect(() => {
-        if(profile.length === 0){
-            myProfile()
+        if(user.firstName === ""){
+            myProfile(credRdx?.credentials?.token)
             .then((results) => {
-                let decodificated = jwt_decode(results.data.token);
-                console.log(decodificated)
-                localStorage.setItem("token", results.data.token);
-
-      let datosBackend = {
-        token : results.data.token,
-        user: decodificated
-      }
-      dispatch(myProfileInfo({ credentials: datosBackend}))
-            setProfile(results.data)
-            console.log(results.data);
+                // let decodificated = jwt_decode(results.data.token);
+                // console.log(decodificated)
+                // localStorage.setItem("token", results.data.token);
+                setUser({
+                    email: results.data.data.user.email || "",
+                    firstName: results.data.user.firstName,
+                    lastName: results.data.user.lastName,
+                    document: results.data.user.document,
+                    dateOfBirth: results.data.user.dateOfBirth,
+                    address: results.data.user.address,
+                    telefonNumber: results.data.user.telefonNumber
+                });
+    //   let datosBackend = {
+    //     token : results.data.token,
+    //     user: decodificated
+    //   }
+    //   dispatch(myProfileInfo({ credentials: datosBackend}))
+    //         setProfile(results.data)
+    //         console.log(results.data);
+        }).catch(error => console.log(error));
         }
-            ).catch(error => console.log(error));
-        }
-    }, [profile, dispatch]);
+    }, []);
 
     return(
         <div className="profileDesign">
@@ -50,20 +65,20 @@ export const MyAccount = () => {
                     <div className="thisCard">Los datos que traera Backend
                             {/* {
                                 profile.map(
-                                    profile => {
-                                        return (
-                                            <div key={profile.id}>
+                                    profile => { */}
+                                        {/* return ( */}
+                                            <div key={user.id}>
                                                 <ProductCard className="usersCardDesign"
-                                                email={`Email: ${profile.email}`}
-                                                firstName={`Nombre: ${profile.firstName}`}
-                                                lastName={`Apellido: ${profile.lastName}`}
-                                                document={`NIE/DNI: ${profile.document}`}
-                                                dateOfBirth={`Fecha de nacimiento: ${profile.dateOfBirth}`}
-                                                address={`Dirección: ${profile.address}`}
-                                                telefonNumber={`Número de teléfono: ${profile.telefonNumber}`}
+                                                email={`Email: ${user.email}`}
+                                                firstName={`Nombre: ${user.firstName}`}
+                                                lastName={`Apellido: ${user.lastName}`}
+                                                document={`NIE/DNI: ${user.document}`}
+                                                dateOfBirth={`Fecha de nacimiento: ${user.dateOfBirth}`}
+                                                address={`Dirección: ${user.address}`}
+                                                telefonNumber={`Número de teléfono: ${user.telefonNumber}`}
                                                 />
                                             </div>
-                                        )
+                                        {/* )
                                     }
                                 )
                             } */}

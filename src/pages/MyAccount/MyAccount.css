@@ -1,6 +1,6 @@
 .profileDesign {
     /* acuerdate de quitar height cuando traeré info del BBDD de user */
-    height: 82vh;
+    /* height: 82vh; */
     width: auto;
     background-color: rgb(247, 243, 231);
     display: flex;
