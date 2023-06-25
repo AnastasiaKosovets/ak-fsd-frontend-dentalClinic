@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MyAccount.css";
 import { myProfile } from "../../services/apiCalls";
+import { Link } from "react-router-dom";
 import { ProductCard } from "../../common/ProductCard/ProductCard";
 import Card from "react-bootstrap/Card";
 import userIcon from "../../img/userIcon.png";
+import treatm6 from "../../img/treatm6.jpg"
 import { myProfileInfo, userData } from "../userSlice";
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,10 +68,14 @@ export const MyAccount = () => {
                                 )
                             } */}
                         </div>
-                        <div className="modInfo">Modificar</div>
+                        <Link to="/updateAccount" className="modInfo">Modificar</Link>
                     </div>
                     <div className="secondPartUser">
-                        <div>Mis Citas</div>
+                    <Card.Img className="d-inline-block userIconA" variant="top" src={treatm6} />
+                        <div className="rigthUserBtn">
+                            <Link to="/myAppointments" className="modInfo">Mis Citas</Link>
+                            <Link to="/bookAppointment" className="modInfo">Pedir Cita</Link>
+                        </div>
                     </div>
                         
                     {/* // )

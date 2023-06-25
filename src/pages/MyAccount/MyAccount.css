@@ -13,7 +13,7 @@
     font-size: x-large;
 }
 
-.thisCard {
+/* .thisCard {
     margin-top: 2em;
     margin-bottom: 2em;
     display: grid;
@@ -23,11 +23,22 @@
     width: 12em;
     background-color: white;
     box-shadow: .0rem .0.5rem .1rem  rgb(186, 186, 186);
-}
+} */
 
 .userIconImg {
     height: 6em;
     width: 6em;
+}
+
+.userIconA {
+    height: 8em;
+    width: 18em;
+    border-radius: 1em;
+}
+
+.rigthUserBtn {
+    display: flex;
+    justify-content: space-around;
 }
 
 .modInfo {
@@ -35,6 +46,7 @@
     width: 10em;
     background-color: rgba(102, 186, 228, 0.76);
     color: white;
+    text-decoration: none;
     font-size: large;
     cursor: pointer;
     transition: 0.4s;
@@ -47,5 +59,6 @@
 
 .modInfo:hover {
     transition: 0.4s;
+    color: white;
     background-color: rgba(60, 101, 122, 0.76);
 }

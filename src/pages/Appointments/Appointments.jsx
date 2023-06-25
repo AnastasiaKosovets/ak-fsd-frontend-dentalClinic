@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Appointments.css';
+import { Link } from "react-router-dom";
 import { getAppointmentsByDoctor } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
 
@@ -21,6 +22,9 @@ export const Appointments = () => {
     }, [products]);
     return(
         <div className='appointmentsDesign'>
+            <div className='doctorAppointments'>
+            <Link to="/doctorApp" className="modInfo">Mis citas</Link>
+            </div>
             {
                 products.length > 0 
                     ? (
