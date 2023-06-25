@@ -60,6 +60,7 @@ export const Login = () => {
     // console.log(e.target.name, "soy el check.....");
   }
 
+
   const logInMe = () => {
     logIn(credentials)
     .then((results) => {
@@ -77,11 +78,9 @@ export const Login = () => {
 
       setTimeout(() => {
         navigate("/");
-      }, 3500);
+      }, 2500);
 
       setWelcome(`Nos alegramos de verte ${decodificated.userName}`);
-      // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
-      // setWelcome('Bienvenid@ de nuevo', results.data);
       console.log(results);
     })
     .catch((error) => console.log(error));

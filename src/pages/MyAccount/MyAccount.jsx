@@ -2,30 +2,51 @@ import React, { useEffect, useState } from "react";
 import "./MyAccount.css";
 import { myProfile } from "../../services/apiCalls";
 import { ProductCard } from "../../common/ProductCard/ProductCard";
+import Card from "react-bootstrap/Card";
+import userIcon from "../../img/userIcon.png";
+import { myProfileInfo, userData } from "../userSlice";
+import jwt_decode from "jwt-decode";
+import { useDispatch, useSelector } from "react-redux";
 
 export const MyAccount = () => {
 
+    const token = localStorage.getItem("token");
+    console.log(token);
     const [profile, setProfile] = useState([]);
+    const dispatch = useDispatch();
+    
+    
 
     useEffect(() => {
         if(profile.length === 0){
             myProfile()
-            .then(
-                results => {
-                    setProfile(results.data)
-                    console.log(results.data);
-                }
+            .then((results) => {
+                let decodificated = jwt_decode(results.data.token);
+                console.log(decodificated)
+                localStorage.setItem("token", results.data.token);
+
+      let datosBackend = {
+        token : results.data.token,
+        user: decodificated
+      }
+      dispatch(myProfileInfo({ credentials: datosBackend}))
+            setProfile(results.data)
+            console.log(results.data);
+        }
             ).catch(error => console.log(error));
         }
-    }, [profile]);
+    }, [profile, dispatch]);
 
     return(
         <div className="profileDesign">
-            {
+            {/* {
                 profile.length > 0 
-                    ? (
-                        <div className="thisCard">
-                            {
+                    ? ( */}
+                    <div className="firstPartUser">
+                    <Card.Img className="d-inline-block userIconImg" variant="top" src={userIcon} />
+                    <p>Mis Datos</p>
+                    <div className="thisCard">Los datos que traera Backend
+                            {/* {
                                 profile.map(
                                     profile => {
                                         return (
@@ -43,14 +64,20 @@ export const MyAccount = () => {
                                         )
                                     }
                                 )
-                            }
+                            } */}
                         </div>
-                    )
+                        <div className="modInfo">Modificar</div>
+                    </div>
+                    <div className="secondPartUser">
+                        <div>Mis Citas</div>
+                    </div>
+                        
+                    {/* // )
 
-                    : (
-                        <div>CARGANDO...</div>
-                    )
-            }
+                    // : (
+                    //     <div>CARGANDO...</div>
+                    // ) */}
+            {/* } */}
         </div>
     )
 }
