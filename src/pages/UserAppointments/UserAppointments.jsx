@@ -21,7 +21,7 @@ export const UserAppointments = () => {
     }, [products]);
 
     return(
-        <div className="userApDesign">Hola User
+        <div className="userApDesign">
             {
                 products.length > 0 
                     ? (
