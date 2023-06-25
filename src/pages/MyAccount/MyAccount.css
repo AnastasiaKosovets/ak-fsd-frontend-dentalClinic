@@ -1,12 +1,13 @@
 .profileDesign {
+    /* acuerdate de quitar height cuando traeré info del BBDD de user */
     height: 82vh;
     width: auto;
     background-color: rgb(247, 243, 231);
     display: flex;
-    justify-content: space-around;
-    /* flex-direction: row;
-    justify-content:space-evenly;
-    align-items: center; */
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+    /* align-items: center; */
     text-align: left;
     color: rgb(66, 103, 123);
     font-weight: bolder;
@@ -24,6 +25,10 @@
     background-color: white;
     box-shadow: .0rem .0.5rem .1rem  rgb(186, 186, 186);
 } */
+
+.firstPartUser, .secondPartUser {
+margin-top: 2em;
+}
 
 .userIconImg {
     height: 6em;
@@ -62,3 +67,43 @@
     color: white;
     background-color: rgba(60, 101, 122, 0.76);
 }
+
+@media only screen and (max-width: 480px) {
+    .profileDesign {
+      font-size: large;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .firstPartUser {
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* margin-left: 1em; */
+    }
+  
+    .userIconImg {
+      height: 4em;
+      width: 4em;
+      /* margin-top: 2em; */
+    }
+  
+    .userIconA {
+      height: 6em;
+      width: 14em;
+      margin-left: 3em;
+    }
+  
+    .rigthUserBtn {
+      margin-bottom: 1em;
+      margin-top: 1em;
+    }
+  
+    .modInfo {
+      width: 8em;
+      font-size: medium;
+      margin-top: 0.5em;
+      justify-content: center;
+    }
+  }
