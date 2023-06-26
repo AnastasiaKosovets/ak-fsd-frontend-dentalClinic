@@ -1,21 +1,16 @@
 .profileDesign {
-    /* acuerdate de quitar height cuando traeré info del BBDD de user */
-    /* height: 82vh; */
     width: auto;
     background-color: rgb(247, 243, 231);
     display: flex;
     flex-direction: column;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
-    /* align-items: center; */
     text-align: left;
     color: rgb(66, 103, 123);
     font-weight: bolder;
     font-size: x-large;
 }
 
-.firstPartUser, .secondPartUser {
-margin-top: 2em;
+.firstPartUser, .middlePartUser, .secondPartUser {
+margin-top: 1em;
 }
 
 .firstPartUser {
@@ -30,15 +25,25 @@ margin-top: 2em;
 }
 
 .userIconA {
-    height: 8em;
-    width: 18em;
+    height: 12em;
+    width: 25em;
     border-radius: 1em;
 }
 
-/* .profileCard {
-    width: 25em;
-    display: flex;
-} */
+.middlePartUser, .secondPartUser {
+  display: flex;
+  height: 25em;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1em;
+  box-shadow: .0rem .0.5rem .1rem  rgb(138, 204, 240);
+}
+
+.profileTxt{
+ font-weight: bolder;
+ font-size: large;
+}
 
 .modInfo {
     height: 3em;
@@ -52,9 +57,11 @@ margin-top: 2em;
     border-radius: 1em;
     margin-top: 1em;
     margin-left: 1em;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+}
+
+.rigthUserBtn, .modInfo{
+  display: flex;
+  justify-content: center;
 }
 
 .modInfo:hover {

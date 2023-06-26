@@ -40,10 +40,10 @@ export const UserAppointments = () => {
                                         return (
                                             <div key={index} className="userAppD">
                                                 <ProductCard className="usersCardDesign"
-                                                    doctor_id={`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
-                                                    patient_id={`${appointment.patient.firstName} ${appointment.patient.lastName}`}
-                                                    treatment_id={appointment.treatment.treatmentName}
-                                                    date={formattedDate}
+                                                    doctor_id={`Médico: ${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
+                                                    patient_id={`Paciente${appointment.patient.firstName} ${appointment.patient.lastName}`}
+                                                    treatment_id={`Tratamiento: ${appointment.treatment.treatmentName}`}
+                                                    date={`Fecha: ${formattedDate}`}
                                                 />
                                                 <Link to="/" className="modInfo">Cancelar Cita</Link>
                                             </div>

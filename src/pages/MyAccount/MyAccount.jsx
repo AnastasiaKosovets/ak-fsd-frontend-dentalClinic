@@ -6,6 +6,7 @@ import { ProductCard } from "../../common/ProductCard/ProductCard";
 import Card from "react-bootstrap/Card";
 import userIcon from "../../img/userIcon.png";
 import treatm6 from "../../img/treatm6.jpg";
+import aptm1 from "../../img/aptm1.jpeg";
 import { userData } from "../userSlice";
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
@@ -87,7 +88,8 @@ export const MyAccount = () => {
               Modificar
             </Link>
           </div>
-          <div className="secondPartUser">
+          <div className="middlePartUser">
+            <p className="profileTxt">Revisa tus citas</p>
             <Card.Img
               className="d-inline-block userIconA"
               variant="top"
@@ -100,10 +102,11 @@ export const MyAccount = () => {
             </div>
           </div>
           <div className="secondPartUser">
+            <p className="profileTxt">Pide tu cita on-line</p>
             <Card.Img
               className="d-inline-block userIconA"
               variant="top"
-              src={treatm6}
+              src={aptm1}
             />
             <div className="rigthUserBtn">
               <Link to="/bookAppointment" className="modInfo">
