@@ -16,22 +16,23 @@ export const Header = () => {
 
   //Guardo los datos de REDUX en una constante para poder acceder a ellos en Header
   const datosCredencialesRedux = useSelector(userData);
+  console.log(datosCredencialesRedux)
 
   //Redux en modo escritura
   const dispatch = useDispatch();
   //Instancio navigate para poder moverme entre la SPA
   const navigate = useNavigate();
 
-  useEffect(()=>{
+//   useEffect(()=>{
 
-    if(!datosCredencialesRedux.credentials?.token){
-        navigate("/");
-    }
- },[]);
+//     if(!datosCredencialesRedux.credentials?.token){
+//         navigate("/");
+//     }
+//  },[]);
   return (
     <div className='headerDesign'>
 
-            {datosCredencialesRedux.credentials?.token 
+            {datosCredencialesRedux?.credentials?.token 
 
                 ? (
                   <Navbar collapseOnSelect expand="lg" className="bg-transparent mainPart">

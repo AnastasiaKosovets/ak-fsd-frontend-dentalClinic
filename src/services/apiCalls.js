@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-export const logIn = async (credentials) => {
-    return await axios.post(`http://localhost:9000/auth/login`, credentials);
+export const logIn = async (body) => {
+    let res = await axios.post('http://localhost:9000/auth/login', body)
+    return res.data.token
+    // return await axios.post(`http://localhost:9000/auth/login`, credentials);
 }
 
 export const myRegister = async (credentials) => {

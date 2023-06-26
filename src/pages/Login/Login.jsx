@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 //Importo métodos de Redux
 import { useDispatch, useSelector } from "react-redux";
 import { login, userData } from "../userSlice";
+import jwtDecode from "jwt-decode";
 
 export const Login = () => {
   
@@ -61,27 +62,26 @@ export const Login = () => {
   }
 
 
-  const logInMe = () => {
-    logIn(credentials)
+  const logInMe = (body) => {
+  
+    logIn(body)
     .then((results) => {
-      let decodificated = jwt_decode(results.data.token);
+      let decodificated = jwtDecode(results);
       console.log(decodificated)
-      localStorage.setItem("token", results.data.token);
-
-      let datosBackend = {
-        token : results.data.token,
-        user: decodificated
-      }
+      // localStorage.setItem("token", results.data.token);
 
       //Guardo en redux.....
-      dispatch(login({ credentials: datosBackend}))
+      dispatch(login({
+        token: results,
+        name: decodificated.userName,
+        role: decodificated.roleId
+      }))
 
       setTimeout(() => {
         navigate("/");
       }, 2000);
 
-      setWelcome(`Nos alegramos de verte ${decodificated.userName}`);
-      console.log(results);
+      setWelcome(`Nos alegramos de verte ${decodificated?.userName}`);
     })
     .catch((error) => console.log(error));
   };
@@ -98,7 +98,6 @@ export const Login = () => {
           {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
 
           <InputText
-            // type, design, placeholder, name, functionHandler, onBlurFunction
             type={"email"}
             design={
               credentialsError.emailError === ""
@@ -112,7 +111,6 @@ export const Login = () => {
           />
           <div className="errorText">{credentialsError.emailError}</div>
           <InputText
-            // type, design, placeholder, name, functionHandler, onBlurFunction
             type={"password"}
             design={
               credentialsError.passwordError === ""
@@ -126,7 +124,7 @@ export const Login = () => {
           />
           <div className="errorText">{credentialsError.passwordError}</div>
 
-          <div onClick={() => logInMe()} className="logButton">
+          <div onClick={() => logInMe(credentials)} className="logButton">
             Iniciar sesión
           </div>
           <div className="registerLinkText">¿No tienes una cuenta?
