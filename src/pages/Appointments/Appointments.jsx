@@ -26,6 +26,12 @@ export const Appointments = () => {
             ) .catch (error => console.log(error));
         }
     }, []);
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString();
+    };
+
     return(
         <div className='appointmentsDesign'>
             <div className='doctorAppointments'>
@@ -37,14 +43,14 @@ export const Appointments = () => {
                         <div className="thisCard">
                             {appointments.map(
                                     (appointment, index) => {
+                                        const formattedDate = formatDate(appointment.date)
                                         return (
                                             <div key={index}>
                                                 <ProductCard className="usersCardDesign"
-                                                doctor_id={` Doctor: ${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
-                                                patient_id={`Paciente: ${appointment.patient.firstName} ${appointment.patient.lastName}`}
-                                                treatment_id={`Tratamiento: ${appointment.treatment.treatmentName}`}
-                                                // price={`Precio: ${appointment.price}`}
-                                                date={`Fecha: ${appointment.date}`}
+                                                doctor_id={`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
+                                                patient_id={`${appointment.patient.firstName} ${appointment.patient.lastName}`}
+                                                treatment_id={appointment.treatment.treatmentName}
+                                                date={formattedDate}
                                                 />
                                             </div>
                                         )

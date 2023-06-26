@@ -6,37 +6,44 @@ import { getAppointmentsByDoctor } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
 
 export const UserAppointments = () => {
-    const [products, setProducts] = useState([]);
+
+    const [appointments, setAppointments] = useState([]);
     
     useEffect(() => {
-        if(products.length === 0){
+        if(appointments.length === 0){
             getAppointmentsByDoctor()
             .then(
-                resultados => {
-                    setProducts(resultados.data.data)
+                results => {
+                    setAppointments(results.data.data)
                     // console.log(resultados.data.data)
                 }
             ) .catch (error => console.log(error));
         }
-    }, [products]);
+    }, []);
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString();
+    };
 
     return(
         <div className="userApDesign">
             {
-                products.length > 0 
+                appointments.length > 0 
                     ? (
                         <div className="thisCard">
                             {
-                                products.map(
-                                    product => {
+                                appointments.map(
+                                    (appointment, index) => {
+                                        const formattedDate = formatDate(appointment.date);
+
                                         return (
-                                            <div key={product.id} className="userAppD">
+                                            <div key={index} className="userAppD">
                                                 <ProductCard className="usersCardDesign"
-                                                doctor_id={` Doctor: ${product.doctor_id}`}
-                                                patient_id={`Paciente: ${product.patient_id}`}
-                                                treatment_id={`Tratamiento: ${product.treatment_id}`}
-                                                price={`Precio: ${product.price}`}
-                                                date={`Fecha: ${product.date}`}
+                                                    doctor_id={`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
+                                                    patient_id={`${appointment.patient.firstName} ${appointment.patient.lastName}`}
+                                                    treatment_id={appointment.treatment.treatmentName}
+                                                    date={formattedDate}
                                                 />
                                                 <Link to="/" className="modInfo">Cancelar Cita</Link>
                                             </div>

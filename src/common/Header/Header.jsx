@@ -38,7 +38,9 @@ export const Header = () => {
                   <Navbar collapseOnSelect expand="lg" className="bg-transparent mainPart">
         <Container className="navBarStyle">
           <Navbar className="logoDesign m-1">
-            <Nav.Link href="/">
+            <Nav.Link 
+            as={Link}
+            to="/">
               <img
                 src={logo2}
                 width="60"

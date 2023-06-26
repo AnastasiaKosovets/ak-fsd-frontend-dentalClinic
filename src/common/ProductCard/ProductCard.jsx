@@ -39,11 +39,11 @@ export const ProductCard = ({
           <Card.Text className="cardText">{telefonNumber}</Card.Text>
           <Card.Text className="cardText">{collegialNumber}</Card.Text>
           <Card.Text className="cardText">{role_id}</Card.Text>
-          <Card.Text className="cardText">{doctor_id}</Card.Text>
-          <Card.Text className="cardText">{patient_id}</Card.Text>
-          <Card.Text className="cardText">{treatment_id}</Card.Text>
+          <Card.Text className="cardText">Médico: {doctor_id}</Card.Text>
+          <Card.Text className="cardText">Paciente: {patient_id}</Card.Text>
+          <Card.Text className="cardText">Tratamiento: {treatment_id}</Card.Text>
           <Card.Text className="cardText">{price}</Card.Text>
-          <Card.Text className="cardText">{date}</Card.Text>
+          <Card.Text className="cardText">Fecha: {date}</Card.Text>
           {/* <Card.Text className="cardText"> */}
           {/* <Card.Img
           variant="top"
