@@ -30,7 +30,7 @@ export const MyAccount = () => {
     if (user.firstName === "") {
       myProfile(credRdx?.credentials?.token)
         .then((results) => {
-            console.log(results)
+            console.log(credRdx)
           // let decodificated = jwt_decode(results.data.token);
           // console.log(decodificated)
           // localStorage.setItem("token", results.data.token);
