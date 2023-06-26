@@ -14,7 +14,9 @@ export const Footer = () => {
         <Navbar bg="transparent">
         <Container className="navBarStyle">
           <Navbar>
-            <Nav.Link href="/">
+            <Nav.Link 
+            as={Link}
+            to="/">
               <img
                 src={logo2}
                 width="60"
