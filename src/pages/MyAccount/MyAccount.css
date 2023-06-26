@@ -4,7 +4,7 @@
     width: auto;
     background-color: rgb(247, 243, 231);
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     /* flex-direction: row; */
     /* justify-content: space-around; */
     /* align-items: center; */
@@ -14,26 +14,25 @@
     font-size: x-large;
 }
 
-/* .thisCard {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-size: small;
-    height: 15em;
-    width: 12em;
-    background-color: white;
-    box-shadow: .0rem .0.5rem .1rem  rgb(186, 186, 186);
-} */
-
 .firstPartUser, .secondPartUser {
 margin-top: 2em;
+}
+
+.firstPartUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .userIconImg {
     height: 6em;
     width: 6em;
 }
+/* 
+.d1 {
+   margin-left: 4em;
+    
+} */
 
 .userIconA {
     height: 8em;
@@ -41,10 +40,13 @@ margin-top: 2em;
     border-radius: 1em;
 }
 
-.rigthUserBtn {
+/* .usersCardDesign {
+    width: 20em;
+} */
+
+/* .rigthUserBtn {
     display: flex;
-    justify-content: space-around;
-}
+} */
 
 .modInfo {
     height: 3em;
@@ -57,9 +59,10 @@ margin-top: 2em;
     transition: 0.4s;
     border-radius: 1em;
     margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 1em;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .modInfo:hover {

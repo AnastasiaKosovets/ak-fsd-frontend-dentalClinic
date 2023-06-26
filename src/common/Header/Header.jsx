@@ -5,7 +5,6 @@ import "./Header.css";
 // método para conexión en modo elctura y escritura a RDX
 import { useSelector, useDispatch } from "react-redux";
 import { userData, userout } from "../../pages/userSlice";
-
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -14,6 +13,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo2 from "../../img/logo2.png";
 
 export const Header = () => {
+
   //Guardo los datos de REDUX en una constante para poder acceder a ellos en Header
   const datosCredencialesRedux = useSelector(userData);
 

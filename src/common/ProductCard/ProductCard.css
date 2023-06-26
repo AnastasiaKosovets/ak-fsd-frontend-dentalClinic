@@ -5,14 +5,12 @@
     margin: 1em;
     cursor: pointer;
     transition: 0.3s;
-    /* display: flex;
-    flex-direction: column; */
-    
+    display: flex;
+    justify-content: center;
+    width: 18rem;
     /* display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-size: small; */
- 
-    /* align-items: center; */
 }
 
 .productCardDesign:hover {
@@ -24,6 +22,9 @@
     margin-top: 1em;
 }
 
+/* .usersCardDesign {
+  width: 20em;
+} */
 /* @media (max-width: 768px) {
     .productCardDesign {
       flex-direction: column;

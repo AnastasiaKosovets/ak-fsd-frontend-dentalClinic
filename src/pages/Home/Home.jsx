@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import space1 from "../../img/space1.jpg";
 import space2 from "../../img/space2.jpg";
 import space3 from "../../img/space3.jpg";
+import space5 from "../../img/space5.jpg"
  
 export const Home = () => {
 
@@ -42,7 +43,7 @@ export const Home = () => {
       <Carousel.Item>
         <img
           className="d-block carouselImg"
-          src={space3}
+          src={space5}
           alt="Third slide"
         />
 
