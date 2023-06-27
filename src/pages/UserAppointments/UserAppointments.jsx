@@ -11,18 +11,6 @@ export const UserAppointments = () => {
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [appointments, setAppointments] = useState({});
-    
-    // useEffect(() => {
-    //     if(appointments.length === 0){
-    //         myAppointments()
-    //         .then(
-    //             results => {
-    //                 setAppointments(results.data.data)
-    //                 // console.log(resultados.data.data)
-    //             }
-    //         ) .catch (error => console.log(error));
-    //     }
-    // }, []);
 
     useEffect(() => {
         myAppointments(token).then((res) => {
