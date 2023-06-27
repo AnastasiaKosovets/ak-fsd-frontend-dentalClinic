@@ -49,19 +49,33 @@ export const Register = () => {
   };
   
   const registerOn = () => {
-    myRegister(credentials)
-      .then((results) => {
-        // let decodificated = jwt_decode(results.data.token);
-        // const {data} = results
-        // console.log(data)
-        setTimeout(() => {
-          navigate("/");
-        }, 2500);
-        // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
-        setWelcome('Gracias por registrarte');
-        console.log(results);
-      })
-      .catch((error) => console.log(error));
+
+    const { firstName, lastName, email, password } = credentials;
+
+    if( !firstName || !lastName || !email || !password ||
+      firstName.trim() === "" || lastName.trim() === "" || 
+      email.trim() === "" || password.trim() === "" ||
+      credentialsError.firstNameError !== "" || credentialsError.lastNameError !== "" ||
+      credentialsError.emailError !== "" || credentialsError.passwordError !== "") {
+      return
+
+      } else {
+
+        myRegister(credentials)
+        .then((results) => {
+          // let decodificated = jwt_decode(results.data.token);
+          // const {data} = results
+          // console.log(data)
+          setTimeout(() => {
+            navigate("/");
+          }, 2500);
+          // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
+          setWelcome('Gracias por registrarte');
+          console.log(results);
+        })
+        .catch((error) => console.log(error));
+      }
+
   };
 
   return (

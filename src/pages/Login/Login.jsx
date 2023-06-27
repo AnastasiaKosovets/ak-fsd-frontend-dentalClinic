@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import jwt_decode from "jwt-decode";
 import "./Login.css";
 // import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { Link } from "react-router-dom";
@@ -56,8 +55,6 @@ export const Login = () => {
       ...prevState,
       [e.target.name + "Error"]: errorMessage,
     }));
-    // checkError(e.target.name, e.target.value);
-    // console.log(e.target.value, "soy el check....");
     // console.log(e.target.name, "soy el check.....");
   }
 
@@ -79,7 +76,7 @@ export const Login = () => {
 
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1000);
 
       setWelcome(`Nos alegramos de verte ${decodificated?.userName}`);
     })
