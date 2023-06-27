@@ -46,17 +46,17 @@ margin-top: 1em;
 }
 
 .modInfo {
-    height: 3em;
-    width: 10em;
-    background-color: rgba(102, 186, 228, 0.76);
-    color: white;
-    text-decoration: none;
-    font-size: large;
-    cursor: pointer;
-    transition: 0.4s;
-    border-radius: 1em;
-    margin-top: 1em;
-    margin-left: 1em;
+  height: 3em;
+  width: 10em;
+  background-color: rgba(102, 186, 228, 0.76);
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-left: 1em;
 }
 
 .rigthUserBtn, .modInfo{

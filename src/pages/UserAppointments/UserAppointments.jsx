@@ -1,24 +1,32 @@
 import React, {useState, useEffect} from "react";
 import "./UserAppointments.css";
-
 import { Link } from "react-router-dom";
-import { getAppointmentsByDoctor } from '../../services/apiCalls';
+import { myAppointments } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
+import { useSelector } from "react-redux";
+import { userData } from "../userSlice";
 
 export const UserAppointments = () => {
-
-    const [appointments, setAppointments] = useState([]);
+    const credRdx = useSelector(userData);
+    const token = credRdx?.credentials?.token;
+    const [appointments, setAppointments] = useState({});
     
+    // useEffect(() => {
+    //     if(appointments.length === 0){
+    //         myAppointments()
+    //         .then(
+    //             results => {
+    //                 setAppointments(results.data.data)
+    //                 // console.log(resultados.data.data)
+    //             }
+    //         ) .catch (error => console.log(error));
+    //     }
+    // }, []);
+
     useEffect(() => {
-        if(appointments.length === 0){
-            getAppointmentsByDoctor()
-            .then(
-                results => {
-                    setAppointments(results.data.data)
-                    // console.log(resultados.data.data)
-                }
-            ) .catch (error => console.log(error));
-        }
+        myAppointments(token).then((res) => {
+            setAppointments(res.data);
+        });
     }, []);
 
     const formatDate = (dateString) => {
@@ -34,11 +42,11 @@ export const UserAppointments = () => {
                         <div className="thisCard">
                             {
                                 appointments.map(
-                                    (appointment, index) => {
+                                    (appointment) => {
                                         const formattedDate = formatDate(appointment.date);
 
                                         return (
-                                            <div key={index} className="userAppD">
+                                            <div key={appointment.id} className="userAppD">
                                                 <ProductCard className="usersCardDesign"
                                                     doctor_id={`Médico: ${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
                                                     patient_id={`Paciente${appointment.patient.firstName} ${appointment.patient.lastName}`}
