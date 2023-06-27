@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 
 export const UserAppointments = () => {
-    
+
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [appointments, setAppointments] = useState({});
@@ -50,7 +50,7 @@ export const UserAppointments = () => {
                                             <div key={appointment.id} className="userAppD">
                                                 <ProductCard className="usersCardDesign"
                                                     doctor_id={`Médico: ${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
-                                                    patient_id={`Paciente${appointment.patient.firstName} ${appointment.patient.lastName}`}
+                                                    patient_id={`Paciente: ${appointment.patient.firstName} ${appointment.patient.lastName}`}
                                                     treatment_id={`Tratamiento: ${appointment.treatment.treatmentName}`}
                                                     date={`Fecha: ${formattedDate}`}
                                                 />
