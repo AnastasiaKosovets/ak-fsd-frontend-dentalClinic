@@ -1,15 +1,17 @@
 import axios from 'axios';
 
+// Login
 export const logIn = async (body) => {
     let res = await axios.post('http://localhost:9000/auth/login', body)
     return res.data.token
-    // return await axios.post(`http://localhost:9000/auth/login`, credentials);
 }
 
+// Register
 export const myRegister = async (credentials) => {
     return await axios.post(`http://localhost:9000/auth/register`, credentials);
 }
 
+// My Profile
 export const myProfile = async (token) => {
     let access = {
         headers: {
@@ -20,6 +22,7 @@ export const myProfile = async (token) => {
     return res.data;
 }
 
+// Update Perfil
 export const updateProfile = async (body, token) => {
     let access = {
         headers: {
@@ -30,12 +33,18 @@ export const updateProfile = async (body, token) => {
     return  res.data;
 }
 
-export const bringProducts = async (credentials) => {
-    // return await axios.get(`https://rickandmortyapi.com/api/character/?page=17`);
-    return await axios.get(`http://localhost:9000/users`, credentials);
-    // return await axios.get(`http://localhost:9000/treatments`);
+// 
+export const getAllUsersByAdmin = async (token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/users`, access);
+    return res.data;
 }
 
+// View of all Appointments by Admin
 export const getAppointmentsByAdmin = async (token) => {
     let access = {
         headers: {
@@ -46,6 +55,7 @@ export const getAppointmentsByAdmin = async (token) => {
     return res.data;
 }
 
+// View of Appointments by User
 export const myAppointments = async (token) => {
     let access = {
         headers: {

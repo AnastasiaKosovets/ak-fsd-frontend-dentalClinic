@@ -11,7 +11,7 @@ export const Appointments = () => {
 
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
-    const [appointments, setAppointments] = useState([]);
+    const [generalAppointments, setgeneralAppointments] = useState([]);
 
     // modifico useEffect para poder acceder a la respuesta detallada de las citas
     // ya que la respuesta en mi BBDD contiene un objeto 'data' que contiene un array de 'appointments'
@@ -30,7 +30,7 @@ export const Appointments = () => {
 
     useEffect(() => {
         getAppointmentsByAdmin(token).then((res) => {
-            setAppointments(res.data);
+            setgeneralAppointments(res.data);
         });
     }, []);
 
@@ -45,18 +45,18 @@ export const Appointments = () => {
             <Link to="/doctorApp" className="modInfo">Mis citas</Link>
             </div>
             {
-                appointments.length > 0 
+                generalAppointments.length > 0 
                     ? (
                         <div className="thisCard">
-                            {appointments.map(
-                                    (appointment) => {
-                                        const formattedDate = formatDate(appointment.date)
+                            {generalAppointments.map(
+                                    (generalAppointments) => {
+                                        const formattedDate = formatDate(generalAppointments.date)
                                         return (
-                                            <div key={appointment.id}>
+                                            <div key={generalAppointments.id}>
                                                 <ProductCard className="usersCardDesign"
-                                                doctor_id={`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
-                                                patient_id={`${appointment.patient.firstName} ${appointment.patient.lastName}`}
-                                                treatment_id={appointment.treatment.treatmentName}
+                                                doctor_id={`${generalAppointments.doctor.firstName} ${generalAppointments.doctor.lastName}`}
+                                                patient_id={`${generalAppointments.patient.firstName} ${generalAppointments.patient.lastName}`}
+                                                treatment_id={generalAppointments.treatment.treatmentName}
                                                 date={formattedDate}
                                                 />
                                             </div>

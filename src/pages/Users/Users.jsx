@@ -1,46 +1,58 @@
 import React, {useState, useEffect} from 'react';
 import './Users.css';
-import { bringProducts } from '../../services/apiCalls';
+// import { bringProducts } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
+import { useSelector } from 'react-redux';
+import { userData } from '../userSlice';
+import { getAllUsersByAdmin } from '../../services/apiCalls';
 
 export const Users = () => {
 
-    const [products, setProducts] = useState([]);
+    const credRdx = useSelector(userData);
+    const token = credRdx?.credentials?.token;
+    const [users, setUsers] = useState([]);
     
+    // useEffect(() => {
+    //     if(products.length === 0){
+    //         getAllUsersByAdmin()
+    //         .then(
+    //             resultados => {
+    //                 setProducts(resultados.data.data)
+    //                 // console.log(resultados.data.data)
+    //             }
+    //         ) .catch (error => console.log(error));
+    //     }
+    // }, [products]);
+
     useEffect(() => {
-        if(products.length === 0){
-            bringProducts()
-            .then(
-                resultados => {
-                    setProducts(resultados.data.data)
-                    // console.log(resultados.data.data)
-                }
-            ) .catch (error => console.log(error));
-        }
-    }, [products]);
+        getAllUsersByAdmin(token).then((res) => {
+            setUsers(res.data);
+        });
+    }, []);
+
     return(
         <div className='userDesign'>
             {
-                products.length > 0 
+                users.length > 0 
                     ? (
                         <div className="thisCard">
                             {
-                                products.map(
-                                    product => {
+                                users.map(
+                                    (users) => {
                                         return (
-                                            <div key={product.id}>
+                                            <div key={users.id}>
                                                 <ProductCard className="usersCardDesign"
-                                                id={` Id: ${product.id}`}
-                                                email={`Email: ${product.email}`}
+                                                id={` Id: ${users.id}`}
+                                                email={`Email: ${users.email}`}
                                                 // password={`Contraseña: ${product.password}`}
-                                                firstName={`Nombre: ${product.firstName}`}
-                                                lastName={`Apellido: ${product.lastName}`}
-                                                document={`NIE/DNI: ${product.document}`}
-                                                dateOfBirth={`Fecha de nacimiento: ${product.dateOfBirth}`}
-                                                address={`Dirección: ${product.address}`}
-                                                telefonNumber={`Número de teléfono: ${product.telefonNumber}`}
-                                                collegialNumber={`Número de colegiado: ${product.collegialNumber}`}
-                                                role_id={`Role_Id: ${product.role_id}`}
+                                                firstName={`Nombre: ${users.firstName}`}
+                                                lastName={`Apellido: ${users.lastName}`}
+                                                document={`NIE/DNI: ${users.document}`}
+                                                dateOfBirth={`Fecha de nacimiento: ${users.dateOfBirth}`}
+                                                address={`Dirección: ${users.address}`}
+                                                telefonNumber={`Número de teléfono: ${users.telefonNumber}`}
+                                                collegialNumber={`Número de colegiado: ${users.collegialNumber}`}
+                                                role_id={`Role_Id: ${users.role_id}`}
                                                 />
                                             </div>
                                         )
