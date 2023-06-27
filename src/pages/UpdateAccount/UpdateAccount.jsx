@@ -49,6 +49,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="email"
                   name="email"
+                  maxLength={25}
                   placeholder={user.email}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -60,6 +61,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="text"
                   name="firstName"
+                  maxLength={25}
                   placeholder={user.firstName ? user.firstName : "Introduce tu nombre"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -68,6 +70,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="text"
                   name="lastName"
+                  maxLength={25}
                   placeholder={user.lastName ? user.lastName : "Introduce tu apellido"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -76,6 +79,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="text"
                   name="document"
+                  maxLength={25}
                   placeholder={user.document ? user.document : "Introduce tu NIE/DNI"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -84,6 +88,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="string"
                   name="dateOfBirth"
+                  maxLength={10}
                   placeholder={user.dateOfBirth ? user.dateOfBirth : "Introduce tu fecha de nacimiento"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -92,6 +97,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="text"
                   name="address"
+                  maxLength={40}
                   placeholder={user.address ? user.address : "Introduce tu dirección"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />
@@ -100,6 +106,7 @@ export const UpdateAccount = () => {
                 <Form.Control
                   type="imteger"
                   name="telefonNumber"
+                  maxLength={25}
                   placeholder={user.telefonNumber ? user.telefonNumber : "Introduce tu número de teléfono"}
                   onChange={(e) => inputHandler(e, setBody)}
                 />

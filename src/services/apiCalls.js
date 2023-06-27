@@ -36,8 +36,14 @@ export const bringProducts = async (credentials) => {
     // return await axios.get(`http://localhost:9000/treatments`);
 }
 
-export const getAppointmentsByDoctor = async (token) => {
-    return await axios.get(`http://localhost:9000/appointments`);
+export const getAppointmentsByAdmin = async (token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/appointments`, access);
+    return res.data;
 }
 
 export const myAppointments = async (token) => {

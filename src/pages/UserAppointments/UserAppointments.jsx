@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 
 export const UserAppointments = () => {
+    
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [appointments, setAppointments] = useState({});
@@ -64,7 +65,7 @@ export const UserAppointments = () => {
                     )
 
                     : (
-                        <div>CARGANDO...</div>
+                        <div>No tienes citas</div>
                     )
             }
 
