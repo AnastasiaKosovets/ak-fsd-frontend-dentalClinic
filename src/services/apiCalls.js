@@ -41,7 +41,7 @@ export const getAllUsersByAdmin = async (token) => {
         },
     };
     let res = await axios.get(`http://localhost:9000/users`, access);
-    return res;
+    return res.data;
 }
 
 // View of all Appointments by Admin
