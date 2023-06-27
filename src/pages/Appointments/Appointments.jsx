@@ -32,7 +32,7 @@ export const Appointments = () => {
         getAppointmentsByAdmin(token).then((res) => {
             setgeneralAppointments(res.data);
         });
-        navigate("/");
+        // navigate("/");
     }, []);
 
     const formatDate = (dateString) => {
@@ -55,10 +55,10 @@ export const Appointments = () => {
                                         return (
                                             <div key={generalAppointments.id}>
                                                 <ProductCard className="usersCardDesign"
-                                                doctor_id={`${generalAppointments.doctor.firstName} ${generalAppointments.doctor.lastName}`}
-                                                patient_id={`${generalAppointments.patient.firstName} ${generalAppointments.patient.lastName}`}
-                                                treatment_id={generalAppointments.treatment.treatmentName}
-                                                date={formattedDate}
+                                                doctor_id={`Médico: ${generalAppointments.doctor.firstName} ${generalAppointments.doctor.lastName}`}
+                                                patient_id={`Paciente: ${generalAppointments.patient.firstName} ${generalAppointments.patient.lastName}`}
+                                                treatment_id={`Tratamiento: ${generalAppointments.treatment.treatmentName}`}
+                                                date={`Fecha: ${formattedDate}`}
                                                 />
                                             </div>
                                         )
