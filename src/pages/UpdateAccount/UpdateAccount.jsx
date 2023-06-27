@@ -1,64 +1,118 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./UpdateAccount.css";
 import Form from "react-bootstrap/Form";
+import { myProfile, updateProfile } from "../../services/apiCalls";
 import { Container } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userData } from "../userSlice";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
+import { inputHandler } from "../../services/useful";
+import { useSelector } from "react-redux";
 // no esta enlazado con BBDD -->> crear axios en apiCalls
 // intentar aplicar las validaciónes del login a este form
 
 export const UpdateAccount = () => {
+  const [body, setBody] = useState({})
+  const credRdx = useSelector(userData);
+  const token = credRdx?.credentials?.token;
+  const navigate = useNavigate();
+  //   console.log(token);
+  const [user, setUser] = useState({});
 
-    
+  const editHandler = (body, token) => {
+    console.log(body)
+        console.log(token)
+    updateProfile(body, token).then((res) => {
+        
+      console.log("HOLA")
+      navigate("/account")
+    });
+  };
+
+  useEffect(() => {
+    myProfile(token).then((res) => {
+      console.log(res);
+      setUser(res.data);
+    });
+  }, []);
 
   return (
-
     <div className="updateDesign">
       Modifica tus datos
       <Container>
         <Row className="justify-content-center">
           <Col xs={10} md={6} lg={8}>
             <Form>
-              {/* <Form.Group className="mb-3" controlId="email">
-                <Form.Control type={"email"} placeholder={"Email"} name={email} />
-              </Form.Group> */}
-              {/* <InputText
-            type={"email"}
-            design={ "normalInput"
-                
-            }
-            placeholder={"Introduce tu e-mail"}
-            name={"email"}
-            // functionHandler={InputHandler}
-            // onBlurFunction={inputCheck}
-          /> */}
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Control type="email" placeholder="Contraseña" />
+              <Form.Group className="mb-3 mt-4" controlId="email">
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder={user.email}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
+              {/* <Form.Group className="mb-3" controlId="password">
+                <Form.Control type="password" placeholder="Contraseña" />
+              </Form.Group> */}
               <Form.Group className="mb-3" controlId="firstName">
-                <Form.Control type="email" placeholder="Nombre" />
+                <Form.Control
+                  type="text"
+                  name="firstName"
+                  placeholder={user.firstName ? user.firstName : "Introduce tu nombre"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="lastName">
-                <Form.Control type="email" placeholder="Apellido" />
+                <Form.Control
+                  type="text"
+                  name="lastName"
+                  placeholder={user.lastName ? user.lastName : "Introduce tu apellido"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="document">
-                <Form.Control type="email" placeholder="DNI/NIE" />
+                <Form.Control
+                  type="text"
+                  name="document"
+                  placeholder={user.document ? user.document : "Introduce tu NIE/DNI"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="dateOfBirth">
-                <Form.Control type="email" placeholder="Fecha de nacimiento" />
+                <Form.Control
+                  type="string"
+                  name="dateOfBirth"
+                  placeholder={user.dateOfBirth ? user.dateOfBirth : "Introduce tu fecha de nacimiento"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="address">
-                <Form.Control type="email" placeholder="Dirección" />
+                <Form.Control
+                  type="text"
+                  name="address"
+                  placeholder={user.address ? user.address : "Introduce tu dirección"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="telefonNumber">
-                <Form.Control type="email" placeholder="Número de teléfono" />
+                <Form.Control
+                  type="imteger"
+                  name="telefonNumber"
+                  placeholder={user.telefonNumber ? user.telefonNumber : "Introduce tu número de teléfono"}
+                  onChange={(e) => inputHandler(e, setBody)}
+                />
               </Form.Group>
             </Form>
           </Col>
           <Col xs={10} md={6} lg={6} className="d-flex justify-content-center">
-            <Link to="/" className="modInfo">
+            <Link
+              className="modInfo"
+              onClick={() => {
+                editHandler(body, token);
+              }}
+            >
               Confirmar
             </Link>
             <Link to="/account" className="modInfo">

@@ -16,7 +16,7 @@ export const MyAccount = () => {
   // const token = localStorage.getItem("token");
   // console.log(token);
 
-  const [body, setBody] = useState({});
+  // const [body, setBody] = useState({});
   const credRdx = useSelector(userData);
   const token = credRdx?.credentials?.token
   const [user, setUser] = useState({
@@ -26,9 +26,10 @@ export const MyAccount = () => {
     document: "",
     dateOfBirth: "",
     address: "",
-    telefonNumber: "",
+    telefonNumber: ""
   });
   console.log(credRdx);
+  
   // const dispatch = useDispatch();
 
   // useEffect(() => {

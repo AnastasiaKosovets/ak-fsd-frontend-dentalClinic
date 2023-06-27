@@ -20,6 +20,16 @@ export const myProfile = async (token) => {
     return res.data;
 }
 
+export const updateProfile = async (body, token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.put(`http://localhost:9000/users/profile`, body, access);
+    return  res.data;
+}
+
 export const bringProducts = async (credentials) => {
     // return await axios.get(`https://rickandmortyapi.com/api/character/?page=17`);
     return await axios.get(`http://localhost:9000/users`, credentials);

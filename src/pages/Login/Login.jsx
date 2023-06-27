@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./Login.css";
-// import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { Link } from "react-router-dom";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
