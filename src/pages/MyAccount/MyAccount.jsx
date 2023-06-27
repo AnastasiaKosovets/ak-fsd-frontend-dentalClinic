@@ -10,11 +10,15 @@ import aptm1 from "../../img/aptm1.jpeg";
 import { userData } from "../userSlice";
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
+import { inputHandler } from "../../services/useful";
 
 export const MyAccount = () => {
   // const token = localStorage.getItem("token");
   // console.log(token);
+
+  const [body, setBody] = useState({});
   const credRdx = useSelector(userData);
+  const token = credRdx?.credentials?.token
   const [user, setUser] = useState({
     email: "",
     firstName: "",
@@ -27,40 +31,43 @@ export const MyAccount = () => {
   console.log(credRdx);
   // const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   if (user.firstName === "") {
+  //     myProfile(credRdx?.credentials?.token)
+  //       .then((results) => {
+  //           console.log(credRdx)
+  //         // let decodificated = jwt_decode(results.data.token);
+  //         // console.log(decodificated)
+  //         // localStorage.setItem("token", results.data.token);
+  //         setUser({
+  //           email: results.credentials.user.email,
+  //           // firstName: results.data.user.firstName,
+  //           // lastName: results.data.user.lastName,
+  //           // document: results.data.user.document,
+  //           // dateOfBirth: results.data.user.dateOfBirth,
+  //           // address: results.data.user.address,
+  //           // telefonNumber: results.data.user.telefonNumber,
+  //         });
+  //         //   let datosBackend = {
+  //         //     token : results.data.token,
+  //         //     user: decodificated
+  //         //   }
+  //         //   dispatch(myProfileInfo({ credentials: datosBackend}))
+  //         //         setProfile(results.data)
+  //         //         console.log(results.data);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (user.firstName === "") {
-      myProfile(credRdx?.credentials?.token)
-        .then((results) => {
-            console.log(credRdx)
-          // let decodificated = jwt_decode(results.data.token);
-          // console.log(decodificated)
-          // localStorage.setItem("token", results.data.token);
-          setUser({
-            email: results.credentials.user.email,
-            // firstName: results.data.user.firstName,
-            // lastName: results.data.user.lastName,
-            // document: results.data.user.document,
-            // dateOfBirth: results.data.user.dateOfBirth,
-            // address: results.data.user.address,
-            // telefonNumber: results.data.user.telefonNumber,
-          });
-          //   let datosBackend = {
-          //     token : results.data.token,
-          //     user: decodificated
-          //   }
-          //   dispatch(myProfileInfo({ credentials: datosBackend}))
-          //         setProfile(results.data)
-          //         console.log(results.data);
-        })
-        .catch((error) => console.log(error));
-    }
+    myProfile(token).then((res) => {
+      setUser(res.data);
+    });
   }, []);
 
   return (
     <div className="profileDesign">
-      {/* {
-                profile.length > 0 
-                    ? ( */}
       <div className="firstPartUser">
         <Card.Img
           className="d-inline-block userIconImg"
@@ -69,10 +76,6 @@ export const MyAccount = () => {
         />
         <p>Mis Datos</p>
         <div className="thisCard">
-          {/* {
-                                profile.map(
-                                    profile => { */}
-          {/* return ( */}
           <div key={user.id} className="d1">
             <ProductCard
               className="usersCardDesign"
@@ -114,19 +117,8 @@ export const MyAccount = () => {
               </Link>
             </div>
           </div>
-          {/* )
-                                    }
-                                )
-                            } */}
         </div>
       </div>
-
-      {/* // )
-
-                    // : (
-                    //     <div>CARGANDO...</div>
-                    // ) */}
-      {/* } */}
     </div>
   );
 };

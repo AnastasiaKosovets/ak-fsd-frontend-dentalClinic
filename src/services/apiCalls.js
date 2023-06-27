@@ -13,10 +13,11 @@ export const myRegister = async (credentials) => {
 export const myProfile = async (token) => {
     let access = {
         headers: {
-            Autorization: "Bearer" + token,
-        }
-    }
-    return await axios.get(`http://localhost:9000/users/profile`, access);
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/users/profile`, access);
+    return res.data;
 }
 
 export const bringProducts = async (credentials) => {
