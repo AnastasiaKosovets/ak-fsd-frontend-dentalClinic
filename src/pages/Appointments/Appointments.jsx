@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Appointments.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAppointmentsByAdmin } from '../../services/apiCalls';
 import { ProductCard } from '../../common/ProductCard/ProductCard';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ import { userData } from '../userSlice';
 
 
 export const Appointments = () => {
-
+    const navigate = useNavigate();
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [generalAppointments, setgeneralAppointments] = useState([]);
@@ -32,6 +32,7 @@ export const Appointments = () => {
         getAppointmentsByAdmin(token).then((res) => {
             setgeneralAppointments(res.data);
         });
+        navigate("/");
     }, []);
 
     const formatDate = (dateString) => {

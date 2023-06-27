@@ -5,12 +5,14 @@ import { ProductCard } from '../../common/ProductCard/ProductCard';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { getAllUsersByAdmin } from '../../services/apiCalls';
+import { useNavigate } from 'react-router-dom';
 
 export const Users = () => {
 
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
     
     // useEffect(() => {
     //     if(products.length === 0){
@@ -28,6 +30,7 @@ export const Users = () => {
         getAllUsersByAdmin(token).then((res) => {
             setUsers(res.data);
         });
+        navigate("/");
     }, []);
 
     return(
