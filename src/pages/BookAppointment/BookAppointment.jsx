@@ -2,89 +2,78 @@ import React, { useEffect, useState } from "react";
 import "./BookAppointment.css";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
-import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
-import { bookAppointment } from "../../services/apiCalls";
-import { Col, Container, Row } from "react-bootstrap";
+import { SelectOption } from "../../common/SelectOption/SelectOption";
+import { bookAppointment, getAllTreatments } from "../../services/apiCalls";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { getAllDoctors, getAllPatients } from "../../services/apiCalls";
 // import { inputHandler } from "../../services/useful";
-import Select from "react-select";
+
 
 export const BookAppointment = () => {
   const [body, setBody] = useState({});
   const credRdx = useSelector(userData);
   const token = credRdx?.credentials?.token;
   const navigate = useNavigate();
+  const [allTreatments, setAllTreatments] = useState([]);
+  const [allDoctors, setAllDoctors] = useState([]);
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [selectedTreatment, setSelectedTreatment] = useState(null);
+  const [confirmApp, setConfirmApp] = useState("");
 //   const [user, setUser] = useState({});
-  const options = [
-    { value: "opcion1", label: "Opción 1" },
-    { value: "opcion2", label: "Opción 2" },
-    { value: "opcion3", label: "Opción 3" },
-  ];
-  const [selectedOption, setSelectedOption] = useState(null);
 
-  const editHandler = (body, token) => {
-    console.log(body);
-    bookAppointment(body, token).then((res) => {
-      navigate("/account");
-    });
-  };
+useEffect(() => {
+    if(allDoctors?.length === 0){
+        getAllDoctors(allDoctors).then((results) => {
+            setAllDoctors(results)
+        }).catch((error) => console.log(error))
+    }
+}, [])
 
-//   useEffect(() => {
-//     myAppointments(token).then((res) => {
-//       setUser(res.data);
-//     });
-//   }, []);
+console.log(allDoctors)
+
+// useEffect(() => {
+//     if(allTreatments?.length === 0){
+//         getAllTreatments(allTreatments).then((results) => {
+//             setAllTreatments(results.data.data)
+//         }).catch((error) => console.log(error))
+//     }
+// }, [])
+  
+const editHandler = async () => {
+
+    const createAppointment = {
+        "doctor_id": Number(selectedDoctor),
+        "treatment_id": Number(selectedTreatment),
+        "date": "2023-07-10 00:00:00"
+    }
+    await bookAppointment(createAppointment)
+
+    setTimeout(() => {
+        navigate("/account");
+    }, 2500)
+
+    setConfirmApp("Su cita ha sido confirmada");
+}
+
+
 
   return (
     <div className="mainBookApp">
       Pide tu cita
-      <Container>
+      {confirmApp !== "" ? (
+        <div>{confirmApp}</div>
+      ) : (
+        <Container>
         <Row>
           <Col>
             <Form>
-              <Select
-                options={options}
-                value={selectedOption}
-                onChange={setSelectedOption}
+              <SelectOption
+              placeholder="Elige al doctor"
+              options={allDoctors}
+            changeFunction={(e) => { setSelectedDoctor(e.target.value)}}
               />
-              <Select
-                options={options}
-                value={selectedOption}
-                onChange={setSelectedOption}
-              />
-              <Select
-                options={options}
-                value={selectedOption}
-                onChange={setSelectedOption}
-              />
-              {/* <Form.Group className="mb-3 mt-4" controlId="doctor_id">
-                <Form.Control
-                  type="integer"
-                  name="doctor_id"
-                //   maxLength={25}
-                  placeholder={user.doctor_id}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="treatment_id">
-                <Form.Control
-                  type="text"
-                  name="treatment_id"
-                //   maxLength={25}
-                  placeholder={user.treatment_id}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="date">
-                <Form.Control
-                  type="date"
-                  name="date"
-                  maxLength={25}
-                  placeholder={user.date}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
-              </Form.Group> */}
             </Form>
           </Col>
           <Col xs={10} md={6} lg={6} className="d-flex justify-content-center">
@@ -102,6 +91,8 @@ export const BookAppointment = () => {
           </Col>
         </Row>
       </Container>
+      )}
+      
     </div>
   );
 };

@@ -44,7 +44,40 @@ export const bookAppointment = async (body, token) => {
     return  res.data;
 }
 
-// View of all Users by Admin
+// Get all Doctors
+export const getAllDoctors = async (token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/users/doctors`, access);
+    return res.data.data;
+}
+
+// Get all Patients
+export const getAllPatients = async (token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/users/patients`, access);
+    return res.data;
+}
+
+// Get all Treatments
+export const getAllTreatments = async (token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.get(`http://localhost:9000/treatments`, access);
+    return res.data;
+}
+
+// Get all Users by Admin
 export const getAllUsersByAdmin = async (token) => {
     let access = {
         headers: {
@@ -55,7 +88,7 @@ export const getAllUsersByAdmin = async (token) => {
     return res.data;
 }
 
-// View of all Appointments by Admin
+// Get all Appointments by Admin
 export const getAppointmentsByAdmin = async (token) => {
     let access = {
         headers: {
@@ -66,7 +99,7 @@ export const getAppointmentsByAdmin = async (token) => {
     return res.data;
 }
 
-// View of Appointments by User
+// Get Appointments by User
 export const myAppointments = async (token) => {
     let access = {
         headers: {
