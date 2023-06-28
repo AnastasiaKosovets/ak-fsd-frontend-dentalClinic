@@ -8,7 +8,7 @@ import { userData } from '../userSlice';
 
 
 export const Appointments = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [generalAppointments, setgeneralAppointments] = useState([]);
@@ -50,14 +50,16 @@ export const Appointments = () => {
                     ? (
                         <div className="thisCard">
                             {generalAppointments.map(
-                                    (generalAppointments) => {
-                                        const formattedDate = formatDate(generalAppointments.date)
+                                    (appointment) => {
+                                        const formattedDate = formatDate(appointment.date);
+                                        const doctorName = appointment.doctor?.firstName + ' ' + appointment.doctor?.lastName;
+                                        const patientName = appointment.patient?.firstName + ' ' + appointment.patient?.lastName;
                                         return (
-                                            <div key={generalAppointments.id}>
+                                            <div key={appointment.id}>
                                                 <ProductCard className="usersCardDesign"
-                                                doctor_id={`Médico: ${generalAppointments.doctor.firstName} ${generalAppointments.doctor.lastName}`}
-                                                patient_id={`Paciente: ${generalAppointments.patient.firstName} ${generalAppointments.patient.lastName}`}
-                                                treatment_id={`Tratamiento: ${generalAppointments.treatment.treatmentName}`}
+                                                doctor_id={`Médico: ${doctorName}`}
+                                                patient_id={`Paciente: ${patientName}`}
+                                                treatment_id={`Tratamiento: ${appointment.treatment?.treatmentName}`}
                                                 date={`Fecha: ${formattedDate}`}
                                                 />
                                             </div>
