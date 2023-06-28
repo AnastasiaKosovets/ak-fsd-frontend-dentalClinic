@@ -8,3 +8,9 @@
     font-weight: bolder;
     font-size: x-large;
 }
+
+.dateDesign {
+    width: 26.4em;
+    background-color: white;
+    color: black;
+}

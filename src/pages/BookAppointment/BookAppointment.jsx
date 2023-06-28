@@ -11,6 +11,12 @@ import {
 } from "../../services/apiCalls";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+// con esta función formateo date antes de enviarlo al BBDD
+import { format } from 'date-fns';
+
+
 // import { Form } from "react-bootstrap";
 // import { inputHandler } from "../../services/useful";
 
@@ -25,19 +31,9 @@ export const BookAppointment = () => {
   const [selectedTreatment, setSelectedTreatment] = useState(null);
   const [yourDate, setYourDate] = useState(null);
   const [yourTime, setYourTime] = useState(null);
-//   const timeOptions = [
-//     "09:00",
-//     "10:00",
-//     "11:00",
-//     "12:00",
-//     "13:00",
-//     "14:00",
-//     "15:00",
-//     "16:00",
-//     "17:00",
-//   ];
   const [confirmApp, setConfirmApp] = useState("");
   //   const [user, setUser] = useState({});
+  const currentDate = new Date();
 
   useEffect(() => {
     if (allDoctors?.length === 0) {
@@ -64,10 +60,15 @@ export const BookAppointment = () => {
   console.log(allTreatments)
 
   const editHandler = async () => {
+    const formattedTime = format(yourTime, 'HH:mm');
+    
     const createAppointment = {
       doctor_id: Number(selectedDoctor),
       treatment_id: Number(selectedTreatment),
-      date: `${yourDate} ${yourTime}:00`,
+      // este método convierte la fecha de datePicker de modo que Back-end pueda recibirla
+      date: yourDate.toISOString(),
+      time: formattedTime,
+
     };
 
     await bookAppointment(token, createAppointment);
@@ -104,20 +105,38 @@ export const BookAppointment = () => {
                   }}
                 />
                 <Form.Group>
-                  <Form.Control
+                  {/* <Form.Control
                     type="date"
                     placeholder="Elige el día"
                     value={yourDate}
                     onChange={(e) => setYourDate(e.target.value)}
+                    max={currentDate}
+                  /> */}
+                  <DatePicker
+                    selected={yourDate}
+                    onChange={(date) => setYourDate(date)}
+                    placeholderText="Elige el día"
+                    minDate={currentDate}
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Control
+                <DatePicker
+                    selected={yourTime}
+                    onChange={(time) => setYourTime(time)}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Hora"
+                    dateFormat="HH:mm"
+                    placeholderText="Elige la hora"
+                    className="dateDesign"
+                  />
+                  {/* <Form.Control
                     type="time"
                     placeholder="Elige la hora"
                     value={yourTime}
                     onChange={(e) => setYourTime(e.target.value)}
-                  />
+                  /> */}
                 </Form.Group>
               </Form>
             </Col>
