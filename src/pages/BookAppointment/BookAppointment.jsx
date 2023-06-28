@@ -103,13 +103,12 @@ export const BookAppointment = () => {
                     setSelectedTreatment(e.target.value);
                   }}
                 />
-                {/* <DateCalendar /> */}
                 <Form.Group>
                   <Form.Control
                     type="date"
                     placeholder="Elige el día"
                     value={yourDate}
-                    changeFunction={(e) => setYourDate(e.target.value)}
+                    onChange={(e) => setYourDate(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group>
@@ -117,7 +116,7 @@ export const BookAppointment = () => {
                     type="time"
                     placeholder="Elige la hora"
                     value={yourTime}
-                    changeFunction={(e) => setYourTime(e.target.value)}
+                    onChange={(e) => setYourTime(e.target.value)}
                   />
                 </Form.Group>
               </Form>

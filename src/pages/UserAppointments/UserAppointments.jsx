@@ -28,7 +28,7 @@ export const UserAppointments = () => {
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        return date.toLocaleDateString();
+        return date.toLocaleString();
     };
 
     return(
@@ -41,13 +41,15 @@ export const UserAppointments = () => {
                                 appointments.map(
                                     (appointment) => {
                                         const formattedDate = formatDate(appointment.date);
+                                        const doctorName = appointment.doctor?.firstName + ' ' + appointment.doctor?.lastName;
+                                        const patientName = appointment.patient?.firstName + ' ' + appointment.patient?.lastName;
 
                                         return (
                                             <div key={appointment.id} className="userAppD">
                                                 <ProductCard className="usersCardDesign"
-                                                    doctor_id={`Médico: ${appointment.doctor.firstName} ${appointment.doctor.lastName}`}
-                                                    patient_id={`Paciente: ${appointment.patient.firstName} ${appointment.patient.lastName}`}
-                                                    treatment_id={`Tratamiento: ${appointment.treatment.treatmentName}`}
+                                                    doctor_id={`Médico: ${doctorName}`}
+                                                    patient_id={`Paciente: ${patientName}`}
+                                                    treatment_id={`Tratamiento: ${appointment.treatment?.treatmentName}`}
                                                     date={`Fecha: ${formattedDate}`}
                                                 />
                                                 <Link to="/" className="modInfo">Cancelar Cita</Link>
