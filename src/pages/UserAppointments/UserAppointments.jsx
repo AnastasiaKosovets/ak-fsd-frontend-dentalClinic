@@ -10,12 +10,20 @@ export const UserAppointments = () => {
 
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
-    const [appointments, setAppointments] = useState({});
+    const [appointments, setAppointments] = useState([]);
+    
 
     useEffect(() => {
-        myAppointments(token).then((res) => {
-            setAppointments(res.data);
-        });
+        const fetchAppointments = async () => {
+            try {
+              const res = await myAppointments(token);
+              setAppointments(res.data);
+            } catch (error) {
+              console.log(error);
+            }
+          };
+        
+          fetchAppointments();
     }, []);
 
     const formatDate = (dateString) => {
