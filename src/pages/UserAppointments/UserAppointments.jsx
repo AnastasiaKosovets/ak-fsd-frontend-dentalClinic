@@ -53,7 +53,7 @@ export const UserAppointments = () => {
                     )
 
                     : (
-                        <div>No tienes citas</div>
+                        <div className="general">No tienes citas</div>
                     )
             }
 

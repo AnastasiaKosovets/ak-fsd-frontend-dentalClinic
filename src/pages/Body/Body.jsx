@@ -12,6 +12,7 @@ import { MyAccount } from "../MyAccount/MyAccount";
 import { UserAppointments } from "../UserAppointments/UserAppointments";
 import { UpdateAccount } from "../UpdateAccount/UpdateAccount";
 import { DoctorApp } from "../DoctorApp/DoctorApp";
+import { BookAppointment } from "../BookAppointment/BookAppointment";
 
 export const Body = () => {
   return (
@@ -29,6 +30,7 @@ export const Body = () => {
         <Route path="/myAppointments" element={<UserAppointments />} />
         <Route path="/account" element={<MyAccount />} />
         <Route path="/updateAccount" element={<UpdateAccount />} />
+        <Route path="/bookAppointment" element={<BookAppointment />} />
       </Routes>
     </>
   );

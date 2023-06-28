@@ -33,7 +33,18 @@ export const updateProfile = async (body, token) => {
     return  res.data;
 }
 
-// 
+// Book Appointment
+export const bookAppointment = async (body, token) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.post(`http://localhost:9000/appointments`, body, access);
+    return  res.data;
+}
+
+// View of all Users by Admin
 export const getAllUsersByAdmin = async (token) => {
     let access = {
         headers: {
