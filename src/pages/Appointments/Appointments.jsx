@@ -37,7 +37,7 @@ export const Appointments = () => {
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        return date.toLocaleDateString();
+        return date.toLocaleString();
     };
 
     return(
