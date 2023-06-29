@@ -10,59 +10,36 @@
     font-size: x-large;
 }
 
-/* .my-datetime-picker {
-    background-color: blue;
-  } */
 
-  .my-calendar {
-    background-color: rgb(251, 229, 229);
-  }
-  .my-calendar .react-calendar__month-view__days__day {
-    background-color: rgba(191, 234, 247, 0.607);
-    color: black;
-    border: 0;
-    font-weight: bold;
-  }
-
-  .my-calendar .react-calendar__navigation__label {
-    background-color: transparent;
-    color: black;
-    
-    font-weight: bold; /* Cambia el color del texto del mes y el año según tus preferencias */
-  }
+.my-calendar {
+  background-color: rgba(228, 238, 243, 0.708);;
+  border-radius: 1em;
+  color: rgb(78, 133, 252);
+  box-shadow: .0rem .0rem .3rem  rgb(66, 103, 123) ;
+  width: 15em;
+}
  
-  .my-calendar .react-calendar__navigation button {
-    background-color: transparent;
-    border: 0;
-    color: blue; /* Cambia el color de los botones de navegación según tus preferencias */
-  }
-
-
-
-
-
-
-
-/* .my-datetime-picker{
-    background-color: rgb(241, 223, 223);
+.my-calendar .react-calendar__month-view__days__day {
+  border-radius: 1em;
+  color: black;
+  border: 0;
+  font-weight: bold;
 }
 
-.custom-datetime-picker .react-calendar {
-    background-color: rgb(180, 227, 252);
-  }
+.my-calendar .react-calendar__navigation__label {
+  font-weight: bold; 
+  background-color: brown;
+}
 
-  .custom-datetime-picker .react-calendar__navigation {
-    background-color: rgba(17, 18, 18, 0.67);
-    height: 3em;
-    font-size: medium;
-  }
+.my-calendar .react-calendar__navigation button {
+  background-color: transparent;
+  border: 0;
+  color: rgb(35, 60, 112); 
+}
 
-  .custom-datetime-picker .react-calendar__month-view__weekdays {
-    color: rgba(17, 18, 18, 0.67); */
-  /* } */
-
-  
-
+.my-calendar .react-calendar__tile--now {
+  color: black; 
+}
 
 @media only screen and (max-width: 768px) {
     .dateDesign {

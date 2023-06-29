@@ -13,8 +13,9 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DateTimePicker from "react-datetime-picker";
 import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-clock/dist/Clock.css'
 // con esta función formateo date antes de enviarlo al BBDD
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 
 // import { Form } from "react-bootstrap";
@@ -31,7 +32,6 @@ export const BookAppointment = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [selectedTreatment, setSelectedTreatment] = useState(null);
   const [yourDate, setYourDate] = useState(new Date());
-  // const [yourTime, setYourTime] = useState("10:00");
   const [confirmApp, setConfirmApp] = useState("");
   //   const [user, setUser] = useState({});
   // const currentDate = new Date();
@@ -46,10 +46,7 @@ export const BookAppointment = () => {
         .catch((error) => console.log(error));
     }
   }, []);
-
-
   // console.log(allDoctors)
-
 
   useEffect(() => {
     if (allTreatments?.length === 0) {
@@ -60,8 +57,6 @@ export const BookAppointment = () => {
         .catch((error) => console.log(error));
     }
   }, []);
-
-
   // console.log(allTreatments)
 
 
@@ -72,22 +67,18 @@ export const BookAppointment = () => {
       // este método convierte la fecha de datePicker de modo que Back-end pueda recibirla
       date: yourDate.toISOString(),
     };
-    console.log("------------", createAppointment);
+    // console.log("------------", createAppointment);
 
 
     await bookAppointment(token, createAppointment);
 
-
     setTimeout(() => {
       navigate("/account");
     }, 2500);
-
-
     setConfirmApp("Su cita ha sido confirmada");
   };
-
-
   // console.log()
+
   return (
     <div className="mainBookApp">
       Pide tu cita
@@ -112,27 +103,15 @@ export const BookAppointment = () => {
                     setSelectedTreatment(e.target.value);
                   }}
                 />
-                <Form.Group>
+                <Form.Group className="pickerWidthStyle">
                   <DateTimePicker
                   className="my-datetime-picker"
                   calendarClassName="my-calendar"
-                  calendarIcon={null}
+                  // calendarIcon={null}
+                  tileDisabled={({ date }) => date < new Date() ? "react-calendar__tile--disabled" : ""}
                     value={yourDate}
                     onChange={(date) => setYourDate(date)}
                   />
-                  {/* <DatePicker
-                    selected={yourDate}
-                    onChange={(date) => setYourDate(date)}
-                    placeholderText="Elige el día"
-                    minDate={currentDate}
-                  /> */}
-                </Form.Group>
-                <Form.Group>
-                  {/* <TimePicker
-                    className="react-time-picker"
-                    value={yourTime}
-                    onChange={(time) => setYourTime(time)}
-                  /> */}
                 </Form.Group>
               </Form>
             </Col>
