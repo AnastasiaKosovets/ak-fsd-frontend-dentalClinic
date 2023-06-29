@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // con esta función formateo date antes de enviarlo al BBDD
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 
 
 // import { Form } from "react-bootstrap";
@@ -57,19 +57,20 @@ export const BookAppointment = () => {
     }
   }, []);
 
-  console.log(allTreatments)
+  // console.log(allTreatments)
 
   const editHandler = async () => {
-    const formattedTime = format(yourTime, 'HH:mm');
     
     const createAppointment = {
       doctor_id: Number(selectedDoctor),
       treatment_id: Number(selectedTreatment),
       // este método convierte la fecha de datePicker de modo que Back-end pueda recibirla
-      date: yourDate.toISOString(),
-      time: formattedTime,
+      date: yourDate,
+      time: yourTime,
 
     };
+    console.log("------------", createAppointment
+    )
 
     await bookAppointment(token, createAppointment);
 
@@ -79,6 +80,12 @@ export const BookAppointment = () => {
 
     setConfirmApp("Su cita ha sido confirmada");
   };
+
+  console.log()
+
+  // const handleTimeChange = (e) => {
+  //   setYourTime(e.target.value);
+  // };
 
   return (
     <div className="mainBookApp">
@@ -105,22 +112,36 @@ export const BookAppointment = () => {
                   }}
                 />
                 <Form.Group>
-                  {/* <Form.Control
-                    type="date"
-                    placeholder="Elige el día"
-                    value={yourDate}
-                    onChange={(e) => setYourDate(e.target.value)}
-                    max={currentDate}
-                  /> */}
-                  <DatePicker
+                  {/* <DatePicker
                     selected={yourDate}
                     onChange={(date) => setYourDate(date)}
                     placeholderText="Elige el día"
                     minDate={currentDate}
-                  />
+                  /> */}
                 </Form.Group>
                 <Form.Group>
-                <DatePicker
+                <input
+        type="date"
+        name="date"
+        value={yourDate}
+        onChange={(event) => setYourDate(event.target.value)}
+      />
+      <input
+        type="time"
+        name="time"
+        value={yourTime}
+        onChange={(event) => setYourTime(event.target.value)}
+        list="time_list"
+      />
+      <datalist id="time_list">
+        <option value="09:00" />
+        <option value="09:30" />
+        <option value="10:00" />
+        <option value="10:30" />
+        <option value="11:00" />
+      </datalist>
+
+                {/* <DatePicker
                     selected={yourTime}
                     onChange={(time) => setYourTime(time)}
                     showTimeSelect
@@ -130,7 +151,8 @@ export const BookAppointment = () => {
                     dateFormat="HH:mm"
                     placeholderText="Elige la hora"
                     className="dateDesign"
-                  />
+                  /> */}
+
                   {/* <Form.Control
                     type="time"
                     placeholder="Elige la hora"
