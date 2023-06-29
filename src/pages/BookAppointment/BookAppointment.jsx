@@ -11,14 +11,15 @@ import {
 } from "../../services/apiCalls";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DateTimePicker from "react-datetime-picker";
+import 'react-datetime-picker/dist/DateTimePicker.css';
 // con esta función formateo date antes de enviarlo al BBDD
-// import { format } from 'date-fns';
+import { format } from "date-fns";
 
 
 // import { Form } from "react-bootstrap";
 // import { inputHandler } from "../../services/useful";
+
 
 export const BookAppointment = () => {
   const [body, setBody] = useState({});
@@ -29,11 +30,12 @@ export const BookAppointment = () => {
   const [allDoctors, setAllDoctors] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [selectedTreatment, setSelectedTreatment] = useState(null);
-  const [yourDate, setYourDate] = useState(null);
-  const [yourTime, setYourTime] = useState(null);
+  const [yourDate, setYourDate] = useState(new Date());
+  // const [yourTime, setYourTime] = useState("10:00");
   const [confirmApp, setConfirmApp] = useState("");
   //   const [user, setUser] = useState({});
-  const currentDate = new Date();
+  // const currentDate = new Date();
+
 
   useEffect(() => {
     if (allDoctors?.length === 0) {
@@ -45,7 +47,9 @@ export const BookAppointment = () => {
     }
   }, []);
 
+
   // console.log(allDoctors)
+
 
   useEffect(() => {
     if (allTreatments?.length === 0) {
@@ -57,36 +61,33 @@ export const BookAppointment = () => {
     }
   }, []);
 
+
   // console.log(allTreatments)
 
+
   const editHandler = async () => {
-    
     const createAppointment = {
       doctor_id: Number(selectedDoctor),
       treatment_id: Number(selectedTreatment),
       // este método convierte la fecha de datePicker de modo que Back-end pueda recibirla
-      date: yourDate,
-      time: yourTime,
-
+      date: yourDate.toISOString(),
     };
-    console.log("------------", createAppointment
-    )
+    console.log("------------", createAppointment);
+
 
     await bookAppointment(token, createAppointment);
+
 
     setTimeout(() => {
       navigate("/account");
     }, 2500);
 
+
     setConfirmApp("Su cita ha sido confirmada");
   };
 
-  console.log()
 
-  // const handleTimeChange = (e) => {
-  //   setYourTime(e.target.value);
-  // };
-
+  // console.log()
   return (
     <div className="mainBookApp">
       Pide tu cita
@@ -112,6 +113,13 @@ export const BookAppointment = () => {
                   }}
                 />
                 <Form.Group>
+                  <DateTimePicker
+                  className="my-datetime-picker"
+                  calendarClassName="my-calendar"
+                  calendarIcon={null}
+                    value={yourDate}
+                    onChange={(date) => setYourDate(date)}
+                  />
                   {/* <DatePicker
                     selected={yourDate}
                     onChange={(date) => setYourDate(date)}
@@ -120,44 +128,10 @@ export const BookAppointment = () => {
                   /> */}
                 </Form.Group>
                 <Form.Group>
-                <input
-        type="date"
-        name="date"
-        value={yourDate}
-        onChange={(event) => setYourDate(event.target.value)}
-      />
-      <input
-        type="time"
-        name="time"
-        value={yourTime}
-        onChange={(event) => setYourTime(event.target.value)}
-        list="time_list"
-      />
-      <datalist id="time_list">
-        <option value="09:00" />
-        <option value="09:30" />
-        <option value="10:00" />
-        <option value="10:30" />
-        <option value="11:00" />
-      </datalist>
-
-                {/* <DatePicker
-                    selected={yourTime}
-                    onChange={(time) => setYourTime(time)}
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={30}
-                    timeCaption="Hora"
-                    dateFormat="HH:mm"
-                    placeholderText="Elige la hora"
-                    className="dateDesign"
-                  /> */}
-
-                  {/* <Form.Control
-                    type="time"
-                    placeholder="Elige la hora"
+                  {/* <TimePicker
+                    className="react-time-picker"
                     value={yourTime}
-                    onChange={(e) => setYourTime(e.target.value)}
+                    onChange={(time) => setYourTime(time)}
                   /> */}
                 </Form.Group>
               </Form>
@@ -186,3 +160,5 @@ export const BookAppointment = () => {
     </div>
   );
 };
+
+
