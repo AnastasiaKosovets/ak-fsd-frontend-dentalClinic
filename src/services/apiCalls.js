@@ -44,6 +44,21 @@ export const bookAppointment = async (token, createAppointment) => {
     return res;
 }
 
+// Delete Appointments
+// export const deleteAppointment = async (appointmentId, token) => {
+//     const access = {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     };
+//     await axios.delete(`http://localhost:9000/appointments/${appointmentId}`, access);
+//   };
+
+export const deleteAppointment = async (appointmentId) => {
+    
+    return await axios.delete(`http://localhost:9000/appointments/${appointmentId}`, appointmentId);
+};
+
 // Get all Doctors
 export const getAllDoctors = async (token) => {
     let access = {
