@@ -14,6 +14,7 @@ export const DoctorApp = () => {
 
     useEffect(() => {
         doctorAppointments(token).then((res) => {
+            console.log(res.data, "---")
             setAppDoctor(res.data);
         });
     }, []);
@@ -35,7 +36,7 @@ export const DoctorApp = () => {
                                                 <ProductCard className="usersCardDesign"
                                                     doctor_id={`Médico: ${appDoctor.doctor.firstName} ${appDoctor.doctor.lastName}`}
                                                     patient_id={`Paciente: ${appDoctor.patient.firstName} ${appDoctor.patient.lastName}`}
-                                                    treatment_id={`Tratamiento: ${appDoctor.treatment.treatmentName}`}
+                                                    treatment_id={`Tratamiento: ${appDoctor.treatment?.treatmentName}`}
                                                     date={`Fecha: ${formattedDate}`}
                                                 />
                                             </div>
