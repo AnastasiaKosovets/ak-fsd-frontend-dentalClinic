@@ -54,9 +54,6 @@ export const UpdateAccount = () => {
                   onChange={(e) => inputHandler(e, setBody)}
                 />
               </Form.Group>
-              {/* <Form.Group className="mb-3" controlId="password">
-                <Form.Control type="password" placeholder="Contraseña" />
-              </Form.Group> */}
               <Form.Group className="mb-3" controlId="firstName">
                 <Form.Control
                   type="text"

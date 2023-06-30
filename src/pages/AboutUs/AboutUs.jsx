@@ -32,7 +32,7 @@ export const AboutUs = () => {
           <Card className="m-2 mt-2" style={{ width: "20rem" }}>
             <Card.Img className="d-inline-block" variant="top" src={doctor2mod} />
             <Card.Body>
-              <Card.Text>Lucia de Castro</Card.Text>
+              <Card.Text>Dra. Lucia de Castro</Card.Text>
               <Card.Title>
                 Especialista en Odontopediatría de la Facultad de
                 Medicina y Odontología de Universitat de València
@@ -44,7 +44,7 @@ export const AboutUs = () => {
           <Card className="m-2 mt-2 mb-2" style={{ width: "20rem" }}>
             <Card.Img variant="top" src={doctor3} />
             <Card.Body>
-              <Card.Text>Svetlana Razhevska</Card.Text>
+              <Card.Text>Dra. Svetlana Razhevska</Card.Text>
               <Card.Title>
                 Especialista en Ortodoncia, trabaja con varios métodos como Invisalign
               </Card.Title>
