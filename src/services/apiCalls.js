@@ -44,16 +44,7 @@ export const bookAppointment = async (token, createAppointment) => {
     return res;
 }
 
-// Delete Appointments
-// export const deleteAppointment = async (appointmentId, token) => {
-//     const access = {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     };
-//     await axios.delete(`http://localhost:9000/appointments/${appointmentId}`, access);
-//   };
-
+// Delete Appointment
 export const deleteAppointment = async (appointmentId) => {
     
     return await axios.delete(`http://localhost:9000/appointments/${appointmentId}`, appointmentId);
@@ -134,4 +125,9 @@ export const doctorAppointments = async (token) => {
     };
     let res = await axios.get(`http://localhost:9000/appointments/doctorsAppointments`, access);
     return res.data;
+}
+
+// Search Appointment
+export const searchApp = async (criteria) => {
+    return await axios.get(`http://localhost:9000/appointments?search=${criteria}`)
 }
