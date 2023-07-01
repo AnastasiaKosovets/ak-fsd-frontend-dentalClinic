@@ -70,6 +70,9 @@ export const Header = () => {
                   <Nav.Link as={Link} to="/account" className="fw-semibold headerText">
                     Mi Perfil
                   </Nav.Link>
+                  <Nav.Link as={Link} to="/bookAppointment" className="fw-semibold headerText">
+                    Cita On-line
+                  </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/"
