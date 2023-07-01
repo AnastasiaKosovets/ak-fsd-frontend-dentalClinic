@@ -1,8 +1,15 @@
+/* General style of Treatment view */
 .treatmentDesign {
-    /* width: auto; */
     background-color: rgb(247, 243, 231);
 }
 
+.containerTr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* font style */
 .treatmentStyleName {
     font-weight: bolder;
     font-size: larger;
@@ -12,21 +19,18 @@
     font-size: medium;
 }
 
+/* Card margins */
 .cardTrtmDesign {
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-/* .containerTreatm {
-  display: flex;
-  margin-left: 8em;
-} */
-/* .firstRow {
+.firstRow {
     margin: 0;
     display: flex;
-    justify-content: center;
-} */
+}
 
+/* Mobile view */
 @media (max-width: 767px) {
     .treatmentDesign {
       display: flex;

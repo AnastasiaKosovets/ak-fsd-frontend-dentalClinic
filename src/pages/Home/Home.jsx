@@ -11,7 +11,6 @@ export const Home = () => {
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-  // git commit -m "refactor: clear code of home page and explain functionality"
 
   return (
     <div className="homeDesign">

@@ -14,7 +14,7 @@ import Col from "react-bootstrap/Col";
 export const Treatment = () => {
   return (
     <div className="treatmentDesign">
-      <Container className="">
+      <Container className="containerTr">
         <Row className="firstRow">
           <Col xs={10} sm={6} md={4} lg={4}>
             <Card className="cardTrtmDesign" style={{ width: "20rem" }}>
@@ -116,7 +116,6 @@ export const Treatment = () => {
             </Card>
           </Col>
         </Row>
-        <Row className="firstRow"></Row>
       </Container>
     </div>
   );
