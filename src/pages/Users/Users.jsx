@@ -5,26 +5,14 @@ import { ProductCard } from '../../common/ProductCard/ProductCard';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { getAllUsersByAdmin } from '../../services/apiCalls';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Users = () => {
 
     const credRdx = useSelector(userData);
     const token = credRdx?.credentials?.token;
     const [infoUser, setInfoUser] = useState([]);
-    // const navigate = useNavigate();
-    
-    // useEffect(() => {
-    //     if(products.length === 0){
-    //         getAllUsersByAdmin()
-    //         .then(
-    //             resultados => {
-    //                 setProducts(resultados.data.data)
-    //                 // console.log(resultados.data.data)
-    //             }
-    //         ) .catch (error => console.log(error));
-    //     }
-    // }, [products]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getAllUsersByAdmin(token).then((res) => {
@@ -32,6 +20,8 @@ export const Users = () => {
         });
         // navigate("/");
     }, []);
+
+    
 
     return(
         <div className='userDesign'>
