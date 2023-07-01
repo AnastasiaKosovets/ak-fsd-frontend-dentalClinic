@@ -8,10 +8,7 @@ import userIcon from "../../img/userIcon.png";
 import treatm6 from "../../img/treatm6.jpg";
 import aptm1 from "../../img/aptm1.jpeg";
 import { userData } from "../userSlice";
-
-// import jwt_decode from "jwt-decode";
 import { useSelector } from "react-redux";
-// import { inputHandler } from "../../services/useful";
 
 export const MyAccount = () => {
   const credRdx = useSelector(userData);
