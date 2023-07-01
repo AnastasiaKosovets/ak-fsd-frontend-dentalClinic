@@ -1,50 +1,55 @@
+/* General style of th view */
 .profileDesign {
-    width: auto;
-    background-color: rgb(247, 243, 231);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    color: rgb(66, 103, 123);
-    font-weight: bolder;
-    font-size: x-large;
+  width: auto;
+  background-color: rgb(247, 243, 231);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: rgb(66, 103, 123);
+  font-weight: bolder;
+  font-size: x-large;
 }
 
-.firstPartUser, .middlePartUser, .secondPartUser {
-margin-top: 1em;
+.firstPartUser,
+.middlePartUser,
+.secondPartUser {
+  margin-top: 1em;
 }
 
 .firstPartUser {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .userIconImg {
-    height: 6em;
-    width: 6em;
+  height: 6em;
+  width: 6em;
 }
 
 .userIconA {
-    height: 12em;
-    width: 25em;
-    border-radius: 1em;
+  height: 12em;
+  width: 25em;
+  border-radius: 1em;
 }
 
-.middlePartUser, .secondPartUser {
+.middlePartUser,
+.secondPartUser {
   display: flex;
   height: 25em;
   text-align: center;
   flex-direction: column;
   justify-content: center;
   border-radius: 1em;
-  box-shadow: .0rem .0.5rem .1rem  rgb(138, 204, 240);
+  box-shadow: 0rem 0.5rem 0.1rem rgb(138, 204, 240);
 }
 
-.profileTxt{
- font-weight: bolder;
- font-size: large;
+.profileTxt {
+  font-weight: bolder;
+  font-size: large;
 }
 
+/* Buttons Style */
 .modInfo {
   height: 3em;
   width: 10em;
@@ -59,51 +64,69 @@ margin-top: 1em;
   margin-left: 1em;
 }
 
-.rigthUserBtn, .modInfo{
+.rigthUserBtn,
+.modInfo {
   display: flex;
   justify-content: center;
 }
 
 .modInfo:hover {
-    transition: 0.4s;
-    color: white;
-    background-color: rgba(60, 101, 122, 0.76);
+  transition: 0.4s;
+  color: white;
+  background-color: rgba(60, 101, 122, 0.76);
 }
 
+/* Mobile view */
 @media only screen and (max-width: 480px) {
-    .profileDesign {
-      font-size: large;
-      flex-direction: column;
-      justify-content: center;
-    }
-  
-    .firstPartUser {
-      margin-top: 1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .userIconImg {
-      height: 4em;
-      width: 4em;
-    }
-  
-    .userIconA {
-      height: 6em;
-      width: 14em;
-      margin-left: 3em;
-    }
-  
-    .rigthUserBtn {
-      margin-bottom: 1em;
-      margin-top: 1em;
-    }
-  
-    .modInfo {
-      width: 8em;
-      font-size: medium;
-      margin-top: 0.5em;
-      justify-content: center;
-    }
+  .profileDesign {
+    font-size: large;
+    flex-direction: column;
+    justify-content: center;
   }
+
+  .firstPartUser {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userIconImg {
+    height: 4em;
+    width: 4em;
+  }
+
+  .userIconA {
+    height: 6em;
+    width: 14em;
+    margin-left: 3em;
+  }
+
+  .rigthUserBtn {
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  .modInfo {
+    width: 8em;
+    font-size: medium;
+    margin-top: 0.5em;
+    justify-content: center;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .profileDesign {
+    font-size: large;
+  }
+
+  .thisCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userIconA {
+    width: 100%;
+  }
+}

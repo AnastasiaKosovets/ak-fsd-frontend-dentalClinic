@@ -1,99 +1,96 @@
 .userApDesign {
   height: auto;
-    width: auto;
-    background-color: rgb(247, 243, 231);
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    align-items: center;
-    text-align: left;
-    color: rgb(66, 103, 123);
-    font-weight: bolder;
-    font-size: x-large;
+  width: auto;
+  background-color: rgb(247, 243, 231);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  color: rgb(66, 103, 123);
+  font-weight: bolder;
+  font-size: x-large;
 }
 
 .modInfo {
-    height: 3em;
-    width: 10em;
-    background-color: rgba(102, 186, 228, 0.76);
-    color: white;
-    text-decoration: none;
-    font-size: large;
-    cursor: pointer;
-    transition: 0.4s;
-    border-radius: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  height: 3em;
+  width: 10em;
+  background-color: rgba(102, 186, 228, 0.76);
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .modInfo:hover {
-    transition: 0.4s;
-    color: white;
-    background-color: rgba(60, 101, 122, 0.76);
+  transition: 0.4s;
+  color: white;
+  background-color: rgba(60, 101, 122, 0.76);
 }
 
 .userAppD {
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-    align-items: center;
-    border-radius: 1em;
-    box-shadow: .0rem .0.5rem .1rem  rgb(138, 204, 240);
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 0rem 0.5rem 0.1rem rgb(138, 204, 240);
 }
 
 .thisCard {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    font-size: small;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: small;
 }
 
-  @media only screen and (max-width: 1024px) {
-    .userApDesign {
-      font-size: x-large;
-    }
-  
-    .modInfo {
-      width: 12em;
-      font-size: large;
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-  
-    .userAppD {
-      margin: 1em;
-    }
-
-    .thisCard {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        font-size: small;
-        flex-direction: column;
-        font-size: smaller;
-      }
+@media only screen and (max-width: 1024px) {
+  .userApDesign {
+    font-size: x-large;
   }
 
-  @media only screen and (max-width: 768px) {
-    .userApDesign {
-      font-size: large;
-      flex-direction: column;
-    }
-  
-    .modInfo {
-      width: 8em;
-      font-size: medium;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-    }
-  
-    .userAppD {
-      margin: 0.5em;
-    }
-
-    .thisCard {
-        display: flex;
-        flex-direction: column;
-        font-size: smaller;
-      }
+  .modInfo {
+    width: 12em;
+    font-size: large;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
+
+  .userAppD {
+    margin: 1em;
+  }
+
+  .thisCard {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .userApDesign {
+    font-size: large;
+    flex-direction: column;
+  }
+
+  .modInfo {
+    width: 8em;
+    font-size: medium;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .userAppD {
+    margin: 0.5em;
+  }
+
+  .thisCard {
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+  }
+}
