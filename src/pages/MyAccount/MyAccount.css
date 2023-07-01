@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 1em;
-  box-shadow: 0rem 0.5rem 0.1rem rgb(138, 204, 240);
+  box-shadow: 0rem 0rem 0.5rem rgb(138, 204, 240);
 }
 
 .profileTxt {

@@ -38,7 +38,7 @@
   margin: 1em;
   align-items: center;
   border-radius: 1em;
-  box-shadow: 0rem 0.5rem 0.1rem rgb(138, 204, 240);
+  box-shadow: 0rem 0rem 0.5rem rgb(138, 204, 240);
 }
 
 .thisCard {
@@ -66,8 +66,11 @@
   }
 
   .thisCard {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: small;
     flex-direction: column;
+    font-size: smaller;
   }
 }
 
