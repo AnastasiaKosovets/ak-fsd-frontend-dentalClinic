@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Appointments.css";
 import { Link } from "react-router-dom";
-import { getAppointmentsByAdmin } from "../../services/apiCalls";
+import { deleteAppointment, getAppointmentsByAdmin } from "../../services/apiCalls";
 import { ProductCard } from "../../common/ProductCard/ProductCard";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
@@ -13,6 +13,7 @@ export const Appointments = () => {
   const [generalAppointments, setgeneralAppointments] = useState([]);
   const [searchApp, setSearchApp] = useState("");
   const [filteredAppointments, setFilteredAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
     getAppointmentsByAdmin(token)
@@ -33,16 +34,32 @@ export const Appointments = () => {
     } else {
       setFilteredAppointments(generalAppointments);
     }
+    // console.log(generalAppointments)
   }, [searchApp, generalAppointments]);
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString();
-  };
-
+ 
   const handleSearch = (e) => {
     setSearchApp(e.target.value);
   };
+
+  const deleteHandler = async (appointmentId) => {
+    try {
+      await deleteAppointment(appointmentId);
+      const updatedAppointments = filteredAppointments.filter(
+        (appointment) => appointment.id !== appointmentId
+      );
+      setFilteredAppointments(updatedAppointments);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleString();
+};
+
 
   return (
     <div className="appointmentsDesign">
@@ -94,6 +111,7 @@ export const Appointments = () => {
                         treatment_id={`Tratamiento: ${appointment.treatment?.treatmentName}`}
                         date={`Fecha: ${formattedDate}`}
                       />
+                      <Link to="/appointments" onClick={() => deleteHandler(appointment.id)} className="modInfo">Eliminar Cita</Link>
                     </div>
                   );
                 })}

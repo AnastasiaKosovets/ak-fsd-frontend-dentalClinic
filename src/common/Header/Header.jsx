@@ -14,7 +14,6 @@ export const Header = () => {
   //Guardo los datos de REDUX en una constante para poder acceder a ellos en Header
   const datosCredencialesRedux = useSelector(userData);
   console.log(datosCredencialesRedux);
-  
 
   //Redux en modo escritura
   const dispatch = useDispatch();
@@ -47,18 +46,46 @@ export const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto firstPart">
-              <Nav.Link as={Link} to="/treatment" className="fw-semibold headerText">
+              <Nav.Link
+                as={Link}
+                to="/treatment"
+                className="fw-semibold headerText"
+              >
                 Tratamientos
               </Nav.Link>
-              <Nav.Link as={Link} to="/about" className="fw-semibold headerText">
+              <Nav.Link
+                as={Link}
+                to="/about"
+                className="fw-semibold headerText"
+              >
                 Sobre Nosotros
               </Nav.Link>
               {role === 1 || role === 3 ? (
                 <>
-                  <Nav.Link as={Link} to="/users" className="fw-semibold headerText">
+                  {/* <div className="doctorAppointments">
+                    <Link to="/doctorApp" className="fw-semibold headerText">
+                      Mis citas
+                    </Link>
+                  </div> */}
+                  <Nav.Link
+                    as={Link}
+                    to="/doctorApp"
+                    className="fw-semibold headerText"
+                  >
+                    Mis Citas
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/users"
+                    className="fw-semibold headerText"
+                  >
                     Usuarios
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/appointments" className="fw-semibold headerText">
+                  <Nav.Link
+                    as={Link}
+                    to="/appointments"
+                    className="fw-semibold headerText"
+                  >
                     Citas
                   </Nav.Link>
                 </>
@@ -67,10 +94,18 @@ export const Header = () => {
             <Nav className="secondPart">
               {datosCredencialesRedux?.credentials?.token ? (
                 <>
-                  <Nav.Link as={Link} to="/account" className="fw-semibold headerText">
+                  <Nav.Link
+                    as={Link}
+                    to="/account"
+                    className="fw-semibold headerText"
+                  >
                     Mi Perfil
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/bookAppointment" className="fw-semibold headerText">
+                  <Nav.Link
+                    as={Link}
+                    to="/bookAppointment"
+                    className="fw-semibold headerText"
+                  >
                     Cita On-line
                   </Nav.Link>
                   <Nav.Link
@@ -83,7 +118,11 @@ export const Header = () => {
                   </Nav.Link>
                 </>
               ) : (
-                <Nav.Link as={Link} to="/login" className="fw-semibold headerText">
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                  className="fw-semibold headerText"
+                >
                   Iniciar sesión
                 </Nav.Link>
               )}
