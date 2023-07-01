@@ -1,6 +1,6 @@
+/* General design of Home view */
 .homeDesign {
-    height:75.5vh;
-    /* width: 100vw; */
+    height: 82vh;
     background-color: rgb(247, 243, 231);
     display: flex;
     flex-direction: row;
@@ -10,7 +10,7 @@
     font-weight: bolder;
     font-size: x-large;
 }
-
+/* Carousel design in parts: general and text design */
 .carouselImg {
     height: 22em;
     width: 35em;
@@ -28,23 +28,19 @@
     background-color: rgba(91, 127, 188, 0.567);
     border-radius: 1em;
 }
-
+/* Mobile-view of Home page */
 @media (max-width: 500px) {
-    /* Estilos para dispositivos móviles con un ancho máximo de 600px */
     .homeDesign {
-      /* Modifica los estilos para adaptarlos a dispositivos móviles */
       flex-direction: column;
       font-size: large;
     }
   
     .carouselImg {
-      /* Modifica los estilos para adaptarlos a dispositivos móviles */
       height: 10em;
       width: 18em;
     }
 
     .carouselText {
         font-size: x-small;
-        /* background-color: rgba(128, 128, 128, 0.604); */
     }
   }

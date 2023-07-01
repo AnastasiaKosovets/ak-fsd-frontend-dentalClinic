@@ -9,26 +9,24 @@ import treatm6 from "../../img/treatm6.jpg";
 import aptm1 from "../../img/aptm1.jpeg";
 import { userData } from "../userSlice";
 
-import jwt_decode from "jwt-decode";
-import { useDispatch, useSelector } from "react-redux";
-import { inputHandler } from "../../services/useful";
+// import jwt_decode from "jwt-decode";
+import { useSelector } from "react-redux";
+// import { inputHandler } from "../../services/useful";
 
 export const MyAccount = () => {
-
   const credRdx = useSelector(userData);
-  const token = credRdx?.credentials?.token
+  const token = credRdx?.credentials?.token;
   const [user, setUser] = useState({
-    
     email: "",
     firstName: "",
     lastName: "",
     document: "",
     dateOfBirth: "",
     address: "",
-    telefonNumber: ""
+    telefonNumber: "",
   });
   console.log(credRdx);
-  
+
   useEffect(() => {
     myProfile(token).then((res) => {
       setUser(res.data);

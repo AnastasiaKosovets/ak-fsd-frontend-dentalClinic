@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-// import jwt_decode from "jwt-decode";
 import "./Register.css";
 import { Link } from "react-router-dom";
-// import { ChangeView } from "../../common/ChangeView/ChangeView";
 import { InputText } from "../../common/InputText/InputText";
 import { checkError } from "../../services/useful";
 import { myRegister } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
-
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
@@ -47,42 +44,43 @@ export const Register = () => {
     checkError(e.target.name, e.target.value);
     console.log(e.target.value, "soy el check....");
   };
-  
-  const registerOn = () => {
 
+  const registerOn = () => {
     const { firstName, lastName, email, password } = credentials;
 
-    if( !firstName || !lastName || !email || !password ||
-      firstName.trim() === "" || lastName.trim() === "" || 
-      email.trim() === "" || password.trim() === "" ||
-      credentialsError.firstNameError !== "" || credentialsError.lastNameError !== "" ||
-      credentialsError.emailError !== "" || credentialsError.passwordError !== "") {
-      return
-
-      } else {
-
-        myRegister(credentials)
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      firstName.trim() === "" ||
+      lastName.trim() === "" ||
+      email.trim() === "" ||
+      password.trim() === "" ||
+      credentialsError.firstNameError !== "" ||
+      credentialsError.lastNameError !== "" ||
+      credentialsError.emailError !== "" ||
+      credentialsError.passwordError !== ""
+    ) {
+      return;
+    } else {
+      myRegister(credentials)
         .then((results) => {
-          // let decodificated = jwt_decode(results.data.token);
-          // const {data} = results
           // console.log(data)
           setTimeout(() => {
             navigate("/");
           }, 2500);
-          // setWelcome(`Bienvenid@ de nuevo ${decodificated.name}`);
-          setWelcome('Gracias por registrarte');
+          setWelcome("Gracias por registrarte");
           console.log(results);
         })
         .catch((error) => console.log(error));
-      }
-
+    }
   };
 
   return (
     <div className="mainRegister">
       <div className="registerDesign">
         Regístrate y pide tú cita On-line
-        {/* {<pre>{JSON.stringify(credentials, null,2)}</pre>} */}
         {welcome !== "" ? (
           <div>{welcome}</div>
         ) : (
@@ -98,7 +96,6 @@ export const Register = () => {
               }
               placeholder={"Introduce tu nombre"}
               name={"firstName"}
-              // classDesign={"InputText"}
               functionHandler={InputHandler}
               onBlurFunction={inputCheck}
             />
@@ -107,12 +104,11 @@ export const Register = () => {
               type={"text"}
               design={
                 credentialsError.lastNameError === ""
-                ? "normalInput"
-                : "normalInput errorInput"
+                  ? "normalInput"
+                  : "normalInput errorInput"
               }
               placeholder={"Introduce tú apellido"}
               name={"lastName"}
-              // classDesign={"InputText"}
               functionHandler={InputHandler}
               onBlurFunction={inputCheck}
             />
@@ -172,11 +168,12 @@ export const Register = () => {
             <div onClick={() => registerOn()} className="logInButton">
               Regístrate
             </div>
-            <div className="registerLinkText">¿Ya tienes una cuenta?
-          <Link to="/login" className="registerLink">
-           ¡Inicia tu sesión!
-          </Link>
-          </div>
+            <div className="registerLinkText">
+              ¿Ya tienes una cuenta?
+              <Link to="/login" className="registerLink">
+                ¡Inicia tu sesión!
+              </Link>
+            </div>
           </div>
         )}
       </div>
