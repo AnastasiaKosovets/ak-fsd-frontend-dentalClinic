@@ -1,3 +1,4 @@
+/* General style of AboutUs view */
 .aboutDesign {
     height: 75.6vh;
     width: 100vw;
@@ -11,7 +12,7 @@
     font-size: x-large;
 }
 
-
+/* Mobile view */
 @media (max-width: 480px) {
   .aboutDesign {
     height: auto;
