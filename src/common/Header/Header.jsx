@@ -62,13 +62,6 @@ export const Header = () => {
               </Nav.Link>
               {role === 1 ? (
                 <>
-                  {/* <Nav.Link
-                    as={Link}
-                    to="/doctorApp"
-                    className="fw-semibold headerText"
-                  >
-                    Mis Citas
-                  </Nav.Link> */}
                   <Nav.Link
                     as={Link}
                     to="/users"
@@ -86,13 +79,13 @@ export const Header = () => {
                 </>
               ) : null}
               {role === 3 ? (
-                 <Nav.Link
-                    as={Link}
-                    to="/doctorApp"
-                    className="fw-semibold headerText"
-                  >
-                    Mis Citas
-                  </Nav.Link> 
+                <Nav.Link
+                  as={Link}
+                  to="/doctorApp"
+                  className="fw-semibold headerText"
+                >
+                  Mis Citas
+                </Nav.Link>
               ) : null}
             </Nav>
             <Nav className="secondPart">

@@ -1,24 +1,55 @@
-.mainBookApp{
-    height: 82vh;
-    width: auto;
-    background-color: rgb(247, 243, 231);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: rgb(66, 103, 123);
-    font-weight: bolder;
-    font-size: x-large;
+/* General style of BookAppointment view */
+.mainBookApp {
+  height: 82vh;
+  width: auto;
+  background-color: rgb(247, 243, 231);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(66, 103, 123);
+  font-weight: bolder;
+  font-size: x-large;
 }
 
+/* Add box shadow for visual style of card create Appointment */
+.chooseDesign {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  height: 12em;
+  width: 1;
+  box-shadow: 0rem 0rem 0.3rem rgb(66, 103, 123);
+  border-radius: 1em;
+}
 
+/* Details of select options style  */
+.selectDoctorOpt {
+  margin-top: 2em;
+  width: 20em;
+}
+
+.rowDesign {
+  width: 21em;
+}
+
+.appButtons {
+  display: flex;
+  margin-left: 1em;
+}
+
+.pickerWidthStyle {
+  margin-top: 1em;
+}
+
+/* DatePickerCalendar pesonalized style */
 .my-calendar {
-  background-color: rgba(228, 238, 243, 0.708);;
+  background-color: rgba(228, 238, 243, 0.708);
   border-radius: 1em;
   color: rgb(78, 133, 252);
-  box-shadow: .0rem .0rem .3rem  rgb(66, 103, 123) ;
+  box-shadow: 0rem 0rem 0.3rem rgb(66, 103, 123);
   width: 15em;
 }
- 
+
 .my-calendar .react-calendar__month-view__days__day {
   border-radius: 1em;
   color: black;
@@ -27,22 +58,39 @@
 }
 
 .my-calendar .react-calendar__navigation__label {
-  font-weight: bold; 
+  font-weight: bold;
   background-color: brown;
 }
 
 .my-calendar .react-calendar__navigation button {
   background-color: transparent;
   border: 0;
-  color: rgb(35, 60, 112); 
+  color: rgb(35, 60, 112);
 }
 
 .my-calendar .react-calendar__tile--now {
-  color: black; 
+  color: black;
 }
 
-@media only screen and (max-width: 768px) {
-    .dateDesign {
-        width: 11.5em;
-    }
+/* Mobile view */
+@media (max-width: 480px) {
+  .mainBookApp {
+    font-size: large;
   }
+
+  .chooseDesign {
+    height: 14em;
+  }
+
+  .selectDoctorOpt {
+    width: 15em;
+  }
+
+  .rowDesign {
+    width: 16em;
+  }
+
+  .my-calendar {
+    width: 12em;
+  }
+}

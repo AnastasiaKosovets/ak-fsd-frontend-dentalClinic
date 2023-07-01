@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Appointments.css";
 import { Link } from "react-router-dom";
-import { deleteAppointment, getAppointmentsByAdmin } from "../../services/apiCalls";
+import {
+  deleteAppointment,
+  getAppointmentsByAdmin,
+} from "../../services/apiCalls";
 import { ProductCard } from "../../common/ProductCard/ProductCard";
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
@@ -13,8 +16,9 @@ export const Appointments = () => {
   const [generalAppointments, setgeneralAppointments] = useState([]);
   const [searchApp, setSearchApp] = useState("");
   const [filteredAppointments, setFilteredAppointments] = useState([]);
-  const [appointments, setAppointments] = useState([]);
+  // const [appointments, setAppointments] = useState([]);
 
+  // This hook depends of dates of token and update state os appointments
   useEffect(() => {
     getAppointmentsByAdmin(token)
       .then((res) => {
@@ -23,7 +27,7 @@ export const Appointments = () => {
       .catch((error) => console.log(error));
   }, [token]);
 
-  // I create another hook to filter the appointments according to the input value
+  // Another hook to filter the appointments according to the input value
   useEffect(() => {
     if (searchApp !== "") {
       const filtered = generalAppointments.filter((appointment) => {
@@ -37,7 +41,6 @@ export const Appointments = () => {
     // console.log(generalAppointments)
   }, [searchApp, generalAppointments]);
 
- 
   const handleSearch = (e) => {
     setSearchApp(e.target.value);
   };
@@ -53,25 +56,16 @@ export const Appointments = () => {
       console.log(error);
     }
   };
-  
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleString();
-};
-
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
+  };
 
   return (
     <div className="appointmentsDesign">
       <Container>
         <Row>
-          <Col>
-            <div className="doctorAppointments">
-              <Link to="/doctorApp" className="modInfo">
-                Mis citas
-              </Link>
-            </div>
-          </Col>
           <Col className="d-flex justify-content-center">
             <div className="searchDoctor">
               <input
@@ -111,7 +105,13 @@ const formatDate = (dateString) => {
                         treatment_id={`Tratamiento: ${appointment.treatment?.treatmentName}`}
                         date={`Fecha: ${formattedDate}`}
                       />
-                      <Link to="/appointments" onClick={() => deleteHandler(appointment.id)} className="modInfo">Eliminar Cita</Link>
+                      <Link
+                        to="/appointments"
+                        onClick={() => deleteHandler(appointment.id)}
+                        className="modInfo"
+                      >
+                        Eliminar Cita
+                      </Link>
                     </div>
                   );
                 })}

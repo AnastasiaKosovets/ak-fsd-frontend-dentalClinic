@@ -4,23 +4,12 @@ import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { useNavigate } from "react-router-dom";
 import { SelectOption } from "../../common/SelectOption/SelectOption";
-import {
-  bookAppointment,
-  getAllTreatments,
-  getAllDoctors,
-} from "../../services/apiCalls";
+import { bookAppointment, getAllTreatments, getAllDoctors } from "../../services/apiCalls";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DateTimePicker from "react-datetime-picker";
-import 'react-datetime-picker/dist/DateTimePicker.css';
-import 'react-clock/dist/Clock.css'
-// con esta función formateo date antes de enviarlo al BBDD
-// import { format } from "date-fns";
-
-
-// import { Form } from "react-bootstrap";
-// import { inputHandler } from "../../services/useful";
-
+import "react-datetime-picker/dist/DateTimePicker.css";
+import "react-clock/dist/Clock.css";
 
 export const BookAppointment = () => {
   const [body, setBody] = useState({});
@@ -33,9 +22,6 @@ export const BookAppointment = () => {
   const [selectedTreatment, setSelectedTreatment] = useState(null);
   const [yourDate, setYourDate] = useState(new Date());
   const [confirmApp, setConfirmApp] = useState("");
-  //   const [user, setUser] = useState({});
-  // const currentDate = new Date();
-
 
   useEffect(() => {
     if (allDoctors?.length === 0) {
@@ -59,16 +45,14 @@ export const BookAppointment = () => {
   }, []);
   // console.log(allTreatments)
 
-
   const editHandler = async () => {
     const createAppointment = {
       doctor_id: Number(selectedDoctor),
       treatment_id: Number(selectedTreatment),
-      // este método convierte la fecha de datePicker de modo que Back-end pueda recibirla
+      // This method transform date of DatePicker for better work with Backend
       date: yourDate.toISOString(),
     };
     // console.log("------------", createAppointment);
-
 
     await bookAppointment(token, createAppointment);
 
@@ -85,10 +69,10 @@ export const BookAppointment = () => {
       {confirmApp !== "" ? (
         <div>{confirmApp}</div>
       ) : (
-        <Container>
-          <Row>
-            <Col>
-              <Form>
+        <Container className="d-flex justify-content-center">
+          <Row className="rowDesign">
+            <Col className="chooseDesign">
+              <Form className="selectDoctorOpt">
                 <SelectOption
                   placeholder="Elige al doctor"
                   options={allDoctors}
@@ -105,33 +89,25 @@ export const BookAppointment = () => {
                 />
                 <Form.Group className="pickerWidthStyle">
                   <DateTimePicker
-                  className="my-datetime-picker"
-                  calendarClassName="my-calendar"
-                  // calendarIcon={null}
-                  tileDisabled={({ date }) => date < new Date() ? "react-calendar__tile--disabled" : ""}
+                    className="my-datetime-picker"
+                    calendarClassName="my-calendar"
+                    // calendarIcon={null}
+                    tileDisabled={({ date }) =>
+                      date < new Date() ? "react-calendar__tile--disabled" : ""
+                    }
                     value={yourDate}
                     onChange={(date) => setYourDate(date)}
                   />
                 </Form.Group>
               </Form>
-            </Col>
-            <Col
-              xs={10}
-              md={6}
-              lg={6}
-              className="d-flex justify-content-center"
-            >
-              <Link
-                className="modInfo"
-                onClick={() => {
-                  editHandler(body, token);
-                }}
-              >
-                Confirmar
-              </Link>
-              <Link to="/account" className="modInfo">
-                Cancelar
-              </Link>
+              <Col xs={10} md={10} lg={10} className="appButtons">
+                <Link
+                  className="modInfo"
+                  onClick={() => {
+                    editHandler(body, token);
+                  }}> Confirmar</Link>
+                <Link to="/account" className="modInfo">Cancelar</Link>
+              </Col>
             </Col>
           </Row>
         </Container>
@@ -139,5 +115,3 @@ export const BookAppointment = () => {
     </div>
   );
 };
-
-
