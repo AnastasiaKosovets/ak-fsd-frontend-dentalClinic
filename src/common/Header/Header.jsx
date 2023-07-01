@@ -60,20 +60,15 @@ export const Header = () => {
               >
                 Sobre Nosotros
               </Nav.Link>
-              {role === 1 || role === 3 ? (
+              {role === 1 ? (
                 <>
-                  {/* <div className="doctorAppointments">
-                    <Link to="/doctorApp" className="fw-semibold headerText">
-                      Mis citas
-                    </Link>
-                  </div> */}
-                  <Nav.Link
+                  {/* <Nav.Link
                     as={Link}
                     to="/doctorApp"
                     className="fw-semibold headerText"
                   >
                     Mis Citas
-                  </Nav.Link>
+                  </Nav.Link> */}
                   <Nav.Link
                     as={Link}
                     to="/users"
@@ -89,6 +84,15 @@ export const Header = () => {
                     Citas
                   </Nav.Link>
                 </>
+              ) : null}
+              {role === 3 ? (
+                 <Nav.Link
+                    as={Link}
+                    to="/doctorApp"
+                    className="fw-semibold headerText"
+                  >
+                    Mis Citas
+                  </Nav.Link> 
               ) : null}
             </Nav>
             <Nav className="secondPart">
