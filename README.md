@@ -11,7 +11,7 @@
     <li><a href="#about-the-project">About the project</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#installation">Installation</a></li>
-    <li><a href="#development ">Project structure</a></li>
+    <li><a href="#development ">Development</a></li>
     <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#future-functionalities">Future functionalities</a></li>
     <li><a href="#license">License</a></li>
@@ -125,7 +125,7 @@ The first thing to start the project was to have clear the layout of the applica
 
 If I could devote more time to develop this project, I would have liked to implement more functionalities, like being able to modify your appointment (not only cancel), implement more security of the application itself, create a "contact us" form and be able to practice the detail view function for users and appointments.
 
-## Licencia
+## License
 This project is belonging to license Creative Commons Legal Code.
  
 
