@@ -2,7 +2,7 @@
 
 <h1 align="center">Fifth project in Geekshubs Academy FSD 04-2023</h1>
 
-!['imagen-db'](./src/img/vs-front.png)
+!['imagen-db'](./src/img/MergedImages.png)
 
 <details>
   <summary>Contet: 📝</summary>
@@ -104,7 +104,7 @@ The first thing to start the project was to have clear the layout of the applica
 
 ## Endpoints
 
-####Currently the following actions can be performed in this app:
+#### Currently the following actions can be performed in this app:
 - Login
 - Register
 - Logout
