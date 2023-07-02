@@ -35,7 +35,7 @@ export const Footer = () => {
               
             </Nav.Link>
             <p className="copRg">2023 Anastasia Kosovets</p>
-            <Nav.Link as={Link} to="/" className="fw-semibold footerIconT">
+            <Nav.Link as={Link} to="/contacts" className="fw-semibold footerIconT">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon icon-tabler icon-tabler-info-octagon"

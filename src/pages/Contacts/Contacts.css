@@ -1,0 +1,66 @@
+/* General view design */
+.generalContactsDesign {
+  height: 82vh;
+  width: auto;
+  background-color: rgb(247, 243, 231);
+}
+
+/* List design */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* Text design of contact info */
+.detailContact {
+  text-align: left;
+  color: rgb(72, 171, 228);
+  text-decoration: underline;
+}
+
+.contactInfo {
+  font-weight: bold;
+  color: rgb(65, 59, 87);
+  font-size: larger;
+}
+
+.contactColInfo {
+  margin-left: 5em;
+}
+
+/* Row details */
+.rowContact {
+  align-items: center;
+}
+
+.mapDesign {
+  margin-left: 18em;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .mapDesign {
+    margin-left: 8em;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .generalContactsDesign {
+    height: auto;
+  }
+  .mapDesign iframe {
+    width: 20em;
+    overflow: hidden;
+  }
+
+  .mapDesign {
+    margin-left: 0;
+  }
+
+  .contactColInfo {
+    margin-left: 0;
+  }
+}

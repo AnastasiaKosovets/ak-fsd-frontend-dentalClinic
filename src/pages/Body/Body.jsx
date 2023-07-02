@@ -13,6 +13,7 @@ import { UserAppointments } from "../UserAppointments/UserAppointments";
 import { UpdateAccount } from "../UpdateAccount/UpdateAccount";
 import { DoctorApp } from "../DoctorApp/DoctorApp";
 import { BookAppointment } from "../BookAppointment/BookAppointment";
+import { Contacts } from "../Contacts/Contacts"
 
 export const Body = () => {
   return (
@@ -31,6 +32,7 @@ export const Body = () => {
         <Route path="/account" element={<MyAccount />} />
         <Route path="/updateAccount" element={<UpdateAccount />} />
         <Route path="/bookAppointment" element={<BookAppointment />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </>
   );
