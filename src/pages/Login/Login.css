@@ -1,65 +1,71 @@
+/* General view design */
 .mainLogInDesign {
-    padding-top: 2em;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: .0rem .0.5rem .1rem  rgb(102, 188, 234);
-    border-radius: 1em;
+  padding-top: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0rem 0.5rem 0.1rem rgb(102, 188, 234);
+  border-radius: 1em;
 }
 
+/* Design of login card */
 .loginDesign {
-    height: 75.5vh;
-    width: 100vw;
-    background-color: rgb(247, 243, 231);
-    display: flex;
-    padding-top: 2em;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(66, 103, 123);
-    font-weight: bolder;
-    font-size: x-large;
+  height: 75.5vh;
+  width: 100vw;
+  background-color: rgb(247, 243, 231);
+  display: flex;
+  padding-top: 2em;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(66, 103, 123);
+  font-weight: bolder;
+  font-size: x-large;
 }
 
 .normalInput {
-    width: 15em;
-    margin: 1em;
-    border-radius: 1em;
-    color: rgb(66, 103, 123);
-    box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
-    background-color: rgb(227, 234, 236);
+  width: 15em;
+  margin: 1em;
+  border-radius: 1em;
+  color: rgb(66, 103, 123);
+  box-shadow: 0rem 0.5rem 0.1rem rgb(81, 149, 186);
+  background-color: rgb(227, 234, 236);
 }
 
-.errorInput{
-border: solid red;
+/* Error input design */
+.errorInput {
+  border: solid red;
 }
 
 .errorText {
-    color: red;
-    font-size:large;
+  color: red;
+  font-size: large;
 }
 
+/* Login button */
 .logButton {
-    height: 3em;
-    width: 10em;
-    background-color: rgba(102, 186, 228, 0.76);
-    color: white;
-    font-size: large;
-    cursor: pointer;
-    transition: 0.4s;
-    border-radius: 1em;
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 3em;
+  width: 10em;
+  background-color: rgba(102, 186, 228, 0.76);
+  color: white;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 1em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logInButton:hover {
-    transition: 0.4s;
-    background-color: rgba(60, 101, 122, 0.76);
+  transition: 0.4s;
+  background-color: rgba(60, 101, 122, 0.76);
 }
 
-.registerLink, .registerLinkText {
+/* Links design */
+.registerLink,
+.registerLinkText {
   margin: 1em;
   color: rgba(60, 101, 122, 0.76);
   font-size: medium;
@@ -70,6 +76,7 @@ border: solid red;
   color: rgba(89, 150, 181, 0.76);
 }
 
+/* Mobile view */
 @media (max-width: 768px) {
   .mainLogInDesign {
     padding-top: 2em;
@@ -93,7 +100,8 @@ border: solid red;
     margin-top: 0.5em;
   }
 
-  .registerLink, .registerLinkText {
+  .registerLink,
+  .registerLinkText {
     font-size: small;
   }
 }

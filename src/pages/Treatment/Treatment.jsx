@@ -21,8 +21,7 @@ export const Treatment = () => {
               <Card.Img
                 className="d-inline-block"
                 variant="top"
-                src={ortodonciaImg}
-              />
+                src={ortodonciaImg}/>
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
                   Ortodoncia
@@ -40,8 +39,7 @@ export const Treatment = () => {
               <Card.Img
                 className="d-inline-block"
                 variant="top"
-                src={treatm3a}
-              />
+                src={treatm3a}/>
               <Card.Body>
                 <Card.Title className="treatmentStyleName">
                   Endodoncia

@@ -1,3 +1,4 @@
+/* General view design */
 .userApDesign {
   height: auto;
   width: auto;
@@ -12,6 +13,7 @@
   font-size: x-large;
 }
 
+/* Button design */
 .modInfo {
   height: 3em;
   width: 10em;
@@ -32,6 +34,7 @@
   background-color: rgba(60, 101, 122, 0.76);
 }
 
+/* User card design */
 .userAppD {
   display: flex;
   flex-direction: column;
@@ -49,54 +52,18 @@
   font-size: small;
 }
 
-<<<<<<< HEAD
-@media only screen and (max-width: 1024px) {
-  .userApDesign {
-    font-size: x-large;
-=======
-  @media only screen and (max-width: 1024px) {
-    .userApDesign {
-      font-size: x-large;
-    }
-  
-    .modInfo {
-      width: 12em;
-      font-size: large;
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-  
-    .userAppD {
-      margin: 1em;
-    }
-
-    .thisCard {
-      display: flex;
-      flex-direction: column;
-    }
->>>>>>> develop
-  }
-
-  .modInfo {
-    width: 12em;
-    font-size: large;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-
-  .userAppD {
-    margin: 1em;
-  }
-
-  .thisCard {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    font-size: small;
-    flex-direction: column;
-    font-size: smaller;
-  }
+.modInfo {
+  width: 12em;
+  font-size: large;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
+.userAppD {
+  margin: 1em;
+}
+
+/* Mobile view */
 @media only screen and (max-width: 768px) {
   .userApDesign {
     font-size: large;
@@ -113,10 +80,32 @@
   .userAppD {
     margin: 0.5em;
   }
-
   .thisCard {
     display: flex;
     flex-direction: column;
     font-size: smaller;
+  }
+}
+
+/* Tablet view */
+@media only screen and (max-width: 1024px) {
+  .userApDesign {
+    font-size: x-large;
+  }
+
+  .modInfo {
+    width: 12em;
+    font-size: large;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .userAppD {
+    margin: 1em;
+  }
+
+  .thisCard {
+    display: flex;
+    flex-direction: column;
   }
 }

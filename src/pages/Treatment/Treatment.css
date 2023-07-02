@@ -1,6 +1,6 @@
 /* General style of Treatment view */
 .treatmentDesign {
-    background-color: rgb(247, 243, 231);
+  background-color: rgb(247, 243, 231);
 }
 
 .containerTr {
@@ -11,12 +11,12 @@
 
 /* font style */
 .treatmentStyleName {
-    font-weight: bolder;
-    font-size: larger;
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .treatmentStyleText {
-    font-size: medium;
+  font-size: medium;
 }
 
 /* Card margins */
@@ -26,21 +26,20 @@
 }
 
 .firstRow {
-    margin: 0;
-    display: flex;
+  margin: 0;
+  display: flex;
 }
 
 /* Mobile view */
 @media (max-width: 767px) {
-    .treatmentDesign {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .treatmCard {
-      width: 80%;
-      margin-bottom: 2em;
-    }
+  .treatmentDesign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .treatmCard {
+    width: 80%;
+    margin-bottom: 2em;
+  }
+}

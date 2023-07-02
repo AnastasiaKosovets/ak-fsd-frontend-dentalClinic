@@ -76,6 +76,23 @@
   background-color: rgba(60, 101, 122, 0.76);
 }
 
+/* Tablet view */
+@media (max-width: 1024px) {
+  .userIconA {
+    width: 35em;
+  }
+
+  .middlePartUser,
+  .secondPartUser {
+    height: 30em;
+  }
+
+  .thisCard {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* Mobile view */
 @media only screen and (max-width: 480px) {
   .profileDesign {
@@ -97,9 +114,8 @@
   }
 
   .userIconA {
-    height: 6em;
-    width: 14em;
-    margin-left: 3em;
+    height: 10em;
+    width: 22em;
   }
 
   .rigthUserBtn {
@@ -112,21 +128,5 @@
     font-size: medium;
     margin-top: 0.5em;
     justify-content: center;
-  }
-}
-
-/* Tablet view */
-@media (max-width: 768px) {
-  .profileDesign {
-    font-size: large;
-  }
-
-  .thisCard {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .userIconA {
-    width: 100%;
   }
 }

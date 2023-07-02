@@ -73,8 +73,7 @@ export const Appointments = () => {
                 type="text"
                 value={searchApp}
                 onChange={handleSearch}
-                placeholder="Buscar por médico"
-              />
+                placeholder="Buscar por médico"/>
               <p className="inputDoctorText">
                 {" "}
                 Registradas: {filteredAppointments.length} citas
@@ -103,13 +102,11 @@ export const Appointments = () => {
                         doctor_id={`Médico: ${doctorName}`}
                         patient_id={`Paciente: ${patientName}`}
                         treatment_id={`Tratamiento: ${appointment.treatment?.treatmentName}`}
-                        date={`Fecha: ${formattedDate}`}
-                      />
+                        date={`Fecha: ${formattedDate}`}/>
                       <Link
                         to="/appointments"
                         onClick={() => deleteHandler(appointment.id)}
-                        className="modInfo"
-                      >
+                        className="modInfo">
                         Eliminar Cita
                       </Link>
                     </div>

@@ -6,15 +6,12 @@ import { Container } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { userData } from "../userSlice";
-import { InputText } from "../../common/InputText/InputText";
-import { checkError } from "../../services/useful";
 import { inputHandler } from "../../services/useful";
 import { useSelector } from "react-redux";
-// no esta enlazado con BBDD -->> crear axios en apiCalls
-// intentar aplicar las validaciónes del login a este form
 
 export const UpdateAccount = () => {
-  const [body, setBody] = useState({})
+
+  const [body, setBody] = useState({});
   const credRdx = useSelector(userData);
   const token = credRdx?.credentials?.token;
   const navigate = useNavigate();
@@ -22,18 +19,15 @@ export const UpdateAccount = () => {
   const [user, setUser] = useState({});
 
   const editHandler = (body, token) => {
-    console.log(body)
-        console.log(token)
+    // console.log(body);
     updateProfile(body, token).then((res) => {
-        
-      console.log("HOLA")
-      navigate("/account")
+      navigate("/account");
     });
   };
 
   useEffect(() => {
     myProfile(token).then((res) => {
-      console.log(res);
+      // console.log(res);
       setUser(res.data);
     });
   }, []);
@@ -51,62 +45,71 @@ export const UpdateAccount = () => {
                   name="email"
                   maxLength={25}
                   placeholder={user.email}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="firstName">
                 <Form.Control
                   type="text"
                   name="firstName"
                   maxLength={25}
-                  placeholder={user.firstName ? user.firstName : "Introduce tu nombre"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.firstName ? user.firstName : "Introduce tu nombre"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="lastName">
                 <Form.Control
                   type="text"
                   name="lastName"
                   maxLength={25}
-                  placeholder={user.lastName ? user.lastName : "Introduce tu apellido"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.lastName ? user.lastName : "Introduce tu apellido"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="document">
                 <Form.Control
                   type="text"
                   name="document"
                   maxLength={25}
-                  placeholder={user.document ? user.document : "Introduce tu NIE/DNI"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.document ? user.document : "Introduce tu NIE/DNI"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="dateOfBirth">
                 <Form.Control
                   type="string"
                   name="dateOfBirth"
                   maxLength={10}
-                  placeholder={user.dateOfBirth ? user.dateOfBirth : "Introduce tu fecha de nacimiento"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.dateOfBirth
+                      ? user.dateOfBirth
+                      : "Introduce tu fecha de nacimiento"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="address">
                 <Form.Control
                   type="text"
                   name="address"
                   maxLength={40}
-                  placeholder={user.address ? user.address : "Introduce tu dirección"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.address ? user.address : "Introduce tu dirección"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="telefonNumber">
                 <Form.Control
                   type="imteger"
                   name="telefonNumber"
                   maxLength={25}
-                  placeholder={user.telefonNumber ? user.telefonNumber : "Introduce tu número de teléfono"}
-                  onChange={(e) => inputHandler(e, setBody)}
-                />
+                  placeholder={
+                    user.telefonNumber
+                      ? user.telefonNumber
+                      : "Introduce tu número de teléfono"
+                  }
+                  onChange={(e) => inputHandler(e, setBody)}/>
               </Form.Group>
             </Form>
           </Col>
@@ -115,8 +118,7 @@ export const UpdateAccount = () => {
               className="modInfo"
               onClick={() => {
                 editHandler(body, token);
-              }}
-            >
+              }}>
               Confirmar
             </Link>
             <Link to="/account" className="modInfo">

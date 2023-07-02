@@ -18,8 +18,7 @@ export const AboutUs = () => {
               <Card.Img
                 className="d-inline-block"
                 variant="top"
-                src={doctor1}
-              />
+                src={doctor1}/>
               <Card.Body>
                 <Card.Text>Dr. Juan Zubichi</Card.Text>
                 <Card.Title>
@@ -34,8 +33,7 @@ export const AboutUs = () => {
               <Card.Img
                 className="d-inline-block"
                 variant="top"
-                src={doctor2mod}
-              />
+                src={doctor2mod}/>
               <Card.Body>
                 <Card.Text>Dra. Lucia de Castro</Card.Text>
                 <Card.Title>

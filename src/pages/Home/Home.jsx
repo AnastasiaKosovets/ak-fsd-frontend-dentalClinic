@@ -17,8 +17,7 @@ export const Home = () => {
       <Carousel
         className="mainCarousel"
         activeIndex={index}
-        onSelect={handleSelect}
-      >
+        onSelect={handleSelect}>
         <Carousel.Item>
           <img className="d-block carouselImg" src={space1} alt="First slide" />
           <Carousel.Caption>
@@ -31,9 +30,7 @@ export const Home = () => {
           <img
             className="d-block carouselImg"
             src={space2}
-            alt="Second slide"
-          />
-
+            alt="Second slide"/>
           <Carousel.Caption>
             <h3 className="fw-semibold carouselText">
               Contamos con el mejor equípo y últimas tecnologías
@@ -42,7 +39,6 @@ export const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block carouselImg" src={space5} alt="Third slide" />
-
           <Carousel.Caption>
             <h3 className="fw-semibold carouselText">
               Trato especial para los mas peques

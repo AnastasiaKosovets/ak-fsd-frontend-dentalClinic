@@ -37,8 +37,7 @@ export const Users = () => {
                   address={`Dirección: ${infoUser.address}`}
                   telefonNumber={`Número de teléfono: ${infoUser.telefonNumber}`}
                   collegialNumber={`Número de colegiado: ${infoUser.collegialNumber}`}
-                  role_id={`Role_Id: ${infoUser.role_id}`}
-                />
+                  role_id={`Role_Id: ${infoUser.role_id}`}/>
               </div>
             );
           })}

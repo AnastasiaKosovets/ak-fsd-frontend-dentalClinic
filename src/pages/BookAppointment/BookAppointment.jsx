@@ -4,7 +4,11 @@ import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { useNavigate } from "react-router-dom";
 import { SelectOption } from "../../common/SelectOption/SelectOption";
-import { bookAppointment, getAllTreatments, getAllDoctors } from "../../services/apiCalls";
+import {
+  bookAppointment,
+  getAllTreatments,
+  getAllDoctors,
+} from "../../services/apiCalls";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DateTimePicker from "react-datetime-picker";
@@ -78,15 +82,13 @@ export const BookAppointment = () => {
                   options={allDoctors}
                   changeFunction={(e) => {
                     setSelectedDoctor(e.target.value);
-                  }}
-                />
+                  }}/>
                 <SelectOption
                   placeholder="Elige el tratamiento"
                   options={allTreatments}
                   changeFunction={(e) => {
                     setSelectedTreatment(e.target.value);
-                  }}
-                />
+                  }}/>
                 <Form.Group className="pickerWidthStyle">
                   <DateTimePicker
                     className="my-datetime-picker"
@@ -96,8 +98,7 @@ export const BookAppointment = () => {
                       date < new Date() ? "react-calendar__tile--disabled" : ""
                     }
                     value={yourDate}
-                    onChange={(date) => setYourDate(date)}
-                  />
+                    onChange={(date) => setYourDate(date)}/>
                 </Form.Group>
               </Form>
               <Col xs={10} md={10} lg={10} className="appButtons">
@@ -105,8 +106,13 @@ export const BookAppointment = () => {
                   className="modInfo"
                   onClick={() => {
                     editHandler(body, token);
-                  }}> Confirmar</Link>
-                <Link to="/account" className="modInfo">Cancelar</Link>
+                  }}>
+                  {" "}
+                  Confirmar
+                </Link>
+                <Link to="/account" className="modInfo">
+                  Cancelar
+                </Link>
               </Col>
             </Col>
           </Row>

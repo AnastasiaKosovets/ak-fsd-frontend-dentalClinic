@@ -28,8 +28,7 @@ export const Register = () => {
   const InputHandler = (e) => {
     setCredentials((prevState) => ({
       ...prevState,
-      //En este punto es donde el handler
-      //asigna el valor a la propiedad adecuada....
+      //Here handler asign value to the property
       [e.target.name]: e.target.value,
     }));
   };
@@ -42,7 +41,7 @@ export const Register = () => {
       [e.target.name + "Error"]: errorMessage,
     }));
     checkError(e.target.name, e.target.value);
-    console.log(e.target.value, "soy el check....");
+    // console.log(e.target.value, "soy el check....");
   };
 
   const registerOn = () => {
@@ -71,7 +70,7 @@ export const Register = () => {
             navigate("/");
           }, 2500);
           setWelcome("Gracias por registrarte");
-          console.log(results);
+          // console.log(results);
         })
         .catch((error) => console.log(error));
     }
@@ -85,7 +84,6 @@ export const Register = () => {
           <div>{welcome}</div>
         ) : (
           <div className="mainLogDesign">
-            {/* La utilidad de la siguiente linea es renderizar un hook at tiempo real en el DOM */}
             {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
             <InputText
               type={"text"}
@@ -97,8 +95,7 @@ export const Register = () => {
               placeholder={"Introduce tu nombre"}
               name={"firstName"}
               functionHandler={InputHandler}
-              onBlurFunction={inputCheck}
-            />
+              onBlurFunction={inputCheck}/>
             <div className="errorText">{credentialsError.firstNameError}</div>
             <InputText
               type={"text"}
@@ -110,8 +107,7 @@ export const Register = () => {
               placeholder={"Introduce tú apellido"}
               name={"lastName"}
               functionHandler={InputHandler}
-              onBlurFunction={inputCheck}
-            />
+              onBlurFunction={inputCheck}/>
             <div className="errorText">{credentialsError.lastNameError}</div>
             <InputText
               type={"email"}
@@ -123,8 +119,7 @@ export const Register = () => {
               placeholder={"Introduce tu e-mail"}
               name={"email"}
               functionHandler={InputHandler}
-              onBlurFunction={inputCheck}
-            />
+              onBlurFunction={inputCheck}/>
             <div className="errorText">{credentialsError.emailError}</div>
             <InputText
               type={"password"}
@@ -136,35 +131,9 @@ export const Register = () => {
               placeholder={"Introduce tu contraseña"}
               name={"password"}
               functionHandler={InputHandler}
-              onBlurFunction={inputCheck}
-            />
+              onBlurFunction={inputCheck}/>
             <div className="errorText">{credentialsError.passwordError}</div>
-            {/* <InputText
-            type={"text"}
-            design={
-              credentialsError.documentError === ""
-                ? "normalInput"
-                : "normalInput errorInput"
-            }
-            placeholder={"Introduce NIE/DNI"}
-            name={"document"}
-            functionHandler={InputHandler}
-            onBlurFunction={inputCheck}
-          />
-          <div className="errorText">{credentialsError.documentError}</div> */}
-            {/* <InputText
-            type={"text"}
-            design={
-              credentialsError.documentError === ""
-                ? "normalInput"
-                : "normalInput errorInput"
-            }
-            placeholder={"Introduce NIE/DNI"}
-            name={"document"}
-            functionHandler={InputHandler}
-            onBlurFunction={inputCheck}
-          />
-          <div className="errorText">{credentialsError.documentError}</div> */}
+
             <div onClick={() => registerOn()} className="logInButton">
               Regístrate
             </div>

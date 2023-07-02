@@ -36,8 +36,7 @@ export const MyAccount = () => {
         <Card.Img
           className="d-inline-block userIconImg"
           variant="top"
-          src={userIcon}
-        />
+          src={userIcon}/>
         <p>Mis Datos</p>
         <div className="thisCard">
           <div key={user.id} className="d1">
@@ -49,8 +48,7 @@ export const MyAccount = () => {
               document={`NIE/DNI: ${user.document}`}
               dateOfBirth={`Fecha de nacimiento: ${user.dateOfBirth}`}
               address={`Dirección: ${user.address}`}
-              telefonNumber={`Número de teléfono: ${user.telefonNumber}`}
-            />
+              telefonNumber={`Número de teléfono: ${user.telefonNumber}`}/>
             <Link to="/updateAccount" className="modInfo">
               Modificar
             </Link>
@@ -60,8 +58,7 @@ export const MyAccount = () => {
             <Card.Img
               className="d-inline-block userIconA"
               variant="top"
-              src={treatm6}
-            />
+              src={treatm6}/>
             <div className="rigthUserBtn">
               <Link to="/myAppointments" className="modInfo">
                 Mis Citas
@@ -73,8 +70,7 @@ export const MyAccount = () => {
             <Card.Img
               className="d-inline-block userIconA"
               variant="top"
-              src={aptm1}
-            />
+              src={aptm1}/>
             <div className="rigthUserBtn">
               <Link to="/bookAppointment" className="modInfo">
                 Pedir Cita

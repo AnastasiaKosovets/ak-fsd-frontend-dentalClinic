@@ -17,7 +17,6 @@
   flex-direction: column;
   margin-top: 2em;
   height: 12em;
-  width: 1;
   box-shadow: 0rem 0rem 0.3rem rgb(66, 103, 123);
   border-radius: 1em;
 }
@@ -79,7 +78,7 @@
   }
 
   .chooseDesign {
-    height: 14em;
+    height: 15em;
   }
 
   .selectDoctorOpt {
