@@ -1,25 +1,26 @@
+/* General  changeView design */
 .changeViewDesign {
-    height: 2em;
-    width: 6em;
-    border-radius: 1em;
-    box-shadow: .0rem .0rem .3rem  rgb(66, 103, 123);
-    background-color:rgb(147, 191, 207);
-    color: rgb(238, 235, 235);
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bolder;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 2em;
-
+  height: 2em;
+  width: 6em;
+  border-radius: 1em;
+  box-shadow: 0rem 0rem 0.3rem rgb(66, 103, 123);
+  background-color: rgb(147, 191, 207);
+  color: rgb(238, 235, 235);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 2em;
 }
 
 .changeViewDesign:hover {
-    transition: 0.3s;
-    background-color: rgb(88, 134, 158);
+  transition: 0.3s;
+  background-color: rgb(88, 134, 158);
 }
 
+/* Text design */
 .formTxt {
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

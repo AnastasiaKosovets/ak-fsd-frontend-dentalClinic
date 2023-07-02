@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Header.css";
 // método para conexión en modo elctura y escritura a RDX
 import { useSelector, useDispatch } from "react-redux";
@@ -11,13 +11,12 @@ import Navbar from "react-bootstrap/Navbar";
 import logo2 from "../../img/logo2.png";
 
 export const Header = () => {
-  //Guardo los datos de REDUX en una constante para poder acceder a ellos en Header
+  //I store the REDUX data in a constant to be able to access it in Header
   const datosCredencialesRedux = useSelector(userData);
-  console.log(datosCredencialesRedux);
+  // console.log(datosCredencialesRedux);
 
-  //Redux en modo escritura
+  //Redux writing mode
   const dispatch = useDispatch();
-  //Instancio navigate para poder moverme entre la SPA
   const navigate = useNavigate();
   // const roleId = datosCredencialesRedux?.credentials?.roleId;
   const credRdx = useSelector(userData);
@@ -39,8 +38,7 @@ export const Header = () => {
                 width="60"
                 height="50"
                 className="d-inline-block align-top"
-                alt="React Bootstrap logo"
-              />
+                alt="React Bootstrap logo"/>
             </Nav.Link>
           </Navbar>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -49,15 +47,13 @@ export const Header = () => {
               <Nav.Link
                 as={Link}
                 to="/treatment"
-                className="fw-semibold headerText"
-              >
+                className="fw-semibold headerText">
                 Tratamientos
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 to="/about"
-                className="fw-semibold headerText"
-              >
+                className="fw-semibold headerText">
                 Sobre Nosotros
               </Nav.Link>
               {role === 1 ? (
@@ -65,15 +61,13 @@ export const Header = () => {
                   <Nav.Link
                     as={Link}
                     to="/users"
-                    className="fw-semibold headerText"
-                  >
+                    className="fw-semibold headerText">
                     Usuarios
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/appointments"
-                    className="fw-semibold headerText"
-                  >
+                    className="fw-semibold headerText">
                     Citas
                   </Nav.Link>
                 </>
@@ -82,8 +76,7 @@ export const Header = () => {
                 <Nav.Link
                   as={Link}
                   to="/doctorApp"
-                  className="fw-semibold headerText"
-                >
+                  className="fw-semibold headerText">
                   Mis Citas
                 </Nav.Link>
               ) : null}
@@ -94,23 +87,20 @@ export const Header = () => {
                   <Nav.Link
                     as={Link}
                     to="/account"
-                    className="fw-semibold headerText"
-                  >
+                    className="fw-semibold headerText">
                     Mi Perfil
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/bookAppointment"
-                    className="fw-semibold headerText"
-                  >
+                    className="fw-semibold headerText">
                     Cita On-line
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/"
                     className="fw-semibold headerText"
-                    onClick={handleLogout}
-                  >
+                    onClick={handleLogout}>
                     Cerrar sesión
                   </Nav.Link>
                 </>
@@ -118,8 +108,7 @@ export const Header = () => {
                 <Nav.Link
                   as={Link}
                   to="/login"
-                  className="fw-semibold headerText"
-                >
+                  className="fw-semibold headerText">
                   Iniciar sesión
                 </Nav.Link>
               )}

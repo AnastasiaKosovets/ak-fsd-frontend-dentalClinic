@@ -1,24 +1,24 @@
+/* General footer design */
 .footerDesign {
-    /* height: 9vh; */
-    width: auto;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(133, 220, 249, 0.653);
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(133, 220, 249, 0.653);
+  display: flex;
+  justify-content: center;
 }
 
 .copRg {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
+/* Navbar style */
 .navBarStyle {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: larger;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: larger;
 }
 
 .footerText:hover {
-    color: rgb(128, 162, 248);
+  color: rgb(128, 162, 248);
 }
