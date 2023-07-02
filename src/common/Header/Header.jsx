@@ -73,12 +73,20 @@ export const Header = () => {
                 </>
               ) : null}
               {role === 3 ? (
+                <>
                 <Nav.Link
                   as={Link}
                   to="/doctorApp"
                   className="fw-semibold headerText">
                   Mis Citas
                 </Nav.Link>
+                <Nav.Link
+                    as={Link}
+                    to="/appointments"
+                    className="fw-semibold headerText">
+                    Citas
+                  </Nav.Link>
+                </>
               ) : null}
             </Nav>
             <Nav className="secondPart">
