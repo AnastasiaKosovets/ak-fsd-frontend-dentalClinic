@@ -9,6 +9,10 @@
     /* align-items: center; */
 }
 
+.copRg {
+    margin-top: 1em;
+}
+
 .navBarStyle {
     display: flex;
     justify-content: space-evenly;
