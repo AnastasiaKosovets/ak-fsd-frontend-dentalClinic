@@ -49,9 +49,32 @@
   font-size: small;
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 1024px) {
   .userApDesign {
     font-size: x-large;
+=======
+  @media only screen and (max-width: 1024px) {
+    .userApDesign {
+      font-size: x-large;
+    }
+  
+    .modInfo {
+      width: 12em;
+      font-size: large;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  
+    .userAppD {
+      margin: 1em;
+    }
+
+    .thisCard {
+      display: flex;
+      flex-direction: column;
+    }
+>>>>>>> develop
   }
 
   .modInfo {
