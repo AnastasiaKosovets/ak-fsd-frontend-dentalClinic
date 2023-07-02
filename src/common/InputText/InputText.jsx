@@ -8,6 +8,7 @@ export const InputText = ({
   design,
   functionHandler,
   onBlurFunction,
+  maxLength,
 }) => {
   return (
     <>
@@ -17,7 +18,9 @@ export const InputText = ({
         placeholder={placeholder}
         name={name}
         onChange={(e) => functionHandler(e)}
-        onBlur={(e) => onBlurFunction(e)}/>
+        onBlur={(e) => onBlurFunction(e)}
+        maxLength={25}/>
+        
     </>
   );
 };

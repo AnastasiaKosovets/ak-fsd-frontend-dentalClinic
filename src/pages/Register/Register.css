@@ -1,6 +1,7 @@
+/* General Register design */
 .mainRegister {
-    /* height: 75.5vh; */
-    width: 100vw;
+    height: 75.5vh;
+    width: auto;
     padding-top: 2em;
     background-color: rgb(247, 243, 231);
     display: flex;
@@ -13,7 +14,6 @@
 }
 
 .mainLogDesign {
-    /* padding-top: 2em; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -28,6 +28,7 @@
     display: flex;
 }
 
+/* Input design */
 .normalInput {
     height: 1.3em;
     width: 15em;
@@ -39,6 +40,7 @@
     background-color: rgb(227, 234, 236);
 }
 
+/* Error input design */
 .errorInput{
 border: solid red;
 }
@@ -48,6 +50,7 @@ border: solid red;
     font-size:large;
 }
 
+/* Button design */
 .logInButton {
     height: 3em;
     width: 10em;
@@ -64,6 +67,7 @@ border: solid red;
     align-items: center
 }
 
+/* Links design */
 .registerLink, .registerLinkText {
     color: rgba(60, 101, 122, 0.76);
     font-size: medium;
@@ -74,6 +78,7 @@ border: solid red;
     color: rgb(120, 196, 234);
   }
 
+  /* Mobile view */
 @media (max-width: 768px) {
     .mainRegister {
       padding-top: 1em;
