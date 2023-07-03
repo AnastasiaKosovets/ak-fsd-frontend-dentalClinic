@@ -67,7 +67,7 @@ export const Register = () => {
         .then((results) => {
           // console.log(data)
           setTimeout(() => {
-            navigate("/");
+            navigate("/login");
           }, 2500);
           setWelcome("Gracias por registrarte");
           // console.log(results);
@@ -79,11 +79,12 @@ export const Register = () => {
   return (
     <div className="mainRegister">
       <div className="registerDesign">
-        Regístrate y pide tú cita On-line
+        
         {welcome !== "" ? (
-          <div>{welcome}</div>
+          <div className="welcomeDesign">{welcome}</div>
         ) : (
           <div className="mainLogDesign">
+            Regístrate y pide tú cita On-line
             {/* {<pre>{JSON.stringify(credentials, null, 2)}</pre>} */}
             <InputText
               type={"text"}

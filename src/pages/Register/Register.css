@@ -1,6 +1,7 @@
 /* General Register design */
 .mainRegister {
-    height: 75.5vh;
+    /* height: 75.5vh; */
+    min-height: auto;
     width: auto;
     padding-top: 2em;
     background-color: rgb(247, 243, 231);
@@ -30,11 +31,12 @@
 
 /* Input design */
 .normalInput {
-    height: 1.3em;
-    width: 15em;
+    height: 2em;
+    width: 17em;
     margin: 1em;
     border-radius: 1em;
     color: rgb(66, 103, 123);
+    text-align: center;
     font-size: large;
     box-shadow: .0rem .0.5rem .1rem  rgb(81, 149, 186);
     background-color: rgb(227, 234, 236);
@@ -76,6 +78,10 @@ border: solid red;
   
   .registerLink {
     color: rgb(120, 196, 234);
+  }
+
+  .welcomeDesign {
+    min-height: 90vh;
   }
 
   /* Mobile view */

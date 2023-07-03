@@ -1,5 +1,6 @@
 /* General style of Appointments view */
 .appointmentsDesign {
+  min-height: auto;
   width: auto;
   background-color: rgb(247, 243, 231);
   display: flex;

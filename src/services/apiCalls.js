@@ -33,6 +33,16 @@ export const updateProfile = async (body, token) => {
     return  res.data;
 }
 
+export const updateMyAppointment = async (updateAppointment, token, updatedAppId) => {
+    let access = {
+        headers: {
+            Authorization: `Bearer: ${token}`,
+        },
+    };
+    let res = await axios.put(`http://localhost:9000/appointments/${updatedAppId}`, updateAppointment, access);
+    return  res.data;
+}
+
 // Book Appointment
 export const bookAppointment = async (token, createAppointment) => {
     let access = {
